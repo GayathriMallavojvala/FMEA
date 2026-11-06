@@ -1,0 +1,29 @@
+{
+  "_source_note": "Paraphrased summaries of the real, verifiable clause content (not verbatim standard text — cite the actual ISO/IATF documents in your references list, since your committee may check this directly).",
+  "clauses": [
+    {
+      "standard": "ISO 9001:2015",
+      "clause": "10.2.1",
+      "title": "Nonconformity and corrective action",
+      "summary": "When a nonconformity occurs (including one arising from a complaint), the organization must react to it, take action to control and correct it, deal with the consequences, and then evaluate whether action is needed to eliminate the root cause(s) so the nonconformity does not recur or occur elsewhere — including reviewing and analyzing the nonconformity, determining its causes, and checking whether similar nonconformities exist or could occur in other areas."
+    },
+    {
+      "standard": "ISO 9001:2015",
+      "clause": "10.2.2",
+      "title": "Documentation of corrective action",
+      "summary": "The organization must retain documented evidence of the nature of the nonconformity and any subsequent action taken, and of the results of any corrective action, and must review the effectiveness of any corrective action taken."
+    },
+    {
+      "standard": "IATF 16949:2016",
+      "clause": "10.2.3",
+      "title": "Problem solving",
+      "summary": "Extends ISO 9001 10.2 with automotive-sector requirements: the organization must have a documented process for problem solving that includes containment, root cause analysis and its verification, implementation of systemic corrective actions, verification of the effectiveness of these actions, and review/update of the relevant documentation (FMEAs, control plans) as needed."
+    },
+    {
+      "standard": "IATF 16949:2016",
+      "clause": "10.2.4",
+      "title": "Error-proofing",
+      "summary": "Requires the organization to apply error-proofing methods, appropriate to the severity of the problem, as part of the corrective action process — i.e., the preventive action should where possible make recurrence physically or procedurally difficult, not just rely on inspection or training alone."
+    }
+  ]
+}

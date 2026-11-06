@@ -1,0 +1,23 @@
+test_action_regeneration_and_reopening (test_baseline.BaselineTests.test_action_regeneration_and_reopening) ... ok
+test_guided_and_runner_match_every_scenario (test_baseline.BaselineTests.test_guided_and_runner_match_every_scenario) ... ok
+test_high_belief_not_confirmation (test_baseline.BaselineTests.test_high_belief_not_confirmation) ... ok
+test_invalid_loss (test_baseline.BaselineTests.test_invalid_loss) ... ok
+test_probability_distributions (test_baseline.BaselineTests.test_probability_distributions) ... ok
+test_state_preserved_and_not_mutated (test_baseline.BaselineTests.test_state_preserved_and_not_mutated) ... ok
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:730: ResourceWarning: unclosed event loop <_UnixSelectorEventLoop running=False closed=False debug=False>
+  _warn(f"unclosed event loop {self!r}", ResourceWarning, source=self)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:730: ResourceWarning: unclosed event loop <_UnixSelectorEventLoop running=False closed=False debug=False>
+  _warn(f"unclosed event loop {self!r}", ResourceWarning, source=self)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+test_comparison_contains_guided_baseline (test_baseline.UIIntegrationTests.test_comparison_contains_guided_baseline) ... ok
+test_generation_uses_case_evidence_and_keeps_plan (test_baseline.UIIntegrationTests.test_generation_uses_case_evidence_and_keeps_plan) ... ok
+test_loss_change_recomputes_and_persists (test_baseline.UIIntegrationTests.test_loss_change_recomputes_and_persists) ... ok
+test_unknown_match_abstains_without_saving (test_baseline.UIIntegrationTests.test_unknown_match_abstains_without_saving) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 1.764s
+
+OK
+Building retrieval index...
+Indexed 124 documents.

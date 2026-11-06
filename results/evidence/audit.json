@@ -1,0 +1,31 @@
+{
+  "sources": 15,
+  "passages": 125,
+  "incident_records": 94,
+  "eligible_incidents": 0,
+  "strict_reference_passages": 1,
+  "groups": 15,
+  "group_partitions": {
+    "test": 3,
+    "validation": 3,
+    "train": 9
+  },
+  "passage_review_states": {
+    "unverified": 124,
+    "source_checked": 1
+  },
+  "legacy_domain_counts": {
+    "steel": 105,
+    "pharmaceutical": 3,
+    "aerospace": 4,
+    "metallurgy_or_steel_unverified": 9,
+    "quality_management": 4
+  },
+  "split_incident_checks": 94,
+  "warnings": [
+    "Grouped split is infrastructure, not a usable incident benchmark.",
+    "No human reviewer identity is authenticated by this schema.",
+    "Unknown paraphrase relationships require manual provenance review.",
+    "ID-valid citations do not establish support or absence of contradictions."
+  ]
+}

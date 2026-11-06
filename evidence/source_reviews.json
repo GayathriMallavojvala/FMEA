@@ -1,0 +1,37 @@
+{
+  "reviews": [
+    {
+      "source_url": "https://link.springer.com/article/10.1007/s42979-023-02104-5",
+      "checked_on": "2026-10-29",
+      "status": "primary_page_accessed",
+      "title": "A Tool to Combine Expert Knowledge and Machine Learning for Defect Detection and Root Cause Analysis in a Hot Strip Mill",
+      "scope": "Title and abstract checked against publisher page. Original bundled paraphrase has not been fully verified. No incident-level test outcomes extracted.",
+      "review_method": "Assistant inspection of publisher page; not domain-expert review"
+    },
+    {
+      "source_url": "https://www.mdpi.com/1996-1944/12/15/2474",
+      "checked_on": "2026-10-29",
+      "status": "access_blocked",
+      "scope": "HTTP 429. Supplied title, journal attribution and summary remain unverified."
+    },
+    {
+      "source_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8588222/",
+      "checked_on": "2026-10-29",
+      "status": "access_blocked",
+      "scope": "Canonical PMC page returned browser verification. Bundled summary remains unverified."
+    }
+  ],
+  "reviewed_passages": [
+    {
+      "passage_id": "REF-LATHAM-2023-ABSTRACT",
+      "source_url": "https://link.springer.com/article/10.1007/s42979-023-02104-5",
+      "title": "A Tool to Combine Expert Knowledge and Machine Learning for Defect Detection and Root Cause Analysis in a Hot Strip Mill",
+      "locator": "Abstract",
+      "domain": "steel",
+      "text": "Latham and Giannetti describe a tool combining expert knowledge with machine learning to detect and investigate width-related defects in hot rolling. Their abstract reports training and validation with data from an operating mill. This is a general research reference, not a record of the current investigation, and it does not supply diagnostic test costs or outcome likelihoods for this application.",
+      "representation": "assistant_paraphrase_checked_against_primary_abstract",
+      "review_state": "source_checked",
+      "checked_on": "2026-10-29"
+    }
+  ]
+}

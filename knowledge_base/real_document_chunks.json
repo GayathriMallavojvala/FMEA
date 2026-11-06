@@ -1,0 +1,150 @@
+[
+  {
+    "chunk_id": "FDA483-001",
+    "source_type": "FDA_483",
+    "source_name": "FDA Form 483 \u2014 Catalent Maryland, Inc. (gene therapy manufacturer)",
+    "source_url": "https://www.fda.gov/media/190192/download",
+    "inspection_date": "2025-04-22 to 2025-04-28",
+    "paraphrased_summary": "Inspectors found that incoming drug substance was not identity-tested before use, and that the written procedure for sterility release testing did not define a required time window between sample collection and testing. They also found that a critical process parameter on the filling line was assessed only by reading a display on a peristaltic pump that had no established maintenance, calibration, or recertification program, with no independent check on the reading's accuracy.",
+    "style_note": "Note the pattern: each observation states the general deficiency first, then a 'Specifically...' clause citing the exact document number, revision, and effective date of the procedure that was violated. This traceability to a specific controlled document is a strong pattern to reuse in a CAPA 'Problem Description' section."
+  },
+  {
+    "chunk_id": "FDA483-002",
+    "source_type": "FDA_483",
+    "source_name": "FDA Form 483 \u2014 Catalent Maryland, Inc. (gene therapy manufacturer)",
+    "source_url": "https://www.fda.gov/media/190192/download",
+    "inspection_date": "2025-04-22 to 2025-04-28",
+    "paraphrased_summary": "A further observation covered visual-inspection operator training: the defect samples used for training were not representative of the actual product fill volume, the same defect set was reused for both training and later qualification (undermining blind testing), and the defect severity was too easy to visually spot on the training samples, reducing the value of the qualification. Records retention was also cited: a document-control procedure requiring a log of destroyed physical batch records could not be produced when requested.",
+    "style_note": "This shows how a single inspection can surface multiple independent nonconformities that would map to separate CAPA records rather than being bundled into one \u2014 useful for how you structure multi-issue non-conformance reports in your dataset."
+  },
+  {
+    "chunk_id": "FDA483-003",
+    "source_type": "FDA_483",
+    "source_name": "FDA Form 483 \u2014 sterile compounding pharmacy (aseptic drug processing)",
+    "source_url": "https://www.fda.gov/media/85788/download",
+    "inspection_date": "2013-03-18 to 2013-03-19",
+    "paraphrased_summary": "Inspectors observed a technician performing aseptic processing inside an ISO 5 hood with exposed skin on the face/neck and hair not fully covered, and noted that gowning worn outside the cleanroom did not fully cover personnel around the neck, knee, and back. A separate observation covered the cleanroom's exhaust vent placement, which had never been verified through smoke studies to confirm the non-turbulent, laminar airflow the aseptic process depended on.",
+    "style_note": "This is a strong example of tying a personnel/behavioral observation (gowning gaps) to a design/verification gap (no smoke study ever performed) \u2014 the same two-layer structure (immediate condition + underlying unverified assumption) that a good 5-Why chain should surface."
+  },
+  {
+    "chunk_id": "NASA-KSC-001-FABRICATION",
+    "source_type": "NASA_NTRS",
+    "source_name": "Failure Analysis at the Kennedy Space Center \u2014 Salazar & Wright, NASA KSC Materials Science Division",
+    "source_url": "https://ntrs.nasa.gov/api/citations/20100039458/downloads/20100039458.pdf",
+    "failure_category": "fabrication",
+    "paraphrased_summary": "A payload-handling rail cracked during installation. Investigators found the rail's drawing specified six notches to be machined for mounting hardware, but two notches had been cut incorrectly and then filled with a welded-in patch of a different, lower-strength steel grade than the base material. The weld joining the patch to the base metal had incomplete penetration/fusion, especially on the underside, which became the crack initiation point. The part failed under normal stress because the repair silently substituted weaker material and an inadequate weld, rather than reworking to the original specification.",
+    "root_cause_pattern": "Undocumented in-process material substitution and weld quality bypassed inspection because the repair was made to look dimensionally correct from the outside; the failure was only caught destructively.",
+    "why_this_is_useful": "Directly analogous to an inclusion or weld-line-defect CAPA: an unauthorized substitution or process deviation goes undetected until the part fails under load, and the eventual root cause is a controls gap (nothing checked that the internal repair matched the drawing), not just 'a bad weld'."
+  },
+  {
+    "chunk_id": "NASA-KSC-002-ENVIRONMENT",
+    "source_type": "NASA_NTRS",
+    "source_name": "Failure Analysis at the Kennedy Space Center \u2014 Salazar & Wright, NASA KSC Materials Science Division",
+    "source_url": "https://ntrs.nasa.gov/api/citations/20100039458/downloads/20100039458.pdf",
+    "failure_category": "environmental / corrosion",
+    "paraphrased_summary": "Stainless steel lightning-protection wire rope, in service for seven years at a coastal launch site, showed two distinct damage mechanisms on later inspection: localized melting from lightning strikes, and pitting corrosion caused by chloride deposits from both the marine environment and rocket-exhaust byproducts. The pitting was worse than visual inspection alone could reveal, since corrosion attacked the interior of individual wire strands along the grain structure (a 'wormhole' pattern) rather than staying on the visible surface.",
+    "root_cause_pattern": "The environment itself (salt air plus chemical exhaust deposition) was the root driver, and the practical lesson was that surface-only visual inspection is insufficient to catch interior degradation in this exposure condition.",
+    "why_this_is_useful": "A good parallel for pitted-surface or rolled-in-scale defects where inspection method limitations (not just the process fault) are part of the root cause \u2014 i.e., the defect existed but the detection method wasn't capable of catching it reliably."
+  },
+  {
+    "chunk_id": "NASA-KSC-003-MAINTENANCE",
+    "source_type": "NASA_NTRS",
+    "source_name": "Failure Analysis at the Kennedy Space Center \u2014 Salazar & Wright, NASA KSC Materials Science Division",
+    "source_url": "https://ntrs.nasa.gov/api/citations/20100039458/downloads/20100039458.pdf",
+    "failure_category": "maintenance / processing",
+    "paraphrased_summary": "A spherical steering bearing on a large crawler-transporter vehicle cracked progressively over time. Fracture analysis showed the crack grew gradually rather than failing suddenly, consistent with the bearing being misaligned in its housing. Grease samples pulled from the bearing were visibly degraded and contaminated with sand and rock particles, and testing confirmed the lubricant had absorbed water and oxidized well beyond normal condition, meaning it was no longer properly transferring load \u2014 which let the bearing bind and progressively crack under normal operating loads.",
+    "root_cause_pattern": "Lubricant condition monitoring (or its absence) allowed a maintenance consumable to silently degrade past the point where it could do its job, and the resulting misalignment/binding was the direct mechanical driver of the crack.",
+    "why_this_is_useful": "Strong parallel structure for a preventive-maintenance-gap root cause (e.g., 'PM interval not tied to actual degradation rate') \u2014 the failure mode is mechanical, but the root cause is a monitoring/scheduling gap, exactly the pattern several of the steel-mill scenarios use."
+  },
+  {
+    "chunk_id": "NASA-KSC-004-DESIGN",
+    "source_type": "NASA_NTRS",
+    "source_name": "Failure Analysis at the Kennedy Space Center \u2014 Salazar & Wright, NASA KSC Materials Science Division",
+    "source_url": "https://ntrs.nasa.gov/api/citations/20100039458/downloads/20100039458.pdf",
+    "failure_category": "design",
+    "paraphrased_summary": "Cracks were found at multiple weld joints on newly installed lightning-protection towers, all located at the same structural transition point (where a smaller diameter brace pipe joined a larger main pipe). Detailed fracture analysis ruled out fatigue and hydrogen-related cracking, and concluded the cracks initiated from stress overload concentrated at the weld toe, a location where the joint geometry itself concentrated stress. The investigators noted the failure's real significance was practical: the towers were extremely difficult to access for future inspection or repair (500 ft tall, ladder access only), so a geometry-driven weakness discovered this early was far cheaper to fix than one found later in the structure's life.",
+    "root_cause_pattern": "The root cause was a design-stage stress-concentration choice (weld joint geometry) rather than a material, fabrication, or maintenance defect \u2014 the same joint design was repeated at every affected location, which is itself the signature of a design-level root cause versus an isolated process escape.",
+    "why_this_is_useful": "Useful contrast case for your dataset: not every root cause is a 'process slipped' story \u2014 some are 'the design itself concentrates the risk everywhere it's used,' which changes what a defensible preventive action looks like (redesign/error-proof the geometry, not just tighten a procedure)."
+  },
+  {
+    "chunk_id": "LIT-001-CASTING-INCLUSION",
+    "source_type": "technical_literature",
+    "source_name": "Internal Cracks and Non-Metallic Inclusions as Root Causes of Casting Failure in Sugar Mill Roller Shafts (published in Metals, MDPI, open access)",
+    "source_url": "https://www.mdpi.com/1996-1944/12/15/2474",
+    "defect_category": "Inclusion (casting)",
+    "paraphrased_summary": "Researchers investigated why large cast roller shafts (over 600mm diameter) at a heavy-manufacturing complex kept getting rejected. Using both destructive sectioning and ultrasonic non-destructive testing across a sample of 32 previously manufactured shafts, they found the rejections traced to alumina/oxide-type non-metallic inclusions that caused surface and sub-surface cracking. The root cause analysis pointed specifically to the refractory lining, the furnace hot-top, and the ladle as the significant contamination sources \u2014 and the corrective fix was replacing the low-quality flux and refractory lining material with standardized, higher-quality alternatives.",
+    "why_this_is_useful": "This is a real, directly analogous case to your Inclusion defect family: same causal chain (refractory/ladle contamination -> non-metallic inclusion -> subsurface crack -> rejection), same investigative method (destructive + non-destructive testing across a historical sample), and the same category of fix (material/procedure standardization) used in several of the synthetic Inclusion scenarios."
+  },
+  {
+    "chunk_id": "LIT-002-ROLLED-SCALE",
+    "source_type": "technical_literature",
+    "source_name": "Characterization of hot rolled scales \u2014 root cause identification and remedial action (ScienceDirect)",
+    "source_url": "https://www.sciencedirect.com/science/article/abs/pii/S135063071300246X",
+    "defect_category": "Rolled-in Scale (hot_rolling)",
+    "paraphrased_summary": "This study characterizes different types of rolled-in scale defects on hot-rolled steel strip by appearance, the grades most prone to each type, and metallographic examination. It explains the underlying mechanism: oxide scale forms on the strip surface in the reheating furnace before rolling due to high-temperature oxidation, and is normally removed by hydraulic descaling during the hot rolling operation; when the primary scale is not fully removed by the descaler, it gets pressed (rolled) into the surface, which is specifically termed 'rolled-in scale.' The paper ties each characterized scale type back to a specific root cause and matching remedial action.",
+    "why_this_is_useful": "This is the real technical basis for the entire Rolled-in Scale defect family in your dataset \u2014 it confirms the exact mechanism (incomplete descaling before rolling causes oxide to be pressed into the surface) that scenarios SC-021 through SC-025 are built around, and is citable as your technical-literature grounding for that family specifically."
+  },
+  {
+    "chunk_id": "LIT-003-WIDTH-DEFECT-RCA",
+    "source_type": "technical_literature",
+    "source_name": "A Tool to Combine Expert Knowledge and Machine Learning for Defect Detection and Root Cause Analysis in a Hot Strip Mill (SN Computer Science, Springer)",
+    "source_url": "https://link.springer.com/article/10.1007/s42979-023-02104-5",
+    "defect_category": "general RCA methodology / hot strip mill process",
+    "paraphrased_summary": "The authors note that defect detection and root cause analysis in hot strip mills is largely a manual process today, which makes it vulnerable to human error, delayed feedback, and knock-on effects across successive steel products further down the line. They propose combining expert domain knowledge with machine learning models specifically for width-related defects, arguing that automated RCA tools remain rare outside of surface-defect image detection and roller-force optimization, leaving a real gap between defect detection and actually explaining why a defect occurred.",
+    "why_this_is_useful": "This is a strong, real, citable justification for your thesis's core premise (Objective 5): that RCA in steel manufacturing today is manual, slow, and error-prone, and that automated tooling for the 'explain why' step (not just detect-the-defect) is a genuine, still-open gap in the literature \u2014 exactly the gap your RAG Copilot targets."
+  },
+  {
+    "chunk_id": "LIT-004-FORGING-FOLD",
+    "source_type": "technical_literature",
+    "source_name": "Prediction of the folding defect in die forging: A versatile approach for three typical types of folding defects (ScienceDirect)",
+    "source_url": "https://www.sciencedirect.com/science/article/abs/pii/S1526612518313422",
+    "defect_category": "Waist Folding (forging)",
+    "paraphrased_summary": "This paper studies fold defects in die forging, which occur when the workpiece undergoes complex material flow inside die cavities and improper processing conditions cause the metal surface to overlap onto itself rather than bond. The authors classify folding defects into three distinct types based on the material flow pattern that produces them: confluence-type (two flow fronts meeting and folding over each other), bending-type (the wall of a cavity bending back on itself), and local-loading-type (uneven local deformation concentrating flow into a fold). They demonstrate the approach on a real axially-symmetric flanged steel component, where folding is strongly tied to the part's geometrical parameters (billet shape, die shape) rather than being a single generic cause.",
+    "why_this_is_useful": "Gives your Waist Folding defect family a real, technical vocabulary for classifying fold formation mechanisms (confluence/bending/local-loading), and reinforces that folding root causes are frequently geometry- and die-design-driven rather than purely operator or material related \u2014 consistent with several of your synthetic scenarios (SC-036, SC-039) that trace folding back to die geometry or process-speed changes rather than operator error."
+  },
+  {
+    "chunk_id": "LIT-005-FORGING-FOLD-CASE",
+    "source_type": "technical_literature",
+    "source_name": "Study on fold formation mechanism and process optimization in multi-directional die forged valve bodies (PLOS ONE, open access, via PMC)",
+    "source_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12742751/",
+    "defect_category": "Waist Folding (forging)",
+    "paraphrased_summary": "This case study examines a real production problem: a multi-directional die-forged valve body where, under the unoptimized process in use, nearly all forged parts showed fold defects, with over half being severe enough to cause substantial financial loss. Using finite-element modeling, the authors systematically varied billet initial temperature, punch speed, and billet-die friction coefficient to identify which process parameters most strongly drove fold formation, then used those findings to redesign the process rather than the die itself.",
+    "why_this_is_useful": "A real, quantified example of just how costly an under-diagnosed fold-defect root cause can be at scale (near-100% defect rate under an unoptimized process) \u2014 useful supporting evidence in your thesis introduction for why fast, accurate RCA matters, and a real precedent for process-parameter-driven (not just die-geometry-driven) fold root causes, complementing LIT-004."
+  },
+  {
+    "chunk_id": "LIT-006-CRAZING-THERMAL-FATIGUE",
+    "source_type": "technical_literature",
+    "source_name": "Early Spalling Analysis of Large Particles in High-Cr Steel during Thermal Fatigue: Relevant Mechanisms (published in Materials, MDPI, open access)",
+    "source_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9573377/",
+    "defect_category": "Crazing (hot_rolling)",
+    "paraphrased_summary": "This study investigates surface deterioration of high-chromium roll steel (the work rolls used in hot rolling) caused by thermal fatigue. Using a laboratory test replicating real hot-rolling thermal cycling, samples were cycled up to 4,500 times at temperatures of 500, 600, and 700C followed by water cooling, with periodic sectioning to examine microstructure and crack development. The authors found that repeated thermal cycling causes oxidation-assisted crack growth that eventually leads to spalling (surface particles breaking away), and that the specific combination of temperature, chemical composition, and thermal stress determines how and where cracking initiates and propagates.",
+    "why_this_is_useful": "This is real, quantified evidence for the physical mechanism behind your Crazing defect family: repeated thermal cycling (exactly the furnace-overshoot and cooling-profile scenarios in SC-001 through SC-005) causes oxidation-assisted micro-cracking that can eventually transfer a crazing-like pattern to the product surface via roll condition, not just strip temperature alone."
+  },
+  {
+    "chunk_id": "LIT-007-SURFACE-DEFECTS-OVERVIEW",
+    "source_type": "technical_literature",
+    "source_name": "Steel surface defects analysis with machine vision and deep learning (International Journal of Advanced Manufacturing Technology, Springer)",
+    "source_url": "https://link.springer.com/article/10.1007/s00170-025-16539-y",
+    "defect_category": "Patches, Pitted Surface, general taxonomy",
+    "paraphrased_summary": "This review paper discusses why steel surface defects matter beyond appearance: crazing can cause rupture, inclusions affect the internal stress state of steel structures, and patches and pitted surface specifically affect resistance to wear and corrosion. It also distinguishes microstructural defects (linked to deoxidation and segregation during steelmaking, producing non-metallic inclusions or microcracks) from purely surface-level defects, and notes that even very small defects (under 100 micrometers) can be detrimental to fatigue strength in high-strength steel grades, though the critical size threshold depends on the specific steel grade.",
+    "why_this_is_useful": "Gives real, citable justification for treating Patches and Pitted Surface as more than cosmetic issues in your CAPA framing \u2014 the paper explicitly ties these defect types to wear/corrosion resistance consequences, supporting the severity language used in the Pitted Surface scenarios (SC-016 to SC-020), and gives you a real reference for the general defect taxonomy overview in your thesis's background chapter."
+  },
+  {
+    "chunk_id": "LIT-008-TONG-MARK",
+    "source_type": "technical_literature",
+    "source_name": "Root Cause Analysis of Tong Mark Defect During Material Handling of IF Steel Coils (G. Mathan, G. Manikandan, M.B.N. Raju \u2014 Research & Development, Tata Steel Limited, Jamshedpur; presented at AIMTDR 2014, the All India Manufacturing Technology, Design and Research Conference)",
+    "source_url": "https://www.researchgate.net/publication/278607272_Root_cause_Analysis_of_Tong_mark_defect_during_material_handling_of_IF_steel_coils",
+    "defect_category": "Scratches (finishing / handling)",
+    "paraphrased_summary": "This is a real Tata Steel R&D paper studying 'tong mark' defects \u2014 surface marks left on Interstitial-Free (IF) steel coils by the mechanical tongs/grippers used to handle coils during loading into and out of the batch annealing furnace (BAF), a process step needed to restore formability after cold rolling. Note: full findings text was not fully retrievable from the available source snippet, so treat this citation as confirming the real topic, authorship, and venue (a genuine Tata Steel technical study, exactly matching the dossier's own suggested 'Tata Steel / SAIL public technical notes' bonus source) rather than as a source for specific quantitative claims \u2014 cite the original conference paper directly if you need exact findings.",
+    "why_this_is_useful": "This is a directly on-point real precedent for your Scratches defect family: it's literally an Indian steel major's own root-cause study of handling-equipment-contact scratches (tongs) during a specific process step (batch annealing furnace loading), matching several of your synthetic Scratches scenarios' handling-equipment root causes (SC-026, SC-027, SC-061)."
+  },
+  {
+    "chunk_id": "LIT-009-ROLL-MARK",
+    "source_type": "technical_literature",
+    "source_name": "Smoothing Complete Feature Pyramid Networks for Roll Mark Detection of Steel Strips (Sensors, MDPI, open access, DOI 10.3390/s21217264)",
+    "source_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8588222/",
+    "defect_category": "Scratches / Roll Marks (hot_rolling, finishing)",
+    "paraphrased_summary": "This paper studies 'roll marks' \u2014 a related defect family to scratches \u2014 which occur periodically and over large areas on hot-rolled steel strip, and are considered one of the most serious defect categories by steel mills specifically because a single damaged or cracked roll surface repeats its mark on every subsequent rotation, turning a single root cause (roll surface damage) into a large-area, continuously recurring defect pattern rather than an isolated scratch.",
+    "why_this_is_useful": "Useful supporting evidence for why your Scratches scenarios that trace back to worn/damaged equipment (a roller sleeve, a guide surface) emphasize periodic or systemic recurrence rather than one-off marks \u2014 this real paper confirms that periodicity is the key diagnostic signature distinguishing an equipment-root-cause defect from a random handling scratch, which is a useful distinction to make explicit in your thesis's defect-taxonomy discussion."
+  }
+]

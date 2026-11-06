@@ -1,0 +1,11 @@
+{
+  "kind": "deterministic logic check; not empirical validation",
+  "library_sha256": "811c6433048350b1120dc0e6e8d230913b5a5e31b331a212ea8b28c69fd8bc7e",
+  "prior": "scenario authored prior",
+  "loss_inr": 20000,
+  "time_cost_inr_per_min": 20,
+  "confidence_threshold": 0.85,
+  "outcome": "most likely given configured true cause",
+  "random_order_seed": "CRC32 of scenario ID",
+  "episodes": 60
+}

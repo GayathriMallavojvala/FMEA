@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: steel-capa-full
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python desk_server.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.8
+      - key: GRADIO_ANALYTICS_ENABLED
+        value: "False"

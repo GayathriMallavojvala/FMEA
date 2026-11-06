@@ -1,0 +1,34 @@
+test_action_regeneration_and_reopening (test_baseline.BaselineTests.test_action_regeneration_and_reopening) ... ok
+test_guided_and_runner_match_every_scenario (test_baseline.BaselineTests.test_guided_and_runner_match_every_scenario) ... ok
+test_high_belief_not_confirmation (test_baseline.BaselineTests.test_high_belief_not_confirmation) ... ok
+test_invalid_loss (test_baseline.BaselineTests.test_invalid_loss) ... ok
+test_probability_distributions (test_baseline.BaselineTests.test_probability_distributions) ... ok
+test_state_preserved_and_not_mutated (test_baseline.BaselineTests.test_state_preserved_and_not_mutated) ... ok
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:730: ResourceWarning: unclosed event loop <_UnixSelectorEventLoop running=False closed=False debug=False>
+  _warn(f"unclosed event loop {self!r}", ResourceWarning, source=self)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py:730: ResourceWarning: unclosed event loop <_UnixSelectorEventLoop running=False closed=False debug=False>
+  _warn(f"unclosed event loop {self!r}", ResourceWarning, source=self)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+test_comparison_contains_guided_baseline (test_baseline.UIIntegrationTests.test_comparison_contains_guided_baseline) ... ok
+test_generation_uses_case_evidence_and_keeps_plan (test_baseline.UIIntegrationTests.test_generation_uses_case_evidence_and_keeps_plan) ... ok
+test_loss_change_recomputes_and_persists (test_baseline.UIIntegrationTests.test_loss_change_recomputes_and_persists) ... ok
+test_unknown_match_abstains_without_saving (test_baseline.UIIntegrationTests.test_unknown_match_abstains_without_saving) ... ok
+test_all_causes_and_weights (test_stochastic.SimulationTests.test_all_causes_and_weights) ... ok
+test_inconclusive_costs_without_update (test_stochastic.SimulationTests.test_inconclusive_costs_without_update) ... ok
+test_library_validation (test_stochastic.SimulationTests.test_library_validation) ... ok
+test_models_independent_and_normalized (test_stochastic.SimulationTests.test_models_independent_and_normalized) ... ok
+test_prior_only_and_brier (test_stochastic.SimulationTests.test_prior_only_and_brier) ... ok
+test_repeatability_and_strategy_pairing (test_stochastic.SimulationTests.test_repeatability_and_strategy_pairing) ... ok
+test_shared_uniform_extreme (test_stochastic.SimulationTests.test_shared_uniform_extreme) ... ok
+test_stochastic_marginals (test_stochastic.SimulationTests.test_stochastic_marginals) ... ok
+test_truth_does_not_change_decisions (test_stochastic.SimulationTests.test_truth_does_not_change_decisions) ... ok
+test_unknown_truth_not_in_policy (test_stochastic.SimulationTests.test_unknown_truth_not_in_policy) ... ok
+test_weighted_statistics_and_paired_interval (test_stochastic.SimulationTests.test_weighted_statistics_and_paired_interval) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 2.301s
+
+OK
+Building retrieval index...
+Indexed 124 documents.

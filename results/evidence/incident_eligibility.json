@@ -1,0 +1,1130 @@
+[
+  {
+    "incident_id": "INC-SC-001",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-002",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-003",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-004",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-005",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-006",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-007",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-008",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-009",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-010",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-011",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-012",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-013",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-014",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-015",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-016",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-017",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-018",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-019",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-020",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-021",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-022",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-023",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-024",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-025",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-026",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-027",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-028",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-029",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-030",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-031",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-032",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-033",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-034",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-035",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-036",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-037",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-038",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-039",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-040",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-041",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-042",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-043",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-044",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-045",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-046",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-047",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-048",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-049",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-050",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-051",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-052",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-053",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-054",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-055",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-056",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-057",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-058",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-059",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-060",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-061",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-062",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-063",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-064",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-065",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-066",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-067",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-068",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-069",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-070",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-071",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-072",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-073",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-074",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-075",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-076",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-077",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-078",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-079",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-080",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-081",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-082",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-083",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-084",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-085",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-086",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-087",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-088",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-089",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-090",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-091",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-092",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-093",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  },
+  {
+    "incident_id": "INC-SC-094",
+    "eligible": false,
+    "reasons": [
+      "incident origin is not established",
+      "initial_information lacks observed evidence",
+      "established_cause lacks observed evidence",
+      "no documented requestable test outcomes",
+      "qualified review is missing"
+    ],
+    "allowed_training_passages": 22
+  }
+]

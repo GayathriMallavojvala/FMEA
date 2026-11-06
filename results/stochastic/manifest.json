@@ -1,0 +1,58 @@
+{
+  "kind": "synthetic stochastic pilot; not industrial validation",
+  "seed": 20261029,
+  "replicates_per_cause": 20,
+  "independent_scenarios": 10,
+  "profiles": {
+    "matched": {},
+    "prior_shift": {
+      "rotate_prior": true
+    },
+    "likelihood_shift": {
+      "likelihood_mix": 0.3
+    },
+    "correlated": {
+      "shared_uniform_probability": 0.6
+    },
+    "inconclusive": {
+      "missing_probability": 0.2
+    },
+    "unknown_cause": {
+      "unknown_prevalence": 0.2
+    },
+    "combined": {
+      "rotate_prior": true,
+      "likelihood_mix": 0.3,
+      "shared_uniform_probability": 0.6,
+      "missing_probability": 0.2,
+      "unknown_prevalence": 0.2
+    }
+  },
+  "strategies": [
+    "cost_aware_voi",
+    "cost_aware",
+    "greedy_info",
+    "cheapest_first",
+    "fixed_order",
+    "random",
+    "no_test"
+  ],
+  "episodes": 8800,
+  "policy_runs": 61600,
+  "loss_inr": 20000,
+  "time_weight_inr_per_min": 20,
+  "threshold": 0.85,
+  "bootstrap_draws": 2000,
+  "bootstrap_unit": "scenario",
+  "sampling": "stratified by cause; scenario-weighted by environment prior",
+  "python": "3.12.14",
+  "code_and_data_sha256": {
+    "active_diagnosis/diagnosis_library.json": "811c6433048350b1120dc0e6e8d230913b5a5e31b331a212ea8b28c69fd8bc7e",
+    "active_diagnosis/engine.py": "7eadb95ad26b4fb9cfa391bd7fe2174f33d27c0b1804c90488b5498096b473ad",
+    "evaluate_stochastic.py": "c55cee9feac82e2c26a1b5ff547c6351aed88347ee80784ad24c59ce592da563",
+    "benchmark/__init__.py": "4490d8d3e6cabc4680d5941476bdbb1b5bf8e95381cd427fec73b62a5fdd97c6",
+    "benchmark/evaluation.py": "a63ddee1cf7b9128d7310c196ee0bd2213491eed9648ef0bbf733671a55c97f1",
+    "benchmark/simulation.py": "63915b7e4756302ede8441a6e35a9fb8f7bfd3e6daa6eec61bf50dd808bc9220",
+    "benchmark/statistics.py": "375226cb445e3ac8eec6e97e35f4e9e5d2a8953568caf0e69025846feed75adb"
+  }
+}

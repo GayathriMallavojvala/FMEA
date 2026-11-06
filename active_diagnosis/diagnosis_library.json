@@ -1,0 +1,2811 @@
+{
+ "_source_note": "AUTHORED ESTIMATES, not measured plant data and not expert-validated. Probability provenance requires future expert validation.",
+ "scenarios": [
+  {
+   "id": "Crazing",
+   "defect_type": "Crazing",
+   "process_stage": "hot_rolling",
+   "presenting_symptom": "Network of fine surface cracks on hot-rolled strip, concentrated mid-width, a few percent of coils per shift.",
+   "true_cause": "furnace_overshoot",
+   "prior": {
+    "furnace_overshoot": 0.25,
+    "uneven_cooling": 0.15,
+    "roll_thermal_fatigue": 0.2,
+    "residual_elements": 0.1,
+    "slab_surface_cracks": 0.1,
+    "low_finish_temp": 0.2
+   },
+   "candidate_causes": [
+    {
+     "id": "furnace_overshoot",
+     "label": "Reheat furnace zone temperature overshoot (control loop on manual override)"
+    },
+    {
+     "id": "uneven_cooling",
+     "label": "Uneven strip/roll cooling causing thermal cycling"
+    },
+    {
+     "id": "roll_thermal_fatigue",
+     "label": "Work roll surface thermal fatigue (roll change overdue)"
+    },
+    {
+     "id": "residual_elements",
+     "label": "Residual Cu/Sn in heat chemistry causing hot shortness"
+    },
+    {
+     "id": "slab_surface_cracks",
+     "label": "Pre-existing slab surface cracks from continuous casting"
+    },
+    {
+     "id": "low_finish_temp",
+     "label": "Finishing mill exit temperature below aim"
+    }
+   ],
+   "tests": [
+    {
+     "id": "furnace_log",
+     "label": "Review reheat furnace temperature log vs setpoint",
+     "cost_inr": 100,
+     "time_minutes": 15,
+     "outcomes": [
+      "overshoot_found",
+      "within_setpoint"
+     ],
+     "outcome_likelihoods": {
+      "furnace_overshoot": {
+       "overshoot_found": 0.88,
+       "within_setpoint": 0.12
+      },
+      "uneven_cooling": {
+       "overshoot_found": 0.1,
+       "within_setpoint": 0.9
+      },
+      "roll_thermal_fatigue": {
+       "overshoot_found": 0.1,
+       "within_setpoint": 0.9
+      },
+      "residual_elements": {
+       "overshoot_found": 0.1,
+       "within_setpoint": 0.9
+      },
+      "slab_surface_cracks": {
+       "overshoot_found": 0.1,
+       "within_setpoint": 0.9
+      },
+      "low_finish_temp": {
+       "overshoot_found": 0.1,
+       "within_setpoint": 0.9
+      }
+     }
+    },
+    {
+     "id": "cooling_check",
+     "label": "Inspect cooling header flow and spray pattern",
+     "cost_inr": 300,
+     "time_minutes": 45,
+     "outcomes": [
+      "uneven_cooling_found",
+      "cooling_even"
+     ],
+     "outcome_likelihoods": {
+      "furnace_overshoot": {
+       "uneven_cooling_found": 0.1,
+       "cooling_even": 0.9
+      },
+      "uneven_cooling": {
+       "uneven_cooling_found": 0.85,
+       "cooling_even": 0.15
+      },
+      "roll_thermal_fatigue": {
+       "uneven_cooling_found": 0.1,
+       "cooling_even": 0.9
+      },
+      "residual_elements": {
+       "uneven_cooling_found": 0.1,
+       "cooling_even": 0.9
+      },
+      "slab_surface_cracks": {
+       "uneven_cooling_found": 0.1,
+       "cooling_even": 0.9
+      },
+      "low_finish_temp": {
+       "uneven_cooling_found": 0.1,
+       "cooling_even": 0.9
+      }
+     }
+    },
+    {
+     "id": "roll_inspect",
+     "label": "Inspect work roll surface and roll-change log",
+     "cost_inr": 200,
+     "time_minutes": 30,
+     "outcomes": [
+      "roll_wear_found",
+      "roll_ok"
+     ],
+     "outcome_likelihoods": {
+      "furnace_overshoot": {
+       "roll_wear_found": 0.1,
+       "roll_ok": 0.9
+      },
+      "uneven_cooling": {
+       "roll_wear_found": 0.1,
+       "roll_ok": 0.9
+      },
+      "roll_thermal_fatigue": {
+       "roll_wear_found": 0.85,
+       "roll_ok": 0.15
+      },
+      "residual_elements": {
+       "roll_wear_found": 0.1,
+       "roll_ok": 0.9
+      },
+      "slab_surface_cracks": {
+       "roll_wear_found": 0.1,
+       "roll_ok": 0.9
+      },
+      "low_finish_temp": {
+       "roll_wear_found": 0.1,
+       "roll_ok": 0.9
+      }
+     }
+    },
+    {
+     "id": "chem_cert",
+     "label": "Check heat chemistry certificate (Cu, Sn, S)",
+     "cost_inr": 150,
+     "time_minutes": 20,
+     "outcomes": [
+      "residuals_high",
+      "chemistry_ok"
+     ],
+     "outcome_likelihoods": {
+      "furnace_overshoot": {
+       "residuals_high": 0.1,
+       "chemistry_ok": 0.9
+      },
+      "uneven_cooling": {
+       "residuals_high": 0.1,
+       "chemistry_ok": 0.9
+      },
+      "roll_thermal_fatigue": {
+       "residuals_high": 0.1,
+       "chemistry_ok": 0.9
+      },
+      "residual_elements": {
+       "residuals_high": 0.9,
+       "chemistry_ok": 0.1
+      },
+      "slab_surface_cracks": {
+       "residuals_high": 0.1,
+       "chemistry_ok": 0.9
+      },
+      "low_finish_temp": {
+       "residuals_high": 0.1,
+       "chemistry_ok": 0.9
+      }
+     }
+    },
+    {
+     "id": "slab_report",
+     "label": "Pull caster slab surface inspection report",
+     "cost_inr": 400,
+     "time_minutes": 60,
+     "outcomes": [
+      "slab_cracks_reported",
+      "slab_clean"
+     ],
+     "outcome_likelihoods": {
+      "furnace_overshoot": {
+       "slab_cracks_reported": 0.1,
+       "slab_clean": 0.9
+      },
+      "uneven_cooling": {
+       "slab_cracks_reported": 0.1,
+       "slab_clean": 0.9
+      },
+      "roll_thermal_fatigue": {
+       "slab_cracks_reported": 0.1,
+       "slab_clean": 0.9
+      },
+      "residual_elements": {
+       "slab_cracks_reported": 0.1,
+       "slab_clean": 0.9
+      },
+      "slab_surface_cracks": {
+       "slab_cracks_reported": 0.85,
+       "slab_clean": 0.15
+      },
+      "low_finish_temp": {
+       "slab_cracks_reported": 0.1,
+       "slab_clean": 0.9
+      }
+     }
+    },
+    {
+     "id": "fm_temp_trend",
+     "label": "Review finishing-mill exit temperature trend",
+     "cost_inr": 100,
+     "time_minutes": 15,
+     "outcomes": [
+      "temp_below_aim",
+      "temp_on_aim"
+     ],
+     "outcome_likelihoods": {
+      "furnace_overshoot": {
+       "temp_below_aim": 0.1,
+       "temp_on_aim": 0.9
+      },
+      "uneven_cooling": {
+       "temp_below_aim": 0.1,
+       "temp_on_aim": 0.9
+      },
+      "roll_thermal_fatigue": {
+       "temp_below_aim": 0.1,
+       "temp_on_aim": 0.9
+      },
+      "residual_elements": {
+       "temp_below_aim": 0.1,
+       "temp_on_aim": 0.9
+      },
+      "slab_surface_cracks": {
+       "temp_below_aim": 0.1,
+       "temp_on_aim": 0.9
+      },
+      "low_finish_temp": {
+       "temp_below_aim": 0.85,
+       "temp_on_aim": 0.15
+      }
+     }
+    },
+    {
+     "id": "metallography",
+     "label": "Metallographic section of the crack (morphology, oxide)",
+     "cost_inr": 3000,
+     "time_minutes": 240,
+     "outcomes": [
+      "thermal_fatigue_pattern",
+      "other_pattern"
+     ],
+     "outcome_likelihoods": {
+      "furnace_overshoot": {
+       "thermal_fatigue_pattern": 0.55,
+       "other_pattern": 0.45
+      },
+      "uneven_cooling": {
+       "thermal_fatigue_pattern": 0.5,
+       "other_pattern": 0.5
+      },
+      "roll_thermal_fatigue": {
+       "thermal_fatigue_pattern": 0.6,
+       "other_pattern": 0.4
+      },
+      "residual_elements": {
+       "thermal_fatigue_pattern": 0.1,
+       "other_pattern": 0.9
+      },
+      "slab_surface_cracks": {
+       "thermal_fatigue_pattern": 0.1,
+       "other_pattern": 0.9
+      },
+      "low_finish_temp": {
+       "thermal_fatigue_pattern": 0.1,
+       "other_pattern": 0.9
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "Inclusion",
+   "defect_type": "Inclusion",
+   "process_stage": "casting",
+   "presenting_symptom": "Sliver-like and spot defects from non-metallic particles trapped in the strip, intermittent across heats.",
+   "true_cause": "ladle_slag_carryover",
+   "prior": {
+    "ladle_slag_carryover": 0.25,
+    "refractory_erosion": 0.2,
+    "reoxidation": 0.15,
+    "mold_powder_entrapment": 0.15,
+    "poor_flotation": 0.1,
+    "deox_error": 0.15
+   },
+   "candidate_causes": [
+    {
+     "id": "ladle_slag_carryover",
+     "label": "Ladle slag carry-over into the tundish"
+    },
+    {
+     "id": "refractory_erosion",
+     "label": "Tundish/SEN refractory erosion"
+    },
+    {
+     "id": "reoxidation",
+     "label": "Air ingress/re-oxidation during casting"
+    },
+    {
+     "id": "mold_powder_entrapment",
+     "label": "Mold powder entrapment from level fluctuation"
+    },
+    {
+     "id": "poor_flotation",
+     "label": "Insufficient argon stirring/flotation time"
+    },
+    {
+     "id": "deox_error",
+     "label": "Deoxidation (Al addition) practice error"
+    }
+   ],
+   "tests": [
+    {
+     "id": "slag_log",
+     "label": "Review ladle slag-off and tapping practice log",
+     "cost_inr": 100,
+     "time_minutes": 15,
+     "outcomes": [
+      "slag_carryover_logged",
+      "practice_normal"
+     ],
+     "outcome_likelihoods": {
+      "ladle_slag_carryover": {
+       "slag_carryover_logged": 0.85,
+       "practice_normal": 0.15
+      },
+      "refractory_erosion": {
+       "slag_carryover_logged": 0.1,
+       "practice_normal": 0.9
+      },
+      "reoxidation": {
+       "slag_carryover_logged": 0.1,
+       "practice_normal": 0.9
+      },
+      "mold_powder_entrapment": {
+       "slag_carryover_logged": 0.1,
+       "practice_normal": 0.9
+      },
+      "poor_flotation": {
+       "slag_carryover_logged": 0.1,
+       "practice_normal": 0.9
+      },
+      "deox_error": {
+       "slag_carryover_logged": 0.1,
+       "practice_normal": 0.9
+      }
+     }
+    },
+    {
+     "id": "tundish_inspect",
+     "label": "Inspect tundish/SEN refractory wear",
+     "cost_inr": 400,
+     "time_minutes": 60,
+     "outcomes": [
+      "erosion_found",
+      "refractory_ok"
+     ],
+     "outcome_likelihoods": {
+      "ladle_slag_carryover": {
+       "erosion_found": 0.1,
+       "refractory_ok": 0.9
+      },
+      "refractory_erosion": {
+       "erosion_found": 0.85,
+       "refractory_ok": 0.15
+      },
+      "reoxidation": {
+       "erosion_found": 0.1,
+       "refractory_ok": 0.9
+      },
+      "mold_powder_entrapment": {
+       "erosion_found": 0.1,
+       "refractory_ok": 0.9
+      },
+      "poor_flotation": {
+       "erosion_found": 0.1,
+       "refractory_ok": 0.9
+      },
+      "deox_error": {
+       "erosion_found": 0.1,
+       "refractory_ok": 0.9
+      }
+     }
+    },
+    {
+     "id": "seal_check",
+     "label": "Check argon shroud/seal integrity and nitrogen pickup",
+     "cost_inr": 200,
+     "time_minutes": 30,
+     "outcomes": [
+      "seal_breach_found",
+      "seals_ok"
+     ],
+     "outcome_likelihoods": {
+      "ladle_slag_carryover": {
+       "seal_breach_found": 0.1,
+       "seals_ok": 0.9
+      },
+      "refractory_erosion": {
+       "seal_breach_found": 0.1,
+       "seals_ok": 0.9
+      },
+      "reoxidation": {
+       "seal_breach_found": 0.85,
+       "seals_ok": 0.15
+      },
+      "mold_powder_entrapment": {
+       "seal_breach_found": 0.1,
+       "seals_ok": 0.9
+      },
+      "poor_flotation": {
+       "seal_breach_found": 0.1,
+       "seals_ok": 0.9
+      },
+      "deox_error": {
+       "seal_breach_found": 0.1,
+       "seals_ok": 0.9
+      }
+     }
+    },
+    {
+     "id": "mold_level",
+     "label": "Review mold level fluctuation and powder consumption",
+     "cost_inr": 150,
+     "time_minutes": 20,
+     "outcomes": [
+      "level_unstable",
+      "level_stable"
+     ],
+     "outcome_likelihoods": {
+      "ladle_slag_carryover": {
+       "level_unstable": 0.1,
+       "level_stable": 0.9
+      },
+      "refractory_erosion": {
+       "level_unstable": 0.1,
+       "level_stable": 0.9
+      },
+      "reoxidation": {
+       "level_unstable": 0.1,
+       "level_stable": 0.9
+      },
+      "mold_powder_entrapment": {
+       "level_unstable": 0.85,
+       "level_stable": 0.15
+      },
+      "poor_flotation": {
+       "level_unstable": 0.1,
+       "level_stable": 0.9
+      },
+      "deox_error": {
+       "level_unstable": 0.1,
+       "level_stable": 0.9
+      }
+     }
+    },
+    {
+     "id": "stir_log",
+     "label": "Review argon stirring time/flow log",
+     "cost_inr": 100,
+     "time_minutes": 15,
+     "outcomes": [
+      "stirring_short",
+      "stirring_ok"
+     ],
+     "outcome_likelihoods": {
+      "ladle_slag_carryover": {
+       "stirring_short": 0.1,
+       "stirring_ok": 0.9
+      },
+      "refractory_erosion": {
+       "stirring_short": 0.1,
+       "stirring_ok": 0.9
+      },
+      "reoxidation": {
+       "stirring_short": 0.1,
+       "stirring_ok": 0.9
+      },
+      "mold_powder_entrapment": {
+       "stirring_short": 0.1,
+       "stirring_ok": 0.9
+      },
+      "poor_flotation": {
+       "stirring_short": 0.85,
+       "stirring_ok": 0.15
+      },
+      "deox_error": {
+       "stirring_short": 0.1,
+       "stirring_ok": 0.9
+      }
+     }
+    },
+    {
+     "id": "deox_log",
+     "label": "Review Al addition and dissolved-oxygen readings",
+     "cost_inr": 150,
+     "time_minutes": 20,
+     "outcomes": [
+      "deox_off_spec",
+      "deox_ok"
+     ],
+     "outcome_likelihoods": {
+      "ladle_slag_carryover": {
+       "deox_off_spec": 0.1,
+       "deox_ok": 0.9
+      },
+      "refractory_erosion": {
+       "deox_off_spec": 0.1,
+       "deox_ok": 0.9
+      },
+      "reoxidation": {
+       "deox_off_spec": 0.1,
+       "deox_ok": 0.9
+      },
+      "mold_powder_entrapment": {
+       "deox_off_spec": 0.1,
+       "deox_ok": 0.9
+      },
+      "poor_flotation": {
+       "deox_off_spec": 0.1,
+       "deox_ok": 0.9
+      },
+      "deox_error": {
+       "deox_off_spec": 0.85,
+       "deox_ok": 0.15
+      }
+     }
+    },
+    {
+     "id": "sem_eds",
+     "label": "SEM/EDS composition of the inclusion",
+     "cost_inr": 4000,
+     "time_minutes": 300,
+     "outcomes": [
+      "slag_type_inclusion",
+      "other_type"
+     ],
+     "outcome_likelihoods": {
+      "ladle_slag_carryover": {
+       "slag_type_inclusion": 0.7,
+       "other_type": 0.3
+      },
+      "refractory_erosion": {
+       "slag_type_inclusion": 0.1,
+       "other_type": 0.9
+      },
+      "reoxidation": {
+       "slag_type_inclusion": 0.1,
+       "other_type": 0.9
+      },
+      "mold_powder_entrapment": {
+       "slag_type_inclusion": 0.65,
+       "other_type": 0.35
+      },
+      "poor_flotation": {
+       "slag_type_inclusion": 0.1,
+       "other_type": 0.9
+      },
+      "deox_error": {
+       "slag_type_inclusion": 0.1,
+       "other_type": 0.9
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "Patches",
+   "defect_type": "Patches",
+   "process_stage": "hot_rolling",
+   "presenting_symptom": "Localised patches on the strip surface that look different in shade or texture from the surroundings.",
+   "true_cause": "lube_spray_fault",
+   "prior": {
+    "lube_spray_fault": 0.15,
+    "roll_contamination": 0.25,
+    "uneven_coolant": 0.15,
+    "roll_crown_wear": 0.15,
+    "segregation": 0.1,
+    "residual_scale": 0.2
+   },
+   "candidate_causes": [
+    {
+     "id": "lube_spray_fault",
+     "label": "Roll lubricant spray fault (blocked or uneven)"
+    },
+    {
+     "id": "roll_contamination",
+     "label": "Contaminated or oxidised work roll surface"
+    },
+    {
+     "id": "uneven_coolant",
+     "label": "Uneven coolant application"
+    },
+    {
+     "id": "roll_crown_wear",
+     "label": "Roll crown/profile wear causing uneven reduction"
+    },
+    {
+     "id": "segregation",
+     "label": "Material segregation in the slab"
+    },
+    {
+     "id": "residual_scale",
+     "label": "Local residual scale from incomplete descaling"
+    }
+   ],
+   "tests": [
+    {
+     "id": "lube_check",
+     "label": "Inspect lubricant spray nozzles and flow",
+     "cost_inr": 200,
+     "time_minutes": 30,
+     "outcomes": [
+      "spray_fault_found",
+      "spray_ok"
+     ],
+     "outcome_likelihoods": {
+      "lube_spray_fault": {
+       "spray_fault_found": 0.85,
+       "spray_ok": 0.15
+      },
+      "roll_contamination": {
+       "spray_fault_found": 0.1,
+       "spray_ok": 0.9
+      },
+      "uneven_coolant": {
+       "spray_fault_found": 0.1,
+       "spray_ok": 0.9
+      },
+      "roll_crown_wear": {
+       "spray_fault_found": 0.1,
+       "spray_ok": 0.9
+      },
+      "segregation": {
+       "spray_fault_found": 0.1,
+       "spray_ok": 0.9
+      },
+      "residual_scale": {
+       "spray_fault_found": 0.1,
+       "spray_ok": 0.9
+      }
+     }
+    },
+    {
+     "id": "roll_surface",
+     "label": "Inspect roll surface condition after the campaign",
+     "cost_inr": 200,
+     "time_minutes": 30,
+     "outcomes": [
+      "contamination_found",
+      "surface_clean"
+     ],
+     "outcome_likelihoods": {
+      "lube_spray_fault": {
+       "contamination_found": 0.1,
+       "surface_clean": 0.9
+      },
+      "roll_contamination": {
+       "contamination_found": 0.85,
+       "surface_clean": 0.15
+      },
+      "uneven_coolant": {
+       "contamination_found": 0.1,
+       "surface_clean": 0.9
+      },
+      "roll_crown_wear": {
+       "contamination_found": 0.1,
+       "surface_clean": 0.9
+      },
+      "segregation": {
+       "contamination_found": 0.1,
+       "surface_clean": 0.9
+      },
+      "residual_scale": {
+       "contamination_found": 0.1,
+       "surface_clean": 0.9
+      }
+     }
+    },
+    {
+     "id": "coolant_pattern",
+     "label": "Check coolant spray pattern and header pressure",
+     "cost_inr": 250,
+     "time_minutes": 40,
+     "outcomes": [
+      "pattern_uneven",
+      "pattern_even"
+     ],
+     "outcome_likelihoods": {
+      "lube_spray_fault": {
+       "pattern_uneven": 0.1,
+       "pattern_even": 0.9
+      },
+      "roll_contamination": {
+       "pattern_uneven": 0.1,
+       "pattern_even": 0.9
+      },
+      "uneven_coolant": {
+       "pattern_uneven": 0.85,
+       "pattern_even": 0.15
+      },
+      "roll_crown_wear": {
+       "pattern_uneven": 0.1,
+       "pattern_even": 0.9
+      },
+      "segregation": {
+       "pattern_uneven": 0.1,
+       "pattern_even": 0.9
+      },
+      "residual_scale": {
+       "pattern_uneven": 0.1,
+       "pattern_even": 0.9
+      }
+     }
+    },
+    {
+     "id": "roll_profile",
+     "label": "Measure roll profile against crown spec",
+     "cost_inr": 500,
+     "time_minutes": 60,
+     "outcomes": [
+      "profile_out_of_spec",
+      "profile_ok"
+     ],
+     "outcome_likelihoods": {
+      "lube_spray_fault": {
+       "profile_out_of_spec": 0.1,
+       "profile_ok": 0.9
+      },
+      "roll_contamination": {
+       "profile_out_of_spec": 0.1,
+       "profile_ok": 0.9
+      },
+      "uneven_coolant": {
+       "profile_out_of_spec": 0.1,
+       "profile_ok": 0.9
+      },
+      "roll_crown_wear": {
+       "profile_out_of_spec": 0.85,
+       "profile_ok": 0.15
+      },
+      "segregation": {
+       "profile_out_of_spec": 0.1,
+       "profile_ok": 0.9
+      },
+      "residual_scale": {
+       "profile_out_of_spec": 0.1,
+       "profile_ok": 0.9
+      }
+     }
+    },
+    {
+     "id": "macroetch",
+     "label": "Macro-etch slab sample for segregation",
+     "cost_inr": 2500,
+     "time_minutes": 240,
+     "outcomes": [
+      "segregation_seen",
+      "no_segregation"
+     ],
+     "outcome_likelihoods": {
+      "lube_spray_fault": {
+       "segregation_seen": 0.1,
+       "no_segregation": 0.9
+      },
+      "roll_contamination": {
+       "segregation_seen": 0.1,
+       "no_segregation": 0.9
+      },
+      "uneven_coolant": {
+       "segregation_seen": 0.1,
+       "no_segregation": 0.9
+      },
+      "roll_crown_wear": {
+       "segregation_seen": 0.1,
+       "no_segregation": 0.9
+      },
+      "segregation": {
+       "segregation_seen": 0.85,
+       "no_segregation": 0.15
+      },
+      "residual_scale": {
+       "segregation_seen": 0.1,
+       "no_segregation": 0.9
+      }
+     }
+    },
+    {
+     "id": "descale_check",
+     "label": "Check descaler pressure and nozzle condition",
+     "cost_inr": 150,
+     "time_minutes": 20,
+     "outcomes": [
+      "descaler_fault",
+      "descaler_ok"
+     ],
+     "outcome_likelihoods": {
+      "lube_spray_fault": {
+       "descaler_fault": 0.1,
+       "descaler_ok": 0.9
+      },
+      "roll_contamination": {
+       "descaler_fault": 0.1,
+       "descaler_ok": 0.9
+      },
+      "uneven_coolant": {
+       "descaler_fault": 0.1,
+       "descaler_ok": 0.9
+      },
+      "roll_crown_wear": {
+       "descaler_fault": 0.1,
+       "descaler_ok": 0.9
+      },
+      "segregation": {
+       "descaler_fault": 0.1,
+       "descaler_ok": 0.9
+      },
+      "residual_scale": {
+       "descaler_fault": 0.85,
+       "descaler_ok": 0.15
+      }
+     }
+    },
+    {
+     "id": "patch_pattern",
+     "label": "Map patch pattern along the strip (periodic vs random)",
+     "cost_inr": 50,
+     "time_minutes": 10,
+     "outcomes": [
+      "periodic_pattern",
+      "random_pattern"
+     ],
+     "outcome_likelihoods": {
+      "lube_spray_fault": {
+       "periodic_pattern": 0.5,
+       "random_pattern": 0.5
+      },
+      "roll_contamination": {
+       "periodic_pattern": 0.65,
+       "random_pattern": 0.35
+      },
+      "uneven_coolant": {
+       "periodic_pattern": 0.1,
+       "random_pattern": 0.9
+      },
+      "roll_crown_wear": {
+       "periodic_pattern": 0.6,
+       "random_pattern": 0.4
+      },
+      "segregation": {
+       "periodic_pattern": 0.1,
+       "random_pattern": 0.9
+      },
+      "residual_scale": {
+       "periodic_pattern": 0.1,
+       "random_pattern": 0.9
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "Pitted_Surface",
+   "defect_type": "Pitted_Surface",
+   "process_stage": "cold_rolling",
+   "presenting_symptom": "Multiple shallow pits near the strip edge after descaling or pickling, roughly 1 in 20 coils affected.",
+   "true_cause": "maintenance_gap",
+   "prior": {
+    "maintenance_gap": 0.3,
+    "corrosive_water": 0.15,
+    "storage_humidity": 0.15,
+    "roll_damage": 0.1,
+    "rolled_in_debris": 0.15,
+    "over_pickling": 0.15
+   },
+   "candidate_causes": [
+    {
+     "id": "maintenance_gap",
+     "label": "Descaler nozzle cleaning missed (maintenance scheduling gap)"
+    },
+    {
+     "id": "corrosive_water",
+     "label": "Descaler/rinse water chemistry more corrosive than spec"
+    },
+    {
+     "id": "storage_humidity",
+     "label": "Coil storage humidity causing pre-existing corrosion"
+    },
+    {
+     "id": "roll_damage",
+     "label": "Damaged work roll surface imprinting pits"
+    },
+    {
+     "id": "rolled_in_debris",
+     "label": "Foreign particles rolled into the strip"
+    },
+    {
+     "id": "over_pickling",
+     "label": "Excess pickling time or acid concentration"
+    }
+   ],
+   "tests": [
+    {
+     "id": "maint_review",
+     "label": "Review descaler maintenance and work-order history",
+     "cost_inr": 100,
+     "time_minutes": 10,
+     "outcomes": [
+      "gap_found",
+      "schedule_followed"
+     ],
+     "outcome_likelihoods": {
+      "maintenance_gap": {
+       "gap_found": 0.88,
+       "schedule_followed": 0.12
+      },
+      "corrosive_water": {
+       "gap_found": 0.1,
+       "schedule_followed": 0.9
+      },
+      "storage_humidity": {
+       "gap_found": 0.1,
+       "schedule_followed": 0.9
+      },
+      "roll_damage": {
+       "gap_found": 0.1,
+       "schedule_followed": 0.9
+      },
+      "rolled_in_debris": {
+       "gap_found": 0.1,
+       "schedule_followed": 0.9
+      },
+      "over_pickling": {
+       "gap_found": 0.1,
+       "schedule_followed": 0.9
+      }
+     }
+    },
+    {
+     "id": "water_test",
+     "label": "Sample and test water pH and chlorides",
+     "cost_inr": 500,
+     "time_minutes": 60,
+     "outcomes": [
+      "chemistry_out_of_spec",
+      "chemistry_in_spec"
+     ],
+     "outcome_likelihoods": {
+      "maintenance_gap": {
+       "chemistry_out_of_spec": 0.1,
+       "chemistry_in_spec": 0.9
+      },
+      "corrosive_water": {
+       "chemistry_out_of_spec": 0.85,
+       "chemistry_in_spec": 0.15
+      },
+      "storage_humidity": {
+       "chemistry_out_of_spec": 0.1,
+       "chemistry_in_spec": 0.9
+      },
+      "roll_damage": {
+       "chemistry_out_of_spec": 0.1,
+       "chemistry_in_spec": 0.9
+      },
+      "rolled_in_debris": {
+       "chemistry_out_of_spec": 0.1,
+       "chemistry_in_spec": 0.9
+      },
+      "over_pickling": {
+       "chemistry_out_of_spec": 0.1,
+       "chemistry_in_spec": 0.9
+      }
+     }
+    },
+    {
+     "id": "humidity_log",
+     "label": "Check coil-yard humidity and dwell-time log",
+     "cost_inr": 150,
+     "time_minutes": 20,
+     "outcomes": [
+      "excursion_found",
+      "humidity_normal"
+     ],
+     "outcome_likelihoods": {
+      "maintenance_gap": {
+       "excursion_found": 0.1,
+       "humidity_normal": 0.9
+      },
+      "corrosive_water": {
+       "excursion_found": 0.1,
+       "humidity_normal": 0.9
+      },
+      "storage_humidity": {
+       "excursion_found": 0.85,
+       "humidity_normal": 0.15
+      },
+      "roll_damage": {
+       "excursion_found": 0.1,
+       "humidity_normal": 0.9
+      },
+      "rolled_in_debris": {
+       "excursion_found": 0.1,
+       "humidity_normal": 0.9
+      },
+      "over_pickling": {
+       "excursion_found": 0.1,
+       "humidity_normal": 0.9
+      }
+     }
+    },
+    {
+     "id": "pit_spacing",
+     "label": "Measure pit spacing vs roll circumference",
+     "cost_inr": 50,
+     "time_minutes": 10,
+     "outcomes": [
+      "periodic_match",
+      "no_periodicity"
+     ],
+     "outcome_likelihoods": {
+      "maintenance_gap": {
+       "periodic_match": 0.1,
+       "no_periodicity": 0.9
+      },
+      "corrosive_water": {
+       "periodic_match": 0.1,
+       "no_periodicity": 0.9
+      },
+      "storage_humidity": {
+       "periodic_match": 0.1,
+       "no_periodicity": 0.9
+      },
+      "roll_damage": {
+       "periodic_match": 0.9,
+       "no_periodicity": 0.1
+      },
+      "rolled_in_debris": {
+       "periodic_match": 0.1,
+       "no_periodicity": 0.9
+      },
+      "over_pickling": {
+       "periodic_match": 0.1,
+       "no_periodicity": 0.9
+      }
+     }
+    },
+    {
+     "id": "debris_check",
+     "label": "Inspect entry cleanliness, filters and wipers",
+     "cost_inr": 200,
+     "time_minutes": 30,
+     "outcomes": [
+      "debris_found",
+      "entry_clean"
+     ],
+     "outcome_likelihoods": {
+      "maintenance_gap": {
+       "debris_found": 0.1,
+       "entry_clean": 0.9
+      },
+      "corrosive_water": {
+       "debris_found": 0.1,
+       "entry_clean": 0.9
+      },
+      "storage_humidity": {
+       "debris_found": 0.1,
+       "entry_clean": 0.9
+      },
+      "roll_damage": {
+       "debris_found": 0.1,
+       "entry_clean": 0.9
+      },
+      "rolled_in_debris": {
+       "debris_found": 0.85,
+       "entry_clean": 0.15
+      },
+      "over_pickling": {
+       "debris_found": 0.1,
+       "entry_clean": 0.9
+      }
+     }
+    },
+    {
+     "id": "pickle_log",
+     "label": "Review pickling speed and acid concentration log",
+     "cost_inr": 100,
+     "time_minutes": 15,
+     "outcomes": [
+      "pickling_off_spec",
+      "pickling_ok"
+     ],
+     "outcome_likelihoods": {
+      "maintenance_gap": {
+       "pickling_off_spec": 0.1,
+       "pickling_ok": 0.9
+      },
+      "corrosive_water": {
+       "pickling_off_spec": 0.1,
+       "pickling_ok": 0.9
+      },
+      "storage_humidity": {
+       "pickling_off_spec": 0.1,
+       "pickling_ok": 0.9
+      },
+      "roll_damage": {
+       "pickling_off_spec": 0.1,
+       "pickling_ok": 0.9
+      },
+      "rolled_in_debris": {
+       "pickling_off_spec": 0.1,
+       "pickling_ok": 0.9
+      },
+      "over_pickling": {
+       "pickling_off_spec": 0.85,
+       "pickling_ok": 0.15
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "Rolled-in_Scale",
+   "defect_type": "Rolled-in_Scale",
+   "process_stage": "hot_rolling",
+   "presenting_symptom": "Dark scale marks pressed into the strip surface after hot rolling, scattered over the width.",
+   "true_cause": "low_descaler_pressure",
+   "prior": {
+    "low_descaler_pressure": 0.2,
+    "blocked_nozzles": 0.25,
+    "long_reheat": 0.2,
+    "high_silicon": 0.1,
+    "furnace_atmosphere": 0.1,
+    "long_transfer": 0.15
+   },
+   "candidate_causes": [
+    {
+     "id": "low_descaler_pressure",
+     "label": "Descaler pump pressure below spec"
+    },
+    {
+     "id": "blocked_nozzles",
+     "label": "Blocked descaler nozzles"
+    },
+    {
+     "id": "long_reheat",
+     "label": "Excessive reheat dwell producing thick scale"
+    },
+    {
+     "id": "high_silicon",
+     "label": "High-silicon steel producing tenacious scale"
+    },
+    {
+     "id": "furnace_atmosphere",
+     "label": "Oxidising furnace atmosphere (excess air)"
+    },
+    {
+     "id": "long_transfer",
+     "label": "Long delay between descaling and rolling (re-scaling)"
+    }
+   ],
+   "tests": [
+    {
+     "id": "pressure_log",
+     "label": "Review descaler pressure trend",
+     "cost_inr": 100,
+     "time_minutes": 10,
+     "outcomes": [
+      "pressure_low",
+      "pressure_ok"
+     ],
+     "outcome_likelihoods": {
+      "low_descaler_pressure": {
+       "pressure_low": 0.88,
+       "pressure_ok": 0.12
+      },
+      "blocked_nozzles": {
+       "pressure_low": 0.1,
+       "pressure_ok": 0.9
+      },
+      "long_reheat": {
+       "pressure_low": 0.1,
+       "pressure_ok": 0.9
+      },
+      "high_silicon": {
+       "pressure_low": 0.1,
+       "pressure_ok": 0.9
+      },
+      "furnace_atmosphere": {
+       "pressure_low": 0.1,
+       "pressure_ok": 0.9
+      },
+      "long_transfer": {
+       "pressure_low": 0.1,
+       "pressure_ok": 0.9
+      }
+     }
+    },
+    {
+     "id": "nozzle_inspect",
+     "label": "Inspect descaler nozzles during stop",
+     "cost_inr": 250,
+     "time_minutes": 40,
+     "outcomes": [
+      "blocked_found",
+      "nozzles_clear"
+     ],
+     "outcome_likelihoods": {
+      "low_descaler_pressure": {
+       "blocked_found": 0.1,
+       "nozzles_clear": 0.9
+      },
+      "blocked_nozzles": {
+       "blocked_found": 0.88,
+       "nozzles_clear": 0.12
+      },
+      "long_reheat": {
+       "blocked_found": 0.1,
+       "nozzles_clear": 0.9
+      },
+      "high_silicon": {
+       "blocked_found": 0.1,
+       "nozzles_clear": 0.9
+      },
+      "furnace_atmosphere": {
+       "blocked_found": 0.1,
+       "nozzles_clear": 0.9
+      },
+      "long_transfer": {
+       "blocked_found": 0.1,
+       "nozzles_clear": 0.9
+      }
+     }
+    },
+    {
+     "id": "dwell_log",
+     "label": "Review furnace dwell-time log for affected slabs",
+     "cost_inr": 100,
+     "time_minutes": 15,
+     "outcomes": [
+      "dwell_excess",
+      "dwell_normal"
+     ],
+     "outcome_likelihoods": {
+      "low_descaler_pressure": {
+       "dwell_excess": 0.1,
+       "dwell_normal": 0.9
+      },
+      "blocked_nozzles": {
+       "dwell_excess": 0.1,
+       "dwell_normal": 0.9
+      },
+      "long_reheat": {
+       "dwell_excess": 0.85,
+       "dwell_normal": 0.15
+      },
+      "high_silicon": {
+       "dwell_excess": 0.1,
+       "dwell_normal": 0.9
+      },
+      "furnace_atmosphere": {
+       "dwell_excess": 0.1,
+       "dwell_normal": 0.9
+      },
+      "long_transfer": {
+       "dwell_excess": 0.1,
+       "dwell_normal": 0.9
+      }
+     }
+    },
+    {
+     "id": "chem_si",
+     "label": "Check heat chemistry for Si level",
+     "cost_inr": 100,
+     "time_minutes": 15,
+     "outcomes": [
+      "si_high",
+      "si_normal"
+     ],
+     "outcome_likelihoods": {
+      "low_descaler_pressure": {
+       "si_high": 0.1,
+       "si_normal": 0.9
+      },
+      "blocked_nozzles": {
+       "si_high": 0.1,
+       "si_normal": 0.9
+      },
+      "long_reheat": {
+       "si_high": 0.1,
+       "si_normal": 0.9
+      },
+      "high_silicon": {
+       "si_high": 0.9,
+       "si_normal": 0.1
+      },
+      "furnace_atmosphere": {
+       "si_high": 0.1,
+       "si_normal": 0.9
+      },
+      "long_transfer": {
+       "si_high": 0.1,
+       "si_normal": 0.9
+      }
+     }
+    },
+    {
+     "id": "furnace_o2",
+     "label": "Review furnace O2/combustion air log",
+     "cost_inr": 150,
+     "time_minutes": 20,
+     "outcomes": [
+      "excess_air",
+      "combustion_ok"
+     ],
+     "outcome_likelihoods": {
+      "low_descaler_pressure": {
+       "excess_air": 0.1,
+       "combustion_ok": 0.9
+      },
+      "blocked_nozzles": {
+       "excess_air": 0.1,
+       "combustion_ok": 0.9
+      },
+      "long_reheat": {
+       "excess_air": 0.1,
+       "combustion_ok": 0.9
+      },
+      "high_silicon": {
+       "excess_air": 0.1,
+       "combustion_ok": 0.9
+      },
+      "furnace_atmosphere": {
+       "excess_air": 0.85,
+       "combustion_ok": 0.15
+      },
+      "long_transfer": {
+       "excess_air": 0.1,
+       "combustion_ok": 0.9
+      }
+     }
+    },
+    {
+     "id": "transfer_time",
+     "label": "Review descale-to-rolling transfer time",
+     "cost_inr": 100,
+     "time_minutes": 10,
+     "outcomes": [
+      "delay_found",
+      "transfer_ok"
+     ],
+     "outcome_likelihoods": {
+      "low_descaler_pressure": {
+       "delay_found": 0.1,
+       "transfer_ok": 0.9
+      },
+      "blocked_nozzles": {
+       "delay_found": 0.1,
+       "transfer_ok": 0.9
+      },
+      "long_reheat": {
+       "delay_found": 0.1,
+       "transfer_ok": 0.9
+      },
+      "high_silicon": {
+       "delay_found": 0.1,
+       "transfer_ok": 0.9
+      },
+      "furnace_atmosphere": {
+       "delay_found": 0.1,
+       "transfer_ok": 0.9
+      },
+      "long_transfer": {
+       "delay_found": 0.85,
+       "transfer_ok": 0.15
+      }
+     }
+    },
+    {
+     "id": "scale_xsection",
+     "label": "Cross-section of scale layer (thickness/type)",
+     "cost_inr": 2500,
+     "time_minutes": 180,
+     "outcomes": [
+      "thick_scale",
+      "thin_scale"
+     ],
+     "outcome_likelihoods": {
+      "low_descaler_pressure": {
+       "thick_scale": 0.1,
+       "thin_scale": 0.9
+      },
+      "blocked_nozzles": {
+       "thick_scale": 0.1,
+       "thin_scale": 0.9
+      },
+      "long_reheat": {
+       "thick_scale": 0.6,
+       "thin_scale": 0.4
+      },
+      "high_silicon": {
+       "thick_scale": 0.45,
+       "thin_scale": 0.55
+      },
+      "furnace_atmosphere": {
+       "thick_scale": 0.6,
+       "thin_scale": 0.4
+      },
+      "long_transfer": {
+       "thick_scale": 0.1,
+       "thin_scale": 0.9
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "Scratches",
+   "defect_type": "Scratches",
+   "process_stage": "finishing",
+   "presenting_symptom": "Linear surface marks on strip after finishing, horizontal or slanting, on several coils.",
+   "true_cause": "stuck_idler",
+   "prior": {
+    "stuck_idler": 0.25,
+    "guide_misalignment": 0.2,
+    "roll_debris": 0.2,
+    "handling_damage": 0.15,
+    "edge_burr": 0.1,
+    "pinch_pressure": 0.1
+   },
+   "candidate_causes": [
+    {
+     "id": "stuck_idler",
+     "label": "Seized or non-rotating idler/guide roll"
+    },
+    {
+     "id": "guide_misalignment",
+     "label": "Guide misalignment dragging the strip"
+    },
+    {
+     "id": "roll_debris",
+     "label": "Debris or build-up on contact rolls"
+    },
+    {
+     "id": "handling_damage",
+     "label": "Coil handling damage (tongs, crane, skids)"
+    },
+    {
+     "id": "edge_burr",
+     "label": "Sharp edge burr from slitting scoring adjacent wraps"
+    },
+    {
+     "id": "pinch_pressure",
+     "label": "Excess pinch-roll pressure"
+    }
+   ],
+   "tests": [
+    {
+     "id": "idler_check",
+     "label": "Check idler roll rotation along the line",
+     "cost_inr": 100,
+     "time_minutes": 20,
+     "outcomes": [
+      "stuck_roll_found",
+      "rolls_free"
+     ],
+     "outcome_likelihoods": {
+      "stuck_idler": {
+       "stuck_roll_found": 0.9,
+       "rolls_free": 0.1
+      },
+      "guide_misalignment": {
+       "stuck_roll_found": 0.1,
+       "rolls_free": 0.9
+      },
+      "roll_debris": {
+       "stuck_roll_found": 0.1,
+       "rolls_free": 0.9
+      },
+      "handling_damage": {
+       "stuck_roll_found": 0.1,
+       "rolls_free": 0.9
+      },
+      "edge_burr": {
+       "stuck_roll_found": 0.1,
+       "rolls_free": 0.9
+      },
+      "pinch_pressure": {
+       "stuck_roll_found": 0.1,
+       "rolls_free": 0.9
+      }
+     }
+    },
+    {
+     "id": "guide_check",
+     "label": "Check guide alignment and wear surfaces",
+     "cost_inr": 200,
+     "time_minutes": 30,
+     "outcomes": [
+      "misalignment_found",
+      "alignment_ok"
+     ],
+     "outcome_likelihoods": {
+      "stuck_idler": {
+       "misalignment_found": 0.1,
+       "alignment_ok": 0.9
+      },
+      "guide_misalignment": {
+       "misalignment_found": 0.85,
+       "alignment_ok": 0.15
+      },
+      "roll_debris": {
+       "misalignment_found": 0.1,
+       "alignment_ok": 0.9
+      },
+      "handling_damage": {
+       "misalignment_found": 0.1,
+       "alignment_ok": 0.9
+      },
+      "edge_burr": {
+       "misalignment_found": 0.1,
+       "alignment_ok": 0.9
+      },
+      "pinch_pressure": {
+       "misalignment_found": 0.1,
+       "alignment_ok": 0.9
+      }
+     }
+    },
+    {
+     "id": "roll_clean",
+     "label": "Inspect contact rolls for debris",
+     "cost_inr": 100,
+     "time_minutes": 15,
+     "outcomes": [
+      "debris_found",
+      "rolls_clean"
+     ],
+     "outcome_likelihoods": {
+      "stuck_idler": {
+       "debris_found": 0.1,
+       "rolls_clean": 0.9
+      },
+      "guide_misalignment": {
+       "debris_found": 0.1,
+       "rolls_clean": 0.9
+      },
+      "roll_debris": {
+       "debris_found": 0.85,
+       "rolls_clean": 0.15
+      },
+      "handling_damage": {
+       "debris_found": 0.1,
+       "rolls_clean": 0.9
+      },
+      "edge_burr": {
+       "debris_found": 0.1,
+       "rolls_clean": 0.9
+      },
+      "pinch_pressure": {
+       "debris_found": 0.1,
+       "rolls_clean": 0.9
+      }
+     }
+    },
+    {
+     "id": "handling_audit",
+     "label": "Audit coil handling and transport log",
+     "cost_inr": 150,
+     "time_minutes": 30,
+     "outcomes": [
+      "handling_issue",
+      "handling_ok"
+     ],
+     "outcome_likelihoods": {
+      "stuck_idler": {
+       "handling_issue": 0.1,
+       "handling_ok": 0.9
+      },
+      "guide_misalignment": {
+       "handling_issue": 0.1,
+       "handling_ok": 0.9
+      },
+      "roll_debris": {
+       "handling_issue": 0.1,
+       "handling_ok": 0.9
+      },
+      "handling_damage": {
+       "handling_issue": 0.85,
+       "handling_ok": 0.15
+      },
+      "edge_burr": {
+       "handling_issue": 0.1,
+       "handling_ok": 0.9
+      },
+      "pinch_pressure": {
+       "handling_issue": 0.1,
+       "handling_ok": 0.9
+      }
+     }
+    },
+    {
+     "id": "edge_burr",
+     "label": "Measure slit-edge burr height",
+     "cost_inr": 300,
+     "time_minutes": 30,
+     "outcomes": [
+      "burr_high",
+      "burr_ok"
+     ],
+     "outcome_likelihoods": {
+      "stuck_idler": {
+       "burr_high": 0.1,
+       "burr_ok": 0.9
+      },
+      "guide_misalignment": {
+       "burr_high": 0.1,
+       "burr_ok": 0.9
+      },
+      "roll_debris": {
+       "burr_high": 0.1,
+       "burr_ok": 0.9
+      },
+      "handling_damage": {
+       "burr_high": 0.1,
+       "burr_ok": 0.9
+      },
+      "edge_burr": {
+       "burr_high": 0.85,
+       "burr_ok": 0.15
+      },
+      "pinch_pressure": {
+       "burr_high": 0.1,
+       "burr_ok": 0.9
+      }
+     }
+    },
+    {
+     "id": "scratch_direction",
+     "label": "Classify scratch direction and continuity",
+     "cost_inr": 50,
+     "time_minutes": 10,
+     "outcomes": [
+      "continuous_longitudinal",
+      "intermittent_or_other"
+     ],
+     "outcome_likelihoods": {
+      "stuck_idler": {
+       "continuous_longitudinal": 0.7,
+       "intermittent_or_other": 0.3
+      },
+      "guide_misalignment": {
+       "continuous_longitudinal": 0.7,
+       "intermittent_or_other": 0.3
+      },
+      "roll_debris": {
+       "continuous_longitudinal": 0.5,
+       "intermittent_or_other": 0.5
+      },
+      "handling_damage": {
+       "continuous_longitudinal": 0.1,
+       "intermittent_or_other": 0.9
+      },
+      "edge_burr": {
+       "continuous_longitudinal": 0.1,
+       "intermittent_or_other": 0.9
+      },
+      "pinch_pressure": {
+       "continuous_longitudinal": 0.1,
+       "intermittent_or_other": 0.9
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "Crescent_Gap",
+   "defect_type": "Crescent_Gap",
+   "process_stage": "cold_rolling",
+   "presenting_symptom": "Half-circle material loss at the strip edge after shearing, appearing on repeated cuts.",
+   "true_cause": "blade_gap",
+   "prior": {
+    "blade_gap": 0.15,
+    "blade_wear": 0.3,
+    "tracking_offset": 0.2,
+    "timing_error": 0.15,
+    "thickness_variation": 0.1,
+    "hydraulic_drop": 0.1
+   },
+   "candidate_causes": [
+    {
+     "id": "blade_gap",
+     "label": "Shear blade gap set incorrectly"
+    },
+    {
+     "id": "blade_wear",
+     "label": "Worn or chipped shear blades"
+    },
+    {
+     "id": "tracking_offset",
+     "label": "Strip tracking offset at the shear"
+    },
+    {
+     "id": "timing_error",
+     "label": "Shear timing/synchronisation error"
+    },
+    {
+     "id": "thickness_variation",
+     "label": "Incoming thickness variation"
+    },
+    {
+     "id": "hydraulic_drop",
+     "label": "Hydraulic pressure drop at the shear"
+    }
+   ],
+   "tests": [
+    {
+     "id": "blade_gap_measure",
+     "label": "Measure blade gap against spec",
+     "cost_inr": 100,
+     "time_minutes": 15,
+     "outcomes": [
+      "gap_off",
+      "gap_ok"
+     ],
+     "outcome_likelihoods": {
+      "blade_gap": {
+       "gap_off": 0.88,
+       "gap_ok": 0.12
+      },
+      "blade_wear": {
+       "gap_off": 0.1,
+       "gap_ok": 0.9
+      },
+      "tracking_offset": {
+       "gap_off": 0.1,
+       "gap_ok": 0.9
+      },
+      "timing_error": {
+       "gap_off": 0.1,
+       "gap_ok": 0.9
+      },
+      "thickness_variation": {
+       "gap_off": 0.1,
+       "gap_ok": 0.9
+      },
+      "hydraulic_drop": {
+       "gap_off": 0.1,
+       "gap_ok": 0.9
+      }
+     }
+    },
+    {
+     "id": "blade_inspect",
+     "label": "Inspect blade edges for wear/chips",
+     "cost_inr": 200,
+     "time_minutes": 30,
+     "outcomes": [
+      "wear_found",
+      "blades_ok"
+     ],
+     "outcome_likelihoods": {
+      "blade_gap": {
+       "wear_found": 0.1,
+       "blades_ok": 0.9
+      },
+      "blade_wear": {
+       "wear_found": 0.85,
+       "blades_ok": 0.15
+      },
+      "tracking_offset": {
+       "wear_found": 0.1,
+       "blades_ok": 0.9
+      },
+      "timing_error": {
+       "wear_found": 0.1,
+       "blades_ok": 0.9
+      },
+      "thickness_variation": {
+       "wear_found": 0.1,
+       "blades_ok": 0.9
+      },
+      "hydraulic_drop": {
+       "wear_found": 0.1,
+       "blades_ok": 0.9
+      }
+     }
+    },
+    {
+     "id": "tracking_check",
+     "label": "Check strip tracking and centre-line control",
+     "cost_inr": 150,
+     "time_minutes": 20,
+     "outcomes": [
+      "offset_found",
+      "centred"
+     ],
+     "outcome_likelihoods": {
+      "blade_gap": {
+       "offset_found": 0.1,
+       "centred": 0.9
+      },
+      "blade_wear": {
+       "offset_found": 0.1,
+       "centred": 0.9
+      },
+      "tracking_offset": {
+       "offset_found": 0.85,
+       "centred": 0.15
+      },
+      "timing_error": {
+       "offset_found": 0.1,
+       "centred": 0.9
+      },
+      "thickness_variation": {
+       "offset_found": 0.1,
+       "centred": 0.9
+      },
+      "hydraulic_drop": {
+       "offset_found": 0.1,
+       "centred": 0.9
+      }
+     }
+    },
+    {
+     "id": "timing_check",
+     "label": "Verify shear timing against line speed",
+     "cost_inr": 250,
+     "time_minutes": 40,
+     "outcomes": [
+      "timing_off",
+      "timing_ok"
+     ],
+     "outcome_likelihoods": {
+      "blade_gap": {
+       "timing_off": 0.1,
+       "timing_ok": 0.9
+      },
+      "blade_wear": {
+       "timing_off": 0.1,
+       "timing_ok": 0.9
+      },
+      "tracking_offset": {
+       "timing_off": 0.1,
+       "timing_ok": 0.9
+      },
+      "timing_error": {
+       "timing_off": 0.85,
+       "timing_ok": 0.15
+      },
+      "thickness_variation": {
+       "timing_off": 0.1,
+       "timing_ok": 0.9
+      },
+      "hydraulic_drop": {
+       "timing_off": 0.1,
+       "timing_ok": 0.9
+      }
+     }
+    },
+    {
+     "id": "gauge_trend",
+     "label": "Review incoming gauge trend",
+     "cost_inr": 100,
+     "time_minutes": 10,
+     "outcomes": [
+      "gauge_variation",
+      "gauge_stable"
+     ],
+     "outcome_likelihoods": {
+      "blade_gap": {
+       "gauge_variation": 0.1,
+       "gauge_stable": 0.9
+      },
+      "blade_wear": {
+       "gauge_variation": 0.1,
+       "gauge_stable": 0.9
+      },
+      "tracking_offset": {
+       "gauge_variation": 0.1,
+       "gauge_stable": 0.9
+      },
+      "timing_error": {
+       "gauge_variation": 0.1,
+       "gauge_stable": 0.9
+      },
+      "thickness_variation": {
+       "gauge_variation": 0.85,
+       "gauge_stable": 0.15
+      },
+      "hydraulic_drop": {
+       "gauge_variation": 0.1,
+       "gauge_stable": 0.9
+      }
+     }
+    },
+    {
+     "id": "hyd_log",
+     "label": "Review hydraulic pressure log at the shear",
+     "cost_inr": 100,
+     "time_minutes": 15,
+     "outcomes": [
+      "pressure_drop_logged",
+      "pressure_ok"
+     ],
+     "outcome_likelihoods": {
+      "blade_gap": {
+       "pressure_drop_logged": 0.1,
+       "pressure_ok": 0.9
+      },
+      "blade_wear": {
+       "pressure_drop_logged": 0.1,
+       "pressure_ok": 0.9
+      },
+      "tracking_offset": {
+       "pressure_drop_logged": 0.1,
+       "pressure_ok": 0.9
+      },
+      "timing_error": {
+       "pressure_drop_logged": 0.1,
+       "pressure_ok": 0.9
+      },
+      "thickness_variation": {
+       "pressure_drop_logged": 0.1,
+       "pressure_ok": 0.9
+      },
+      "hydraulic_drop": {
+       "pressure_drop_logged": 0.85,
+       "pressure_ok": 0.15
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "Waist_Folding",
+   "defect_type": "Waist_Folding",
+   "process_stage": "forging",
+   "presenting_symptom": "Folds or wrinkles on forged parts from excessive local deformation, repeating on a die set.",
+   "true_cause": "soft_material",
+   "prior": {
+    "soft_material": 0.15,
+    "poor_lubrication": 0.25,
+    "preform_geometry": 0.2,
+    "die_wear": 0.15,
+    "low_forging_temp": 0.15,
+    "press_speed": 0.1
+   },
+   "candidate_causes": [
+    {
+     "id": "soft_material",
+     "label": "Material too soft (low carbon) for the deformation"
+    },
+    {
+     "id": "poor_lubrication",
+     "label": "Die lubrication poor or uneven"
+    },
+    {
+     "id": "preform_geometry",
+     "label": "Preform geometry incorrect"
+    },
+    {
+     "id": "die_wear",
+     "label": "Die wear changing metal flow"
+    },
+    {
+     "id": "low_forging_temp",
+     "label": "Billet forging temperature too low"
+    },
+    {
+     "id": "press_speed",
+     "label": "Press speed or stroke misset"
+    }
+   ],
+   "tests": [
+    {
+     "id": "hardness_check",
+     "label": "Check hardness/chemistry of the billet",
+     "cost_inr": 200,
+     "time_minutes": 30,
+     "outcomes": [
+      "material_soft",
+      "material_ok"
+     ],
+     "outcome_likelihoods": {
+      "soft_material": {
+       "material_soft": 0.85,
+       "material_ok": 0.15
+      },
+      "poor_lubrication": {
+       "material_soft": 0.1,
+       "material_ok": 0.9
+      },
+      "preform_geometry": {
+       "material_soft": 0.1,
+       "material_ok": 0.9
+      },
+      "die_wear": {
+       "material_soft": 0.1,
+       "material_ok": 0.9
+      },
+      "low_forging_temp": {
+       "material_soft": 0.1,
+       "material_ok": 0.9
+      },
+      "press_speed": {
+       "material_soft": 0.1,
+       "material_ok": 0.9
+      }
+     }
+    },
+    {
+     "id": "lube_audit",
+     "label": "Audit die lubricant application",
+     "cost_inr": 100,
+     "time_minutes": 15,
+     "outcomes": [
+      "lube_issue",
+      "lube_ok"
+     ],
+     "outcome_likelihoods": {
+      "soft_material": {
+       "lube_issue": 0.1,
+       "lube_ok": 0.9
+      },
+      "poor_lubrication": {
+       "lube_issue": 0.85,
+       "lube_ok": 0.15
+      },
+      "preform_geometry": {
+       "lube_issue": 0.1,
+       "lube_ok": 0.9
+      },
+      "die_wear": {
+       "lube_issue": 0.1,
+       "lube_ok": 0.9
+      },
+      "low_forging_temp": {
+       "lube_issue": 0.1,
+       "lube_ok": 0.9
+      },
+      "press_speed": {
+       "lube_issue": 0.1,
+       "lube_ok": 0.9
+      }
+     }
+    },
+    {
+     "id": "preform_measure",
+     "label": "Measure preform dimensions vs drawing",
+     "cost_inr": 250,
+     "time_minutes": 40,
+     "outcomes": [
+      "preform_off",
+      "preform_ok"
+     ],
+     "outcome_likelihoods": {
+      "soft_material": {
+       "preform_off": 0.1,
+       "preform_ok": 0.9
+      },
+      "poor_lubrication": {
+       "preform_off": 0.1,
+       "preform_ok": 0.9
+      },
+      "preform_geometry": {
+       "preform_off": 0.88,
+       "preform_ok": 0.12
+      },
+      "die_wear": {
+       "preform_off": 0.1,
+       "preform_ok": 0.9
+      },
+      "low_forging_temp": {
+       "preform_off": 0.1,
+       "preform_ok": 0.9
+      },
+      "press_speed": {
+       "preform_off": 0.1,
+       "preform_ok": 0.9
+      }
+     }
+    },
+    {
+     "id": "die_inspect",
+     "label": "Inspect die surface and wear",
+     "cost_inr": 400,
+     "time_minutes": 60,
+     "outcomes": [
+      "die_worn",
+      "die_ok"
+     ],
+     "outcome_likelihoods": {
+      "soft_material": {
+       "die_worn": 0.1,
+       "die_ok": 0.9
+      },
+      "poor_lubrication": {
+       "die_worn": 0.1,
+       "die_ok": 0.9
+      },
+      "preform_geometry": {
+       "die_worn": 0.1,
+       "die_ok": 0.9
+      },
+      "die_wear": {
+       "die_worn": 0.85,
+       "die_ok": 0.15
+      },
+      "low_forging_temp": {
+       "die_worn": 0.1,
+       "die_ok": 0.9
+      },
+      "press_speed": {
+       "die_worn": 0.1,
+       "die_ok": 0.9
+      }
+     }
+    },
+    {
+     "id": "billet_temp",
+     "label": "Check billet temperature at the press",
+     "cost_inr": 100,
+     "time_minutes": 10,
+     "outcomes": [
+      "temp_low",
+      "temp_ok"
+     ],
+     "outcome_likelihoods": {
+      "soft_material": {
+       "temp_low": 0.1,
+       "temp_ok": 0.9
+      },
+      "poor_lubrication": {
+       "temp_low": 0.1,
+       "temp_ok": 0.9
+      },
+      "preform_geometry": {
+       "temp_low": 0.1,
+       "temp_ok": 0.9
+      },
+      "die_wear": {
+       "temp_low": 0.1,
+       "temp_ok": 0.9
+      },
+      "low_forging_temp": {
+       "temp_low": 0.88,
+       "temp_ok": 0.12
+      },
+      "press_speed": {
+       "temp_low": 0.1,
+       "temp_ok": 0.9
+      }
+     }
+    },
+    {
+     "id": "press_params",
+     "label": "Verify press speed/stroke parameters",
+     "cost_inr": 100,
+     "time_minutes": 15,
+     "outcomes": [
+      "params_off",
+      "params_ok"
+     ],
+     "outcome_likelihoods": {
+      "soft_material": {
+       "params_off": 0.1,
+       "params_ok": 0.9
+      },
+      "poor_lubrication": {
+       "params_off": 0.1,
+       "params_ok": 0.9
+      },
+      "preform_geometry": {
+       "params_off": 0.1,
+       "params_ok": 0.9
+      },
+      "die_wear": {
+       "params_off": 0.1,
+       "params_ok": 0.9
+      },
+      "low_forging_temp": {
+       "params_off": 0.1,
+       "params_ok": 0.9
+      },
+      "press_speed": {
+       "params_off": 0.85,
+       "params_ok": 0.15
+      }
+     }
+    },
+    {
+     "id": "fold_section",
+     "label": "Sectioned fold: flow-line pattern",
+     "cost_inr": 2500,
+     "time_minutes": 180,
+     "outcomes": [
+      "flow_pattern_cold",
+      "flow_pattern_other"
+     ],
+     "outcome_likelihoods": {
+      "soft_material": {
+       "flow_pattern_cold": 0.5,
+       "flow_pattern_other": 0.5
+      },
+      "poor_lubrication": {
+       "flow_pattern_cold": 0.5,
+       "flow_pattern_other": 0.5
+      },
+      "preform_geometry": {
+       "flow_pattern_cold": 0.1,
+       "flow_pattern_other": 0.9
+      },
+      "die_wear": {
+       "flow_pattern_cold": 0.1,
+       "flow_pattern_other": 0.9
+      },
+      "low_forging_temp": {
+       "flow_pattern_cold": 0.55,
+       "flow_pattern_other": 0.45
+      },
+      "press_speed": {
+       "flow_pattern_cold": 0.1,
+       "flow_pattern_other": 0.9
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "Weld_Line_Defect",
+   "defect_type": "Weld_Line_Defect",
+   "process_stage": "casting",
+   "presenting_symptom": "Incomplete fusion at a coil-to-coil weld joint, causing a line stop on continuous processing.",
+   "true_cause": "wrong_recipe",
+   "prior": {
+    "wrong_recipe": 0.25,
+    "wheel_wear": 0.2,
+    "edge_misalignment": 0.2,
+    "poor_trim": 0.15,
+    "cooling_fault": 0.1,
+    "parameter_override": 0.1
+   },
+   "candidate_causes": [
+    {
+     "id": "wrong_recipe",
+     "label": "Weld recipe not updated for the new gauge range"
+    },
+    {
+     "id": "wheel_wear",
+     "label": "Electrode/weld wheel wear"
+    },
+    {
+     "id": "edge_misalignment",
+     "label": "Strip edge misalignment at the welder"
+    },
+    {
+     "id": "poor_trim",
+     "label": "Poor trim quality of strip ends"
+    },
+    {
+     "id": "cooling_fault",
+     "label": "Weld cooling fault"
+    },
+    {
+     "id": "parameter_override",
+     "label": "Operator parameter override"
+    }
+   ],
+   "tests": [
+    {
+     "id": "recipe_check",
+     "label": "Compare weld recipe with current gauge",
+     "cost_inr": 100,
+     "time_minutes": 10,
+     "outcomes": [
+      "recipe_mismatch",
+      "recipe_ok"
+     ],
+     "outcome_likelihoods": {
+      "wrong_recipe": {
+       "recipe_mismatch": 0.9,
+       "recipe_ok": 0.1
+      },
+      "wheel_wear": {
+       "recipe_mismatch": 0.1,
+       "recipe_ok": 0.9
+      },
+      "edge_misalignment": {
+       "recipe_mismatch": 0.1,
+       "recipe_ok": 0.9
+      },
+      "poor_trim": {
+       "recipe_mismatch": 0.1,
+       "recipe_ok": 0.9
+      },
+      "cooling_fault": {
+       "recipe_mismatch": 0.1,
+       "recipe_ok": 0.9
+      },
+      "parameter_override": {
+       "recipe_mismatch": 0.1,
+       "recipe_ok": 0.9
+      }
+     }
+    },
+    {
+     "id": "wheel_inspect",
+     "label": "Inspect electrodes/weld wheels",
+     "cost_inr": 250,
+     "time_minutes": 30,
+     "outcomes": [
+      "wear_found",
+      "wheels_ok"
+     ],
+     "outcome_likelihoods": {
+      "wrong_recipe": {
+       "wear_found": 0.1,
+       "wheels_ok": 0.9
+      },
+      "wheel_wear": {
+       "wear_found": 0.85,
+       "wheels_ok": 0.15
+      },
+      "edge_misalignment": {
+       "wear_found": 0.1,
+       "wheels_ok": 0.9
+      },
+      "poor_trim": {
+       "wear_found": 0.1,
+       "wheels_ok": 0.9
+      },
+      "cooling_fault": {
+       "wear_found": 0.1,
+       "wheels_ok": 0.9
+      },
+      "parameter_override": {
+       "wear_found": 0.1,
+       "wheels_ok": 0.9
+      }
+     }
+    },
+    {
+     "id": "alignment_check",
+     "label": "Check strip-end alignment at the welder",
+     "cost_inr": 150,
+     "time_minutes": 20,
+     "outcomes": [
+      "misalignment_found",
+      "aligned"
+     ],
+     "outcome_likelihoods": {
+      "wrong_recipe": {
+       "misalignment_found": 0.1,
+       "aligned": 0.9
+      },
+      "wheel_wear": {
+       "misalignment_found": 0.1,
+       "aligned": 0.9
+      },
+      "edge_misalignment": {
+       "misalignment_found": 0.85,
+       "aligned": 0.15
+      },
+      "poor_trim": {
+       "misalignment_found": 0.1,
+       "aligned": 0.9
+      },
+      "cooling_fault": {
+       "misalignment_found": 0.1,
+       "aligned": 0.9
+      },
+      "parameter_override": {
+       "misalignment_found": 0.1,
+       "aligned": 0.9
+      }
+     }
+    },
+    {
+     "id": "trim_inspect",
+     "label": "Inspect shear trim quality of strip ends",
+     "cost_inr": 150,
+     "time_minutes": 20,
+     "outcomes": [
+      "poor_trim_found",
+      "trim_ok"
+     ],
+     "outcome_likelihoods": {
+      "wrong_recipe": {
+       "poor_trim_found": 0.1,
+       "trim_ok": 0.9
+      },
+      "wheel_wear": {
+       "poor_trim_found": 0.1,
+       "trim_ok": 0.9
+      },
+      "edge_misalignment": {
+       "poor_trim_found": 0.1,
+       "trim_ok": 0.9
+      },
+      "poor_trim": {
+       "poor_trim_found": 0.85,
+       "trim_ok": 0.15
+      },
+      "cooling_fault": {
+       "poor_trim_found": 0.1,
+       "trim_ok": 0.9
+      },
+      "parameter_override": {
+       "poor_trim_found": 0.1,
+       "trim_ok": 0.9
+      }
+     }
+    },
+    {
+     "id": "cooling_check_w",
+     "label": "Check weld cooling flow/temperature",
+     "cost_inr": 150,
+     "time_minutes": 20,
+     "outcomes": [
+      "cooling_fault_found",
+      "cooling_ok"
+     ],
+     "outcome_likelihoods": {
+      "wrong_recipe": {
+       "cooling_fault_found": 0.1,
+       "cooling_ok": 0.9
+      },
+      "wheel_wear": {
+       "cooling_fault_found": 0.1,
+       "cooling_ok": 0.9
+      },
+      "edge_misalignment": {
+       "cooling_fault_found": 0.1,
+       "cooling_ok": 0.9
+      },
+      "poor_trim": {
+       "cooling_fault_found": 0.1,
+       "cooling_ok": 0.9
+      },
+      "cooling_fault": {
+       "cooling_fault_found": 0.85,
+       "cooling_ok": 0.15
+      },
+      "parameter_override": {
+       "cooling_fault_found": 0.1,
+       "cooling_ok": 0.9
+      }
+     }
+    },
+    {
+     "id": "audit_trail",
+     "label": "Review welder parameter change log",
+     "cost_inr": 100,
+     "time_minutes": 10,
+     "outcomes": [
+      "override_found",
+      "no_override"
+     ],
+     "outcome_likelihoods": {
+      "wrong_recipe": {
+       "override_found": 0.1,
+       "no_override": 0.9
+      },
+      "wheel_wear": {
+       "override_found": 0.1,
+       "no_override": 0.9
+      },
+      "edge_misalignment": {
+       "override_found": 0.1,
+       "no_override": 0.9
+      },
+      "poor_trim": {
+       "override_found": 0.1,
+       "no_override": 0.9
+      },
+      "cooling_fault": {
+       "override_found": 0.1,
+       "no_override": 0.9
+      },
+      "parameter_override": {
+       "override_found": 0.88,
+       "no_override": 0.12
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "Water_Oil_Spot",
+   "defect_type": "Water_Oil_Spot",
+   "process_stage": "finishing",
+   "presenting_symptom": "Low-contrast stains on finished strip from residual moisture or oil, on several coils per shift.",
+   "true_cause": "dryer_temp",
+   "prior": {
+    "dryer_temp": 0.2,
+    "blower_clog": 0.15,
+    "oil_carryover": 0.2,
+    "worn_wiper": 0.2,
+    "rinse_quality": 0.1,
+    "oil_overspray": 0.15
+   },
+   "candidate_causes": [
+    {
+     "id": "dryer_temp",
+     "label": "Dryer air temperature below spec"
+    },
+    {
+     "id": "blower_clog",
+     "label": "Dryer blower or air knife clogged"
+    },
+    {
+     "id": "oil_carryover",
+     "label": "Coolant/oil carry-over from upstream"
+    },
+    {
+     "id": "worn_wiper",
+     "label": "Worn wiper/squeegee rolls"
+    },
+    {
+     "id": "rinse_quality",
+     "label": "Poor rinse-water quality (dissolved solids)"
+    },
+    {
+     "id": "oil_overspray",
+     "label": "Skin-pass lubricant overspray"
+    }
+   ],
+   "tests": [
+    {
+     "id": "dryer_temp_log",
+     "label": "Review dryer temperature log",
+     "cost_inr": 100,
+     "time_minutes": 10,
+     "outcomes": [
+      "temp_low_logged",
+      "temp_ok"
+     ],
+     "outcome_likelihoods": {
+      "dryer_temp": {
+       "temp_low_logged": 0.88,
+       "temp_ok": 0.12
+      },
+      "blower_clog": {
+       "temp_low_logged": 0.1,
+       "temp_ok": 0.9
+      },
+      "oil_carryover": {
+       "temp_low_logged": 0.1,
+       "temp_ok": 0.9
+      },
+      "worn_wiper": {
+       "temp_low_logged": 0.1,
+       "temp_ok": 0.9
+      },
+      "rinse_quality": {
+       "temp_low_logged": 0.1,
+       "temp_ok": 0.9
+      },
+      "oil_overspray": {
+       "temp_low_logged": 0.1,
+       "temp_ok": 0.9
+      }
+     }
+    },
+    {
+     "id": "blower_inspect",
+     "label": "Inspect blower and air-knife condition",
+     "cost_inr": 250,
+     "time_minutes": 30,
+     "outcomes": [
+      "clog_found",
+      "air_ok"
+     ],
+     "outcome_likelihoods": {
+      "dryer_temp": {
+       "clog_found": 0.1,
+       "air_ok": 0.9
+      },
+      "blower_clog": {
+       "clog_found": 0.85,
+       "air_ok": 0.15
+      },
+      "oil_carryover": {
+       "clog_found": 0.1,
+       "air_ok": 0.9
+      },
+      "worn_wiper": {
+       "clog_found": 0.1,
+       "air_ok": 0.9
+      },
+      "rinse_quality": {
+       "clog_found": 0.1,
+       "air_ok": 0.9
+      },
+      "oil_overspray": {
+       "clog_found": 0.1,
+       "air_ok": 0.9
+      }
+     }
+    },
+    {
+     "id": "oil_test",
+     "label": "Wipe test of strip for oil residue",
+     "cost_inr": 100,
+     "time_minutes": 15,
+     "outcomes": [
+      "oil_present",
+      "oil_absent"
+     ],
+     "outcome_likelihoods": {
+      "dryer_temp": {
+       "oil_present": 0.1,
+       "oil_absent": 0.9
+      },
+      "blower_clog": {
+       "oil_present": 0.1,
+       "oil_absent": 0.9
+      },
+      "oil_carryover": {
+       "oil_present": 0.8,
+       "oil_absent": 0.2
+      },
+      "worn_wiper": {
+       "oil_present": 0.1,
+       "oil_absent": 0.9
+      },
+      "rinse_quality": {
+       "oil_present": 0.1,
+       "oil_absent": 0.9
+      },
+      "oil_overspray": {
+       "oil_present": 0.8,
+       "oil_absent": 0.2
+      }
+     }
+    },
+    {
+     "id": "wiper_inspect",
+     "label": "Inspect wiper roll condition",
+     "cost_inr": 150,
+     "time_minutes": 20,
+     "outcomes": [
+      "wear_found",
+      "wipers_ok"
+     ],
+     "outcome_likelihoods": {
+      "dryer_temp": {
+       "wear_found": 0.1,
+       "wipers_ok": 0.9
+      },
+      "blower_clog": {
+       "wear_found": 0.1,
+       "wipers_ok": 0.9
+      },
+      "oil_carryover": {
+       "wear_found": 0.1,
+       "wipers_ok": 0.9
+      },
+      "worn_wiper": {
+       "wear_found": 0.85,
+       "wipers_ok": 0.15
+      },
+      "rinse_quality": {
+       "wear_found": 0.1,
+       "wipers_ok": 0.9
+      },
+      "oil_overspray": {
+       "wear_found": 0.1,
+       "wipers_ok": 0.9
+      }
+     }
+    },
+    {
+     "id": "water_tds",
+     "label": "Test rinse-water conductivity/TDS",
+     "cost_inr": 300,
+     "time_minutes": 40,
+     "outcomes": [
+      "tds_high",
+      "tds_ok"
+     ],
+     "outcome_likelihoods": {
+      "dryer_temp": {
+       "tds_high": 0.1,
+       "tds_ok": 0.9
+      },
+      "blower_clog": {
+       "tds_high": 0.1,
+       "tds_ok": 0.9
+      },
+      "oil_carryover": {
+       "tds_high": 0.1,
+       "tds_ok": 0.9
+      },
+      "worn_wiper": {
+       "tds_high": 0.1,
+       "tds_ok": 0.9
+      },
+      "rinse_quality": {
+       "tds_high": 0.88,
+       "tds_ok": 0.12
+      },
+      "oil_overspray": {
+       "tds_high": 0.1,
+       "tds_ok": 0.9
+      }
+     }
+    },
+    {
+     "id": "spray_check",
+     "label": "Check skin-pass spray nozzle setup",
+     "cost_inr": 150,
+     "time_minutes": 20,
+     "outcomes": [
+      "overspray_found",
+      "spray_ok"
+     ],
+     "outcome_likelihoods": {
+      "dryer_temp": {
+       "overspray_found": 0.1,
+       "spray_ok": 0.9
+      },
+      "blower_clog": {
+       "overspray_found": 0.1,
+       "spray_ok": 0.9
+      },
+      "oil_carryover": {
+       "overspray_found": 0.1,
+       "spray_ok": 0.9
+      },
+      "worn_wiper": {
+       "overspray_found": 0.1,
+       "spray_ok": 0.9
+      },
+      "rinse_quality": {
+       "overspray_found": 0.1,
+       "spray_ok": 0.9
+      },
+      "oil_overspray": {
+       "overspray_found": 0.85,
+       "spray_ok": 0.15
+      }
+     }
+    },
+    {
+     "id": "stain_type",
+     "label": "Classify stain: oil vs mineral/water residue",
+     "cost_inr": 50,
+     "time_minutes": 10,
+     "outcomes": [
+      "oil_type",
+      "water_type"
+     ],
+     "outcome_likelihoods": {
+      "dryer_temp": {
+       "oil_type": 0.1,
+       "water_type": 0.9
+      },
+      "blower_clog": {
+       "oil_type": 0.1,
+       "water_type": 0.9
+      },
+      "oil_carryover": {
+       "oil_type": 0.8,
+       "water_type": 0.2
+      },
+      "worn_wiper": {
+       "oil_type": 0.4,
+       "water_type": 0.6
+      },
+      "rinse_quality": {
+       "oil_type": 0.1,
+       "water_type": 0.9
+      },
+      "oil_overspray": {
+       "oil_type": 0.8,
+       "water_type": 0.2
+      }
+     }
+    }
+   ]
+  }
+ ]
+}

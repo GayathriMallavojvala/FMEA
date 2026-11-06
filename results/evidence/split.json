@@ -1,0 +1,902 @@
+{
+  "schema_version": 1,
+  "seed": 20261029,
+  "grouping": "source+incident+declared_duplicate+exact_normalized_text",
+  "group_partitions": {
+    "GROUP-05d7ea20a1fe34fd": "test",
+    "GROUP-95cc8ce307d648db": "test",
+    "GROUP-4fee8b492d81f716": "test",
+    "GROUP-271dadda29a803cd": "validation",
+    "GROUP-d4341232e90a40e7": "validation",
+    "GROUP-00b6844ae892cce0": "validation",
+    "GROUP-a800f660f82050fc": "train",
+    "GROUP-55c9ec119a95ef01": "train",
+    "GROUP-e71d7fc14531e73a": "train",
+    "GROUP-3fdb54d633cf58c7": "train",
+    "GROUP-be0cc8df0c201658": "train",
+    "GROUP-c22596bf20f3bdcc": "train",
+    "GROUP-1462e1f9ccf44e36": "train",
+    "GROUP-d65d81dc12cb618c": "train",
+    "GROUP-afe4ee4e87a29104": "train"
+  },
+  "passages": {
+    "CAPA-SC-001": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-002": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-003": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-004": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-005": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-006": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-007": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-008": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-009": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-010": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-011": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-012": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-013": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-014": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-015": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-016": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-017": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-018": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-019": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-020": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-021": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-022": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-023": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-024": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-025": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-026": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-027": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-028": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-029": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-030": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-031": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-032": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-033": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-034": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-035": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-036": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-037": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-038": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-039": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-040": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-041": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-042": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-043": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-044": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-045": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-046": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-047": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-048": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-049": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-050": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-051": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-052": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-053": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-054": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-055": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-056": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-057": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-058": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-059": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-060": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-061": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-062": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-063": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-064": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-065": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-066": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-067": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-068": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-069": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-070": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-071": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-072": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-073": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-074": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-075": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-076": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-077": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-078": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-079": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-080": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-081": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-082": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-083": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-084": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-085": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-086": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-087": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-088": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-089": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-090": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-091": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-092": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-093": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "CAPA-SC-094": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "FDA483-001": {
+      "group_id": "GROUP-1462e1f9ccf44e36",
+      "partition": "train"
+    },
+    "FDA483-002": {
+      "group_id": "GROUP-1462e1f9ccf44e36",
+      "partition": "train"
+    },
+    "FDA483-003": {
+      "group_id": "GROUP-271dadda29a803cd",
+      "partition": "validation"
+    },
+    "NASA-KSC-001-FABRICATION": {
+      "group_id": "GROUP-a800f660f82050fc",
+      "partition": "train"
+    },
+    "NASA-KSC-002-ENVIRONMENT": {
+      "group_id": "GROUP-a800f660f82050fc",
+      "partition": "train"
+    },
+    "NASA-KSC-003-MAINTENANCE": {
+      "group_id": "GROUP-a800f660f82050fc",
+      "partition": "train"
+    },
+    "NASA-KSC-004-DESIGN": {
+      "group_id": "GROUP-a800f660f82050fc",
+      "partition": "train"
+    },
+    "LIT-001-CASTING-INCLUSION": {
+      "group_id": "GROUP-95cc8ce307d648db",
+      "partition": "test"
+    },
+    "LIT-002-ROLLED-SCALE": {
+      "group_id": "GROUP-55c9ec119a95ef01",
+      "partition": "train"
+    },
+    "LIT-003-WIDTH-DEFECT-RCA": {
+      "group_id": "GROUP-05d7ea20a1fe34fd",
+      "partition": "test"
+    },
+    "LIT-004-FORGING-FOLD": {
+      "group_id": "GROUP-c22596bf20f3bdcc",
+      "partition": "train"
+    },
+    "LIT-005-FORGING-FOLD-CASE": {
+      "group_id": "GROUP-d65d81dc12cb618c",
+      "partition": "train"
+    },
+    "LIT-006-CRAZING-THERMAL-FATIGUE": {
+      "group_id": "GROUP-be0cc8df0c201658",
+      "partition": "train"
+    },
+    "LIT-007-SURFACE-DEFECTS-OVERVIEW": {
+      "group_id": "GROUP-d4341232e90a40e7",
+      "partition": "validation"
+    },
+    "LIT-008-TONG-MARK": {
+      "group_id": "GROUP-3fdb54d633cf58c7",
+      "partition": "train"
+    },
+    "LIT-009-ROLL-MARK": {
+      "group_id": "GROUP-afe4ee4e87a29104",
+      "partition": "train"
+    },
+    "TAX-01": {
+      "group_id": "GROUP-e71d7fc14531e73a",
+      "partition": "train"
+    },
+    "TAX-02": {
+      "group_id": "GROUP-e71d7fc14531e73a",
+      "partition": "train"
+    },
+    "TAX-03": {
+      "group_id": "GROUP-e71d7fc14531e73a",
+      "partition": "train"
+    },
+    "TAX-04": {
+      "group_id": "GROUP-e71d7fc14531e73a",
+      "partition": "train"
+    },
+    "TAX-05": {
+      "group_id": "GROUP-e71d7fc14531e73a",
+      "partition": "train"
+    },
+    "TAX-06": {
+      "group_id": "GROUP-e71d7fc14531e73a",
+      "partition": "train"
+    },
+    "TAX-07": {
+      "group_id": "GROUP-e71d7fc14531e73a",
+      "partition": "train"
+    },
+    "TAX-08": {
+      "group_id": "GROUP-e71d7fc14531e73a",
+      "partition": "train"
+    },
+    "TAX-09": {
+      "group_id": "GROUP-e71d7fc14531e73a",
+      "partition": "train"
+    },
+    "TAX-10": {
+      "group_id": "GROUP-e71d7fc14531e73a",
+      "partition": "train"
+    },
+    "STD-01": {
+      "group_id": "GROUP-4fee8b492d81f716",
+      "partition": "test"
+    },
+    "STD-02": {
+      "group_id": "GROUP-4fee8b492d81f716",
+      "partition": "test"
+    },
+    "STD-03": {
+      "group_id": "GROUP-4fee8b492d81f716",
+      "partition": "test"
+    },
+    "STD-04": {
+      "group_id": "GROUP-4fee8b492d81f716",
+      "partition": "test"
+    },
+    "REF-LATHAM-2023-ABSTRACT": {
+      "group_id": "GROUP-05d7ea20a1fe34fd",
+      "partition": "test"
+    }
+  },
+  "incidents": {
+    "INC-SC-001": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-002": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-003": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-004": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-005": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-006": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-007": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-008": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-009": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-010": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-011": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-012": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-013": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-014": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-015": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-016": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-017": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-018": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-019": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-020": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-021": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-022": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-023": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-024": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-025": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-026": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-027": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-028": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-029": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-030": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-031": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-032": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-033": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-034": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-035": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-036": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-037": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-038": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-039": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-040": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-041": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-042": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-043": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-044": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-045": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-046": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-047": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-048": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-049": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-050": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-051": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-052": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-053": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-054": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-055": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-056": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-057": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-058": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-059": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-060": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-061": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-062": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-063": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-064": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-065": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-066": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-067": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-068": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-069": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-070": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-071": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-072": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-073": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-074": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-075": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-076": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-077": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-078": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-079": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-080": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-081": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-082": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-083": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-084": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-085": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-086": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-087": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-088": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-089": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-090": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-091": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-092": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-093": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    },
+    "INC-SC-094": {
+      "group_id": "GROUP-00b6844ae892cce0",
+      "partition": "validation"
+    }
+  }
+}

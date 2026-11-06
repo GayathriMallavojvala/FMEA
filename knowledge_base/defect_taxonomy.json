@@ -1,0 +1,85 @@
+{
+  "_source_note": "Defect names and mechanism descriptions are paraphrased from the class definitions used in three public, verified steel-surface-defect research datasets. These are the REAL industrial defect taxonomy your synthetic CAPA scenarios should reuse, so your defect categories match genuine industrial terminology instead of being invented from scratch.",
+  "sources": [
+    {
+      "name": "NEU Surface Defect Database (NEU-DET)",
+      "institution": "Northeastern University, China",
+      "content": "1,800 grayscale images of hot-rolled steel strip, 300 samples across 6 defect classes",
+      "link": "https://www.kaggle.com/datasets/kaustubhdikshit/neu-surface-defect-database"
+    },
+    {
+      "name": "GC10-DET",
+      "institution": "Tianjin University, China",
+      "content": "3,570 grayscale images collected from a real industrial steel-sheet production line, 10 defect classes",
+      "link": "https://www.kaggle.com/datasets/lirick/gc10-det"
+    },
+    {
+      "name": "Severstal Steel Defect Detection",
+      "institution": "Severstal (Kaggle competition)",
+      "content": "Real production-line defect images from a working steel plant, 4 anonymized defect classes",
+      "link": "https://www.kaggle.com/c/severstal-steel-defect-detection"
+    }
+  ],
+  "defect_families": [
+    {
+      "defect_type": "Crazing",
+      "typical_process_stage": "hot_rolling",
+      "source_dataset": "NEU-DET",
+      "mechanism_description": "A network of fine, shallow surface cracks that form on the strip surface, typically linked to thermal stress or repeated stress cycling during hot deformation."
+    },
+    {
+      "defect_type": "Inclusion",
+      "typical_process_stage": "casting",
+      "source_dataset": "NEU-DET / GC10-DET",
+      "mechanism_description": "Foreign non-metallic particles (oxides, slag, refractory fragments) trapped inside the steel matrix during solidification. Some inclusions are loosely bound and flake off at the surface; others remain pressed into the material and only appear after rolling exposes them."
+    },
+    {
+      "defect_type": "Patches",
+      "typical_process_stage": "hot_rolling",
+      "source_dataset": "NEU-DET",
+      "mechanism_description": "A localized region of the strip surface visually distinguished from the surrounding material by a particular characteristic (texture, reflectivity, or color), usually from uneven descaling or oxide formation."
+    },
+    {
+      "defect_type": "Pitted Surface / Rolled Pit",
+      "typical_process_stage": "cold_rolling",
+      "source_dataset": "NEU-DET / GC10-DET",
+      "mechanism_description": "A localized corrosion or mechanical-indentation pattern concentrated on a small area of the surface, penetrating into the material interior. Often linked to descaling effectiveness or roll-surface condition."
+    },
+    {
+      "defect_type": "Rolled-in Scale",
+      "typical_process_stage": "hot_rolling",
+      "source_dataset": "NEU-DET",
+      "mechanism_description": "Oxide scale that was not fully removed before rolling gets pressed into the strip surface during the rolling pass, leaving an embedded scale pattern rather than a clean surface."
+    },
+    {
+      "defect_type": "Scratches",
+      "typical_process_stage": "finishing",
+      "source_dataset": "NEU-DET",
+      "mechanism_description": "Linear surface marks (horizontal, vertical, or slanting) from mechanical contact with equipment, rollers, or handling surfaces during transport or finishing operations."
+    },
+    {
+      "defect_type": "Crescent Gap",
+      "typical_process_stage": "cold_rolling",
+      "source_dataset": "GC10-DET",
+      "mechanism_description": "A half-circle-shaped material loss defect that occurs during shearing/cutting of the strip, typically from blade wear or misalignment in the cutting station."
+    },
+    {
+      "defect_type": "Waist Folding",
+      "typical_process_stage": "forging",
+      "source_dataset": "GC10-DET",
+      "mechanism_description": "Visible folds/wrinkles from excessive local deformation, generally associated with low-carbon material behavior under forming stress or die-fill issues."
+    },
+    {
+      "defect_type": "Weld Line Defect",
+      "typical_process_stage": "casting",
+      "source_dataset": "GC10-DET",
+      "mechanism_description": "A defect at the coil-to-coil weld joint (used when splicing strip ends for continuous processing); while a weld line itself is a normal process feature, a defective weld shows incomplete fusion, offset, or thickness variation that must be tracked and diverted downstream."
+    },
+    {
+      "defect_type": "Water Spot / Oil Spot",
+      "typical_process_stage": "finishing",
+      "source_dataset": "GC10-DET",
+      "mechanism_description": "Low-contrast surface staining from residual moisture (drying step) or lubricant/coolant residue not fully removed during finishing. Easily confused with each other due to similar low-contrast appearance."
+    }
+  ]
+}

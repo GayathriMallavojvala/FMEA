@@ -1,0 +1,1694 @@
+[
+  {
+    "id": "SC-001",
+    "defect_type": "Crazing",
+    "process_stage": "hot_rolling",
+    "non_conformance_description": "Fine surface crack network observed on hot-rolled coil HR-1187, Line 1, concentrated in the mid-width region. Approximately 3% of coils in the shift showed the pattern under inspection light.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Surface cracking appears after finishing rolling -> the strip experienced excessive thermal cycling before the final pass.",
+      "Why 2: Excessive thermal cycling occurred -> the reheat furnace zone-3 temperature overshot setpoint by ~40C during the shift.",
+      "Why 3: Zone-3 overshot -> the furnace's temperature control loop was running on a manual override left from a prior maintenance test.",
+      "Why 4: Manual override was left active -> the maintenance technician did not log the override or return the controller to auto mode at end of test.",
+      "Why 5 (root cause): the maintenance work instruction for furnace controller testing does not require a mandatory return-to-auto verification step before sign-off."
+    ],
+    "root_cause": "The furnace maintenance test procedure has no mandatory step requiring verification that temperature control is returned to automatic mode before the furnace is released back to production.",
+    "corrective_action": "Return zone-3 controller to automatic mode immediately; re-inspect all coils processed during the override window for crazing before release.",
+    "preventive_action": "Add a mandatory 'return-to-auto' checklist item with technician and shift-supervisor dual sign-off to the furnace maintenance test work instruction; interlock the furnace HMI to alarm if manual override remains active beyond 30 minutes.",
+    "effectiveness_verification": "Zero furnace override-related crazing incidents over the next 20 production days; maintenance work-order audit confirms 100% dual sign-off compliance for furnace tests in the same period."
+  },
+  {
+    "id": "SC-002",
+    "defect_type": "Crazing",
+    "process_stage": "hot_rolling",
+    "non_conformance_description": "Operator on Line 3 night shift flagged crazing on the trailing end of coil HR-1340, roughly 1.5m of affected length, first noticed on the 6th coil of a new steel grade changeover.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.3",
+    "five_why": [
+      "Why 1: Crazing appeared only on the trailing end -> that section cooled at a faster rate than the rest of the coil.",
+      "Why 2: Faster cooling on the trailing end -> the run-out table cooling spray pattern was not adjusted for the new grade's recommended cooling profile.",
+      "Why 3: Cooling profile not adjusted -> the new grade's setpoint recipe had not been loaded into the run-out table controller before the changeover.",
+      "Why 4: Recipe not loaded -> the changeover checklist references 'verify rolling parameters' but does not explicitly list run-out table cooling recipe as a separate item.",
+      "Why 5 (root cause): the grade-changeover checklist bundles cooling-recipe verification inside a generic 'rolling parameters' line item, making it easy to treat as already covered by the mill setpoint check."
+    ],
+    "root_cause": "The changeover checklist does not list run-out table cooling recipe verification as its own explicit item, so it gets silently skipped under the assumption it's covered elsewhere.",
+    "corrective_action": "Load the correct cooling recipe immediately; quarantine and inspect all coils since changeover start for crazing.",
+    "preventive_action": "Split the changeover checklist's 'verify rolling parameters' item into separate, individually-signed sub-items, with 'run-out table cooling recipe' as its own explicit line.",
+    "effectiveness_verification": "Audit the next 15 grade changeovers for checklist compliance; target zero cooling-recipe-related defects in that window."
+  },
+  {
+    "id": "SC-003",
+    "defect_type": "Crazing",
+    "process_stage": "hot_rolling",
+    "non_conformance_description": "Quality inspector on Line 2 day shift found crazing across the full width of two consecutive coils (HR-2050, HR-2051) following an unplanned rolling-speed reduction due to a downstream jam.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Full-width crazing appeared -> the strip spent longer than normal in the high-temperature zone due to reduced line speed.",
+      "Why 2: Line speed was reduced -> a downstream coiler jam forced a temporary slowdown without adjusting furnace output.",
+      "Why 3: Furnace output was not adjusted -> there is no automated link between line-speed changes and furnace zone temperature setpoints.",
+      "Why 4: No automated link exists -> the furnace and mill speed controls were installed by different vendors on separate control systems that were never integrated.",
+      "Why 5 (root cause): the plant's furnace and rolling-line control systems operate independently, so speed disruptions are not automatically compensated by temperature adjustments."
+    ],
+    "root_cause": "Furnace temperature control and rolling-line speed control are on separate, non-integrated systems, so an unplanned speed change does not trigger a compensating temperature adjustment.",
+    "corrective_action": "Manually reduce furnace zone temperatures for the remainder of the slowdown; scrap or downgrade the two affected coils per grade specification.",
+    "preventive_action": "Implement an interim manual SOP requiring the line operator to notify the furnace operator within 60 seconds of any speed reduction event >15%, pending longer-term integration of the two control systems (tracked as a separate capital project).",
+    "effectiveness_verification": "Track all speed-reduction events over 30 days; verify furnace-operator notification occurred within 60 seconds for 100% of events, with zero resulting crazing defects."
+  },
+  {
+    "id": "SC-004",
+    "defect_type": "Crazing",
+    "process_stage": "hot_rolling",
+    "non_conformance_description": "Recurring low-level crazing (under 0.5% of coils) reported by Line 1 across three consecutive weeks, always on the same roll stand, not tied to any single shift or grade.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.3 / 10.2.4",
+    "five_why": [
+      "Why 1: Crazing recurs regardless of shift or grade -> a fixed piece of equipment is the common factor.",
+      "Why 2: The common factor is stand-4 work rolls -> the rolls show a shallow surface texture from wear that is transferring onto the strip.",
+      "Why 3: Rolls show wear texture -> the stand-4 roll change interval was extended from 3 days to 5 days six weeks ago.",
+      "Why 4: Interval was extended -> a scheduling change was made to reduce changeover downtime without re-validating roll wear life against the new interval.",
+      "Why 5 (root cause): the roll-change interval was modified based on a downtime-reduction target without a corresponding wear-life validation study."
+    ],
+    "root_cause": "The stand-4 roll-change interval was extended for downtime reasons without validating that roll surface wear stays within tolerance over the new interval.",
+    "corrective_action": "Revert stand-4 to the original 3-day roll-change interval immediately; inspect and replace current rolls.",
+    "preventive_action": "Require any future roll-change interval modification to go through a documented wear-life validation (surface roughness measurement at proposed interval) and quality sign-off before implementation.",
+    "effectiveness_verification": "Monitor stand-4 crazing rate over the next 4 weeks at reverted interval; target return to baseline (<0.1%) and zero interval changes made without validation sign-off."
+  },
+  {
+    "id": "SC-005",
+    "defect_type": "Crazing",
+    "process_stage": "hot_rolling",
+    "non_conformance_description": "Customer complaint received for coil HR-0998 (shipped 2 weeks prior) citing surface crazing discovered during their own downstream processing; internal inspection records for that coil show no defect was flagged at dispatch.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2 (customer complaint)",
+    "five_why": [
+      "Why 1: Defect reached the customer undetected -> the crazing was below the visual detection threshold used at final inspection lighting conditions.",
+      "Why 2: Below detection threshold at final inspection -> final inspection uses standard overhead lighting, not the raking/oblique light angle needed to reveal fine crazing.",
+      "Why 3: Raking light is not used -> the final inspection station was not equipped with adjustable-angle lighting when it was set up.",
+      "Why 4: Not equipped -> the inspection station specification at installation was based on general surface-defect visibility, not defect-family-specific detection requirements.",
+      "Why 5 (root cause): the final inspection lighting specification was never updated to include oblique lighting specifically required for fine crack-type defects like crazing."
+    ],
+    "root_cause": "Final inspection station lighting was specified for general defect visibility and was never updated to include the oblique/raking light angle needed to reliably detect fine crazing.",
+    "corrective_action": "Notify the customer, arrange coil recall/credit per customer agreement; re-inspect recent shipments of the same grade under temporary raking-light setup.",
+    "preventive_action": "Install adjustable-angle raking lighting at the final inspection station and add a documented crazing-specific inspection step to the final inspection SOP.",
+    "effectiveness_verification": "Zero crazing-related customer complaints over the next 90 days; monthly internal audit confirms raking-light inspection step is being performed and documented."
+  },
+  {
+    "id": "SC-006",
+    "defect_type": "Inclusion",
+    "process_stage": "casting",
+    "non_conformance_description": "Billet-cutting inspection on Caster 2 found visible non-metallic inclusions in the cross-section of 4 out of 40 billets sampled from heat H-3391.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Inclusions found in billet cross-section -> non-metallic particles were present in the liquid steel at solidification.",
+      "Why 2: Particles were present -> refractory erosion from the tundish lining introduced material into the melt.",
+      "Why 3: Refractory eroded -> the tundish lining had exceeded its rated heat-count life before being scheduled for replacement.",
+      "Why 4: Exceeded rated life -> refractory life tracking is done manually on a paper log that was not updated for the last 3 heats.",
+      "Why 5 (root cause): tundish refractory life tracking depends on a manual paper log with no system-enforced replacement trigger, allowing it to run past rated life undetected."
+    ],
+    "root_cause": "Refractory lining life is tracked manually with no automated or enforced trigger, so a lining can silently exceed its rated heat count before replacement.",
+    "corrective_action": "Replace the tundish lining immediately; quarantine and section-test all billets cast on the current lining before further processing.",
+    "preventive_action": "Move refractory life tracking into the caster's digital heat-count system with an automatic hold/alert when a lining approaches its rated heat count.",
+    "effectiveness_verification": "Zero refractory-related inclusion defects over the next 60 heats; audit confirms 100% of relining events triggered by the digital alert rather than manual log entry."
+  },
+  {
+    "id": "SC-007",
+    "defect_type": "Inclusion",
+    "process_stage": "casting",
+    "non_conformance_description": "Rolled coil from billets of heat H-3402 showed surface inclusions after hot rolling, traced back to the casting stage upon metallurgical review; affected roughly 8% of the heat's output.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.3",
+    "five_why": [
+      "Why 1: Inclusions traced to casting -> slag carryover occurred from the ladle into the tundish during pouring.",
+      "Why 2: Slag carryover occurred -> the ladle slag-detection sensor did not trigger the automatic stopper-rod cutoff.",
+      "Why 3: Sensor did not trigger -> the sensor's calibration had drifted outside acceptable tolerance.",
+      "Why 4: Calibration drifted -> the sensor calibration schedule is quarterly, and this heat fell near the end of the calibration window.",
+      "Why 5 (root cause): the slag-detection sensor calibration interval (quarterly) is longer than the sensor's demonstrated drift tolerance allows, letting sensitivity degrade before the next scheduled check."
+    ],
+    "root_cause": "The quarterly slag-sensor calibration interval is too long relative to the sensor's actual drift rate, allowing detection sensitivity to degrade before recalibration.",
+    "corrective_action": "Recalibrate the slag-detection sensor immediately; hold and re-sample billets from the affected heat.",
+    "preventive_action": "Shorten the slag-detection sensor calibration interval from quarterly to monthly and add a mid-interval functional drift check using a reference standard.",
+    "effectiveness_verification": "Track sensor drift readings monthly for 2 quarters; target drift remaining within tolerance at every check, zero slag-carryover inclusion events."
+  },
+  {
+    "id": "SC-008",
+    "defect_type": "Inclusion",
+    "process_stage": "casting",
+    "non_conformance_description": "New grade trial heat H-3410 produced billets with inclusion levels above internal spec, discovered during first-article ultrasonic testing before the heat was released.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2 (first-article inspection)",
+    "five_why": [
+      "Why 1: Inclusion levels exceeded spec -> the deoxidation practice used was the standard-grade recipe, not the trial grade's requirement.",
+      "Why 2: Standard recipe was used -> the trial grade's process sheet had not been fully released to the melt-shop floor system at the time of pour.",
+      "Why 3: Process sheet not released -> the new-grade approval workflow allows metallurgy sign-off and melt-shop release to happen as parallel, not sequential, steps.",
+      "Why 4: Parallel workflow allowed the pour to proceed on default settings -> there is no system hold that blocks a trial heat from starting until the grade-specific recipe is confirmed loaded.",
+      "Why 5 (root cause): the trial-grade release workflow has no hard system block preventing a pour from starting before the grade-specific process recipe is confirmed present in the melt-shop control system."
+    ],
+    "root_cause": "The new-grade release process allows metallurgical approval and control-system recipe loading to proceed independently, with no system-enforced hold linking the two before a trial pour can begin.",
+    "corrective_action": "Downgrade or scrap the affected trial heat per material disposition procedure; reload the correct recipe for any remaining trial pours.",
+    "preventive_action": "Add a system interlock requiring confirmed recipe-load status before a trial heat can be initiated, sequencing metallurgy sign-off ahead of melt-shop release rather than in parallel.",
+    "effectiveness_verification": "Verify the interlock blocks at least one simulated mismatched-recipe attempt during commissioning test; zero trial-heat recipe mismatches over the next 10 new-grade trials."
+  },
+  {
+    "id": "SC-009",
+    "defect_type": "Inclusion",
+    "process_stage": "casting",
+    "non_conformance_description": "Routine metallurgical audit found elevated inclusion counts across multiple heats over a two-week period on Caster 1, none individually severe enough to trigger real-time rejection but trending upward.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.4 (error-proofing)",
+    "five_why": [
+      "Why 1: Inclusion counts trended upward gradually -> argon stirring intensity in the ladle had been gradually reduced over several weeks.",
+      "Why 2: Stirring intensity reduced -> operators had been manually lowering the argon flow rate to reduce visible surface turbulence, believing it improved safety.",
+      "Why 3: Operators made this adjustment -> there is no documented acceptable range for argon flow rate posted at the operator station; only a single target value with no context.",
+      "Why 4: No acceptable range posted -> the ladle-treatment SOP was written assuming a fixed setpoint would always be used and never anticipated operator-driven adjustment.",
+      "Why 5 (root cause): the ladle-treatment SOP does not document why the argon flow target exists or what range is safe to deviate within, so operators self-adjusted without visibility into the inclusion-control consequence."
+    ],
+    "root_cause": "The ladle-treatment SOP specifies an argon flow target without explaining its purpose or acceptable deviation range, leaving operators to make undocumented adjustments without understanding the inclusion-control tradeoff.",
+    "corrective_action": "Restore argon flow to the validated target setpoint on Caster 1 immediately; review recent heats for disposition.",
+    "preventive_action": "Revise the ladle-treatment SOP to state the rationale for the argon flow target and its validated acceptable range, and add flow-rate logging with a supervisor alert for any sustained deviation beyond that range.",
+    "effectiveness_verification": "Inclusion count trend returns to baseline over the next 4 weeks; flow-rate log shows zero sustained deviations outside the documented range."
+  },
+  {
+    "id": "SC-010",
+    "defect_type": "Inclusion",
+    "process_stage": "casting",
+    "non_conformance_description": "A single severe inclusion cluster caused a billet to fracture during subsequent hot rolling on Line 2, halting production for 40 minutes; heat H-3425 traced as the source.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.3",
+    "five_why": [
+      "Why 1: Billet fractured under rolling load -> a large inclusion cluster created a stress concentration point.",
+      "Why 2: Large cluster formed -> a refractory nozzle partially collapsed during pouring, releasing a burst of material into the stream.",
+      "Why 3: Nozzle partially collapsed -> the nozzle was from a new supplier batch that had not completed incoming inspection before use.",
+      "Why 4: Used before inspection completed -> the melt shop had run low on approved-stock nozzles and used the new batch under time pressure.",
+      "Why 5 (root cause): there is no hard hold preventing unqualified incoming refractory stock from being used when approved stock runs low, so time pressure can override the incoming-inspection gate."
+    ],
+    "root_cause": "The refractory incoming-inspection process can be bypassed under production time pressure because there is no system hold preventing unqualified stock from being pulled into use.",
+    "corrective_action": "Halt use of the affected nozzle batch; complete incoming inspection on remaining units before any further use; disposition the fractured billet and downstream material.",
+    "preventive_action": "Implement a physical/system lockout (e.g., barcode-gated storage) that prevents refractory stock from being issued to the floor until incoming inspection is marked complete, regardless of stock-out pressure.",
+    "effectiveness_verification": "Zero unqualified-refractory-use incidents over the next 90 days; storage lockout audit confirms 100% of issued stock had completed inspection."
+  },
+  {
+    "id": "SC-011",
+    "defect_type": "Patches",
+    "process_stage": "hot_rolling",
+    "non_conformance_description": "Irregular light-colored patches observed on the top surface of coil HR-2210, Line 3, covering roughly 10% of the coil's visible surface, first noticed mid-shift.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Light-colored patches appeared -> uneven oxide/scale formation occurred on the strip surface before descaling.",
+      "Why 2: Uneven scale formation -> furnace zone-2 burners were firing unevenly across the width.",
+      "Why 3: Uneven firing -> one burner nozzle had partial fuel-line restriction from accumulated deposits.",
+      "Why 4: Deposits accumulated -> burner nozzle cleaning is only performed during scheduled shutdowns, roughly every 8 weeks.",
+      "Why 5 (root cause): burner nozzle cleaning frequency is tied to shutdown scheduling convenience rather than to the deposit accumulation rate observed in practice."
+    ],
+    "root_cause": "Burner nozzle cleaning interval is set by shutdown-schedule convenience rather than by measured deposit-accumulation rate, allowing partial restriction to develop between cleanings.",
+    "corrective_action": "Clean the affected burner nozzle immediately; inspect surrounding coils for similar patching.",
+    "preventive_action": "Establish a deposit-accumulation-based cleaning interval (determined by periodic flow-rate testing) independent of shutdown scheduling, with interim manual flow checks between shutdowns.",
+    "effectiveness_verification": "Burner flow-rate checks show no significant restriction over next 3 monitoring cycles; zero patch-defect recurrence over 30 days."
+  },
+  {
+    "id": "SC-012",
+    "defect_type": "Patches",
+    "process_stage": "hot_rolling",
+    "non_conformance_description": "Line 1 day shift reported dull, irregular patches on coil HR-2260 concentrated near the strip centerline, coinciding with a recent descaler header maintenance.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Patches concentrated at centerline -> descaler spray coverage was reduced in the center zone.",
+      "Why 2: Reduced coverage -> a center-zone nozzle was reinstalled at the wrong angle after maintenance.",
+      "Why 3: Wrong angle -> the maintenance work order did not specify nozzle angle settings, only 'reinstall per standard.'",
+      "Why 4: No angle spec on work order -> nozzle angle settings are documented in a separate engineering drawing not routinely attached to maintenance work orders.",
+      "Why 5 (root cause): critical setup parameters (nozzle angle) live in a document not linked to the maintenance work order, so technicians rely on memory or approximation during reassembly."
+    ],
+    "root_cause": "Descaler nozzle angle specifications exist in a separate engineering drawing that is not attached to or referenced by the maintenance work order, so correct reassembly depends on technician memory.",
+    "corrective_action": "Re-angle the center-zone nozzle to specification immediately; re-inspect coils processed since the maintenance event.",
+    "preventive_action": "Attach the nozzle-angle engineering drawing directly to the descaler maintenance work order template and require a photo-verification step confirming angle before sign-off.",
+    "effectiveness_verification": "Zero descaler-related patch defects over next 20 maintenance-adjacent production days; work-order audit confirms drawing attachment and photo verification present."
+  },
+  {
+    "id": "SC-013",
+    "defect_type": "Patches",
+    "process_stage": "hot_rolling",
+    "non_conformance_description": "Sporadic patch defects (roughly 1 in 50 coils) reported across Line 2 over a month, with no single obvious cause identified by operators.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.3",
+    "five_why": [
+      "Why 1: Patches occur sporadically without an obvious pattern -> incoming slab surface condition varies between suppliers.",
+      "Why 2: Slab surface condition varies -> two different slab suppliers are used interchangeably without a documented surface-quality difference in receiving records.",
+      "Why 3: No documented difference -> incoming slab inspection checks dimensional and chemical specs but not surface oxide condition.",
+      "Why 4: Surface oxide condition not checked -> the incoming inspection checklist was designed before patch-defect trending began and was never updated.",
+      "Why 5 (root cause): incoming slab inspection criteria were fixed at initial checklist design and have not been revisited to include surface oxide condition despite downstream patch-defect trends implicating it."
+    ],
+    "root_cause": "Incoming slab inspection does not check surface oxide condition, a factor that trend data now implicates in patch defects, because the checklist was never revisited after initial design.",
+    "corrective_action": "Add a surface oxide visual check to incoming inspection for the current slab lot; segregate slabs showing heavy oxide condition for closer monitoring.",
+    "preventive_action": "Formally update the incoming slab inspection checklist to include a surface oxide condition rating, with a documented acceptance threshold agreed with both slab suppliers.",
+    "effectiveness_verification": "Patch defect rate on Line 2 drops below 1 in 200 coils over the next 60 days; incoming inspection records show oxide rating captured for 100% of received slab lots."
+  },
+  {
+    "id": "SC-014",
+    "defect_type": "Patches",
+    "process_stage": "hot_rolling",
+    "non_conformance_description": "Large single patch defect (approx. 0.3m x 0.2m) found on coil HR-2301, causing customer rejection at receiving inspection; traced to a localized event during rolling.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2 (customer complaint)",
+    "five_why": [
+      "Why 1: Large localized patch -> a brief loss of descaler water pressure occurred during that section's pass.",
+      "Why 2: Pressure loss occurred -> the descaler pump momentarily cavitated due to a low water reservoir level.",
+      "Why 3: Reservoir was low -> the reservoir refill valve had a slow response lag under high-demand conditions.",
+      "Why 4: Slow refill response -> the refill valve had not been serviced despite showing degraded response in prior maintenance logs.",
+      "Why 5 (root cause): degraded refill valve response noted in maintenance logs was not escalated to a work order because there is no defined threshold at which a logged observation triggers mandatory action."
+    ],
+    "root_cause": "There is no defined escalation threshold linking a logged 'degraded' maintenance observation to a mandatory corrective work order, so early warning signs are recorded but not acted on.",
+    "corrective_action": "Service the refill valve immediately; issue customer credit/replacement per complaint procedure; inspect reservoir levels across all descaler stations.",
+    "preventive_action": "Define explicit escalation thresholds in the maintenance logging system so that a 'degraded' rating on safety- or quality-critical components automatically generates a work order within a set timeframe.",
+    "effectiveness_verification": "Zero unaddressed 'degraded' log entries older than the defined escalation window over the next quarter; zero recurrence of reservoir-related patch defects."
+  },
+  {
+    "id": "SC-015",
+    "defect_type": "Patches",
+    "process_stage": "hot_rolling",
+    "non_conformance_description": "Night shift trainee flagged patch-like discoloration on coil HR-2318 but was unsure if it met the rejection threshold; coil was released and later reworked at customer's request.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Borderline defect was released -> the trainee lacked a clear visual reference for the rejection threshold.",
+      "Why 2: No clear reference -> the plant's defect-severity reference photos are kept in a binder in the QA office, not at the inspection station.",
+      "Why 3: Reference kept off-station -> the inspection station was set up before the photo reference guide was created and was never retrofitted.",
+      "Why 4: Never retrofitted -> there is no periodic review step that checks whether inspection stations have current reference materials.",
+      "Why 5 (root cause): there is no periodic audit step confirming that visual reference materials created after station setup actually get deployed to the physical inspection stations."
+    ],
+    "root_cause": "New visual defect-severity references are created centrally but there is no audit step ensuring they are physically deployed to every inspection station, so stations set up earlier remain without them.",
+    "corrective_action": "Post laminated defect-severity reference photos at the Line 2 inspection station immediately; re-evaluate the released coil per customer agreement.",
+    "preventive_action": "Add a quarterly audit checklist item confirming current visual reference materials are physically present and legible at every inspection station plant-wide.",
+    "effectiveness_verification": "Quarterly audit shows 100% of inspection stations with current reference materials; zero borderline-defect release incidents over the following 2 quarters."
+  },
+  {
+    "id": "SC-016",
+    "defect_type": "Pitted Surface",
+    "process_stage": "cold_rolling",
+    "non_conformance_description": "Multiple shallow pits visible on the top surface near the strip edge after descaling, batch HR-2291, Line 2 night shift, roughly 1 in 20 coils affected over two days.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Pitting appears post-descaling -> scale was not fully removed before rolling.",
+      "Why 2: Scale removal was incomplete -> descaler spray pressure was uneven across the strip width.",
+      "Why 3: Spray pressure was uneven -> one or more descaler header nozzles were partially obstructed.",
+      "Why 4: Nozzles were obstructed -> scheduled nozzle-cleaning/filter-change was missed during the preceding maintenance window.",
+      "Why 5 (root cause): the maintenance scheduling system does not flag descaler nozzle cleaning as a hard-blocking task before shift handover, allowing it to be silently skipped under workload pressure."
+    ],
+    "root_cause": "The maintenance scheduling system does not flag descaler nozzle cleaning as a hard-blocking task before shift handover, allowing it to be silently skipped under workload pressure.",
+    "corrective_action": "Immediately inspect and clean all descaler header nozzles on Line 2; quarantine and re-inspect all coils produced since the start of the affected shift window before release.",
+    "preventive_action": "Convert descaler nozzle inspection/cleaning into a hard-blocking checklist item in the shift-handover system that cannot be bypassed without supervisor sign-off; add a spray-pressure sensor alarm on the descaler header to flag a >=10% pressure drop in real time.",
+    "effectiveness_verification": "Monitor pit-defect rate on Line 2 over the next 15 production days; target rate below 0.5% of coils, with zero missed-cleaning checklist events recorded in the handover log over the same period."
+  },
+  {
+    "id": "SC-017",
+    "defect_type": "Pitted Surface",
+    "process_stage": "cold_rolling",
+    "non_conformance_description": "Rolled pit defects observed on coil CR-0410, isolated to a 2m section, coinciding with a work-roll change earlier in the shift.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.3",
+    "five_why": [
+      "Why 1: Rolled pits appeared after roll change -> the newly installed work roll had surface pitting from prior storage.",
+      "Why 2: Roll had storage-related pitting -> rolls are stored in a general equipment yard without corrosion-protective covering.",
+      "Why 3: No protective covering -> roll storage procedure specifies indoor storage but does not mandate covering for rolls awaiting reinstallation.",
+      "Why 4: Covering not mandated -> the storage procedure was written when all rolls were used within 48 hours, before current longer inventory cycles began.",
+      "Why 5 (root cause): the roll storage procedure was written under old inventory-cycle assumptions (fast turnover) that no longer match current practice, so it lacks corrosion protection requirements needed for longer storage durations."
+    ],
+    "root_cause": "The roll storage procedure predates the plant's current longer roll-inventory cycles and was never updated to require corrosion protection for rolls held longer than the original 48-hour assumption.",
+    "corrective_action": "Remove and inspect the current work roll; replace with a roll confirmed free of surface pitting; disposition the affected 2m section.",
+    "preventive_action": "Update the roll storage procedure to mandate corrosion-protective covering and a maximum uncovered storage duration, with a pre-installation surface inspection step for any roll stored over 7 days.",
+    "effectiveness_verification": "Zero storage-related rolled pit defects over next 10 roll changes; storage audit confirms 100% of rolls in inventory have protective covering."
+  },
+  {
+    "id": "SC-018",
+    "defect_type": "Pitted Surface",
+    "process_stage": "cold_rolling",
+    "non_conformance_description": "Pitting defect cluster found during in-process inspection on Line 4, associated with a change to a new coolant supplier three weeks prior.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Pitting cluster appeared -> localized micro-corrosion occurred on the strip surface during rolling.",
+      "Why 2: Micro-corrosion occurred -> the new coolant's corrosion-inhibitor concentration was lower than the previous supplier's formulation.",
+      "Why 3: Lower inhibitor concentration -> the new coolant was approved based on lubricity and cost criteria without a corrosion-inhibitor equivalence test.",
+      "Why 4: No equivalence test performed -> the supplier-change approval process for consumables does not require corrosion-performance testing, only lubricity and cost review.",
+      "Why 5 (root cause): the consumable supplier-change approval process evaluates lubricity and cost but has no required corrosion-inhibitor equivalence test, so a formulation difference in a non-evaluated property was missed."
+    ],
+    "root_cause": "The supplier-change approval process for rolling coolant does not include a required corrosion-inhibitor equivalence test, so relevant formulation differences can pass approval unnoticed.",
+    "corrective_action": "Revert to the previous coolant supplier or formulation while the new one is re-evaluated; inspect and disposition affected coils from the last 3 weeks.",
+    "preventive_action": "Add a mandatory corrosion-inhibitor equivalence test to the consumable supplier-change approval checklist for any coolant/lubricant substitution.",
+    "effectiveness_verification": "Coolant re-approval includes documented corrosion test results before reintroduction; zero coolant-related pitting defects over the next 30 days post-reintroduction."
+  },
+  {
+    "id": "SC-019",
+    "defect_type": "Pitted Surface",
+    "process_stage": "cold_rolling",
+    "non_conformance_description": "Isolated pitting found on coil CR-0455 traced to a single roll bite event; equipment logs show a momentary tension drop at the same timestamp.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.3",
+    "five_why": [
+      "Why 1: Pitting at a specific point -> a momentary loss of strip tension caused contact irregularity between strip and roll.",
+      "Why 2: Tension loss occurred -> the tension control system's feedback sensor had a brief signal dropout.",
+      "Why 3: Signal dropout occurred -> a loose connector on the sensor cable had intermittent contact.",
+      "Why 4: Connector was loose -> the cable routing passes through a high-vibration zone without strain relief.",
+      "Why 5 (root cause): the tension sensor cable was routed through a high-vibration area without strain relief hardware, allowing vibration to gradually loosen the connector over time."
+    ],
+    "root_cause": "The tension sensor cable lacks strain relief in a high-vibration routing zone, allowing the connector to loosen gradually until it caused an intermittent signal dropout.",
+    "corrective_action": "Secure/replace the loose connector immediately; inspect the affected coil section and disposition per spec.",
+    "preventive_action": "Add strain-relief hardware to the tension sensor cable routing and include cable connector integrity as a check item in the preventive maintenance schedule for that zone.",
+    "effectiveness_verification": "Zero tension-related sensor dropouts over next 90 days; PM records confirm connector checks performed on schedule."
+  },
+  {
+    "id": "SC-020",
+    "defect_type": "Pitted Surface",
+    "process_stage": "cold_rolling",
+    "non_conformance_description": "Cluster of pitting defects found plant-wide across multiple lines over a single week, coinciding with an announced water-treatment plant maintenance event.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Pitting occurred across multiple lines simultaneously -> a shared input changed for all lines at once.",
+      "Why 2: Shared input changed -> process water pH shifted outside normal range during water-treatment plant maintenance.",
+      "Why 3: pH shifted -> the water-treatment team did not notify production of the maintenance window or its expected water-quality impact.",
+      "Why 4: No notification given -> there is no formal communication protocol between the utilities/water-treatment team and production quality for planned maintenance affecting shared process inputs.",
+      "Why 5 (root cause): no formal cross-functional notification protocol exists between utilities maintenance and production quality for planned work that affects shared process inputs like water quality."
+    ],
+    "root_cause": "There is no formal notification protocol requiring the utilities/water-treatment team to alert production quality before planned maintenance that could affect shared process inputs such as water pH.",
+    "corrective_action": "Restore process water to spec; inspect and disposition affected production across all lines from the maintenance window.",
+    "preventive_action": "Establish a formal cross-functional notification protocol requiring utilities to notify production quality at least 24 hours before any planned maintenance affecting shared process inputs, with a defined escalation contact.",
+    "effectiveness_verification": "100% of subsequent utilities maintenance events show documented 24-hour advance notification over the next 2 quarters; zero water-quality-related multi-line defect events."
+  },
+  {
+    "id": "SC-021",
+    "defect_type": "Rolled-in Scale",
+    "process_stage": "hot_rolling",
+    "non_conformance_description": "Embedded scale pattern found across the width of coil HR-2410, Line 1, first noticed at final visual inspection; no in-process alarm triggered.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Scale is embedded across full width -> descaler was not active during that pass.",
+      "Why 2: Descaler was not active -> the descaler was left in standby mode after a prior grade change that did not require descaling.",
+      "Why 3: Left in standby -> there is no automatic default-to-active state for the descaler between grade changes.",
+      "Why 4: No automatic default -> the descaler control was designed assuming operators would always manually re-enable it, without a fail-safe default.",
+      "Why 5 (root cause): the descaler control system has no fail-safe default-to-active state, relying entirely on manual operator re-enablement after any standby period."
+    ],
+    "root_cause": "The descaler control system defaults to whatever state it was last left in rather than fail-safing to active, so a standby setting from a prior grade silently carries over to the next run.",
+    "corrective_action": "Re-enable the descaler immediately; quarantine and downgrade the affected coil.",
+    "preventive_action": "Reconfigure the descaler control logic to default to active at the start of every new coil/heat, requiring explicit operator confirmation to enter standby rather than to exit it.",
+    "effectiveness_verification": "Zero descaler-standby-related scale defects over next 30 production days; control logic audit confirms default-active behavior verified in test."
+  },
+  {
+    "id": "SC-022",
+    "defect_type": "Rolled-in Scale",
+    "process_stage": "hot_rolling",
+    "non_conformance_description": "Localized rolled-in scale patches on coil HR-2455, appearing intermittently rather than continuously, Line 3.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.3",
+    "five_why": [
+      "Why 1: Scale appears intermittently -> descaler spray pressure fluctuates rather than staying constant.",
+      "Why 2: Pressure fluctuates -> the descaler pump's pressure regulator is aging and no longer holds a stable setpoint.",
+      "Why 3: Regulator is aging -> it is past its manufacturer-recommended service life but has no replacement scheduled.",
+      "Why 4: No replacement scheduled -> the plant's preventive maintenance plan does not include a defined service-life-based replacement schedule for this component class.",
+      "Why 5 (root cause): the preventive maintenance plan tracks failure-based repair for pressure regulators but has no proactive service-life-based replacement schedule for this component class."
+    ],
+    "root_cause": "The preventive maintenance plan lacks a service-life-based replacement schedule for descaler pressure regulators, so aging units are only addressed reactively after failure symptoms appear.",
+    "corrective_action": "Replace the aging pressure regulator immediately; inspect recent coils for intermittent scale patterns.",
+    "preventive_action": "Add descaler pressure regulators to the PM plan with a proactive, service-life-based replacement schedule per manufacturer recommendation, rather than run-to-failure.",
+    "effectiveness_verification": "Pressure stability logs show setpoint held within tolerance over next 60 days; zero intermittent scale defects in that window."
+  },
+  {
+    "id": "SC-023",
+    "defect_type": "Rolled-in Scale",
+    "process_stage": "hot_rolling",
+    "non_conformance_description": "Coil HR-2470 showed rolled-in scale concentrated at the leading edge only, Line 2 morning shift, first coil after a cold start following a weekend shutdown.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Scale concentrated at leading edge only -> descaler water was not yet at operating pressure when the leading edge passed through.",
+      "Why 2: Water not at pressure -> the descaler pump takes several minutes to reach full pressure after a cold start.",
+      "Why 3: Pump not pre-started -> the startup checklist sequences descaler activation after, not before, strip threading.",
+      "Why 4: Sequencing is after threading -> the checklist was written around minimizing water usage during idle periods rather than around descaler readiness timing.",
+      "Why 5 (root cause): the startup checklist sequence was optimized for water conservation during idle time rather than for ensuring descaler pressure readiness before the leading edge reaches the descaler."
+    ],
+    "root_cause": "The startup checklist sequences descaler pump activation after strip threading (to conserve water during idle time), which does not allow enough lead time for the pump to reach operating pressure before the leading edge passes through.",
+    "corrective_action": "Trim and downgrade the affected leading-edge section; re-sequence remaining startup for this shift to pre-start the descaler.",
+    "preventive_action": "Revise the startup checklist to activate the descaler pump a defined lead time (based on measured pressure ramp-up) before strip threading begins, accepting the minor water-usage tradeoff.",
+    "effectiveness_verification": "Zero leading-edge scale defects over the next 10 cold-start events; pressure logs confirm operating pressure reached before threading in each case."
+  },
+  {
+    "id": "SC-024",
+    "defect_type": "Rolled-in Scale",
+    "process_stage": "hot_rolling",
+    "non_conformance_description": "Scale defect found on a single coil (HR-2481) traced to an operator manually bypassing the descaler for a rush order to save cycle time.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.4 (error-proofing)",
+    "five_why": [
+      "Why 1: Descaler was bypassed -> the operator manually disabled it to meet a rush delivery deadline.",
+      "Why 2: Operator felt able to bypass it -> the descaler bypass function is accessible without any supervisory authorization or system log entry.",
+      "Why 3: No authorization required -> the bypass control was originally added for maintenance testing purposes, not intended for production use, but was never access-restricted.",
+      "Why 4: Never access-restricted -> when the bypass feature was added, there was no formal review of its production-floor access implications.",
+      "Why 5 (root cause): the descaler bypass function, added for maintenance testing, was never access-restricted or logged, leaving it available for undocumented use during production under schedule pressure."
+    ],
+    "root_cause": "The descaler bypass control, intended only for maintenance testing, was never access-restricted or logged, making it available for unauthorized production-floor use under schedule pressure.",
+    "corrective_action": "Downgrade or scrap the affected coil; counsel the operator per standard practice and communicate the schedule-pressure concern to supervision for resolution.",
+    "preventive_action": "Restrict the descaler bypass function to supervisor-level access with mandatory system logging of every activation, including a required reason code.",
+    "effectiveness_verification": "Bypass activation log shows zero unauthorized uses over next 90 days; 100% of legitimate maintenance bypasses have reason codes logged."
+  },
+  {
+    "id": "SC-025",
+    "defect_type": "Rolled-in Scale",
+    "process_stage": "hot_rolling",
+    "non_conformance_description": "Low-level rolled-in scale (isolated spots, not continuous) found sporadically across Line 1 over two months, no clear correlation with shift, grade, or equipment identified by initial investigation.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Sporadic isolated spots with no clear correlation -> descaler nozzles intermittently clog with fine debris rather than fully blocking.",
+      "Why 2: Intermittent clogging -> incoming descaler water is not filtered finely enough to catch the fine particulate causing partial clogs.",
+      "Why 3: Filtration insufficient -> the water filtration system's mesh size was specified based on the original 1990s equipment generation and was never updated when nozzles were upgraded to finer-spray models.",
+      "Why 4: Never updated -> equipment upgrades (nozzles) and utility specifications (filtration) are managed by separate teams without a cross-check step at upgrade time.",
+      "Why 5 (root cause): nozzle upgrades and water filtration specifications are managed by separate teams with no cross-check step, so a nozzle upgrade to finer spray tolerances was never matched with a corresponding filtration upgrade."
+    ],
+    "root_cause": "Equipment upgrades (descaler nozzles) and utility specifications (water filtration mesh size) are managed by separate teams with no cross-check step at upgrade time, so filtration was never matched to the finer nozzle tolerances introduced years ago.",
+    "corrective_action": "Add an interim finer in-line filter ahead of the descaler header on Line 1; flush and inspect current nozzles for partial clogs.",
+    "preventive_action": "Establish a cross-functional sign-off requirement between equipment engineering and utilities whenever nozzle/spray equipment is upgraded, explicitly checking upstream filtration compatibility.",
+    "effectiveness_verification": "Sporadic scale defect rate drops to near zero over the next 60 days; documented cross-check sign-off present for the next equipment upgrade as a process test."
+  },
+  {
+    "id": "SC-026",
+    "defect_type": "Scratches",
+    "process_stage": "finishing",
+    "non_conformance_description": "Linear scratches found on multiple coils during final packaging inspection, Line 2, all oriented the same direction consistent with handling equipment contact.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Consistent-direction linear scratches -> the coil is contacting a fixed guide surface during transfer to packaging.",
+      "Why 2: Contact with guide surface -> a transfer roller's protective sleeve has worn through, exposing bare metal.",
+      "Why 3: Sleeve worn through -> sleeve wear inspection is visual-only and was scheduled but missed during the last two rounds.",
+      "Why 4: Inspection missed -> the sleeve inspection task is not tracked in the digital maintenance system, only on a paper rotation sheet.",
+      "Why 5 (root cause): sleeve inspection tasks live on a manual paper rotation sheet outside the digital maintenance tracking system, making missed inspections invisible to the compliance dashboard."
+    ],
+    "root_cause": "Transfer roller sleeve inspection is tracked on a manual paper sheet outside the digital maintenance system, so missed inspections are not visible on the compliance dashboard and go unnoticed.",
+    "corrective_action": "Replace the worn roller sleeve immediately; inspect coils processed since the sleeve wear likely began.",
+    "preventive_action": "Migrate transfer roller sleeve inspection into the digital maintenance tracking system with the same missed-task alerting used for other critical PM items.",
+    "effectiveness_verification": "Zero missed sleeve inspections over next 90 days per digital system records; zero recurrence of transfer-roller scratch defects."
+  },
+  {
+    "id": "SC-027",
+    "defect_type": "Scratches",
+    "process_stage": "finishing",
+    "non_conformance_description": "Single deep scratch found on coil FN-0512 during customer receiving inspection; internal records show no defect flagged before shipment.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2 (customer complaint)",
+    "five_why": [
+      "Why 1: Deep scratch reached customer undetected -> the defect occurred during loading, after the final quality inspection point.",
+      "Why 2: Occurred after inspection -> the loading dock crane's coil sling made direct metal-to-metal contact during transfer.",
+      "Why 3: Direct metal contact -> the protective sling padding had not been replaced despite visible wear noted by the dock crew informally.",
+      "Why 4: Not replaced despite informal notice -> there is no formal reporting channel for dock crew to flag equipment condition issues to maintenance; concerns are passed verbally and can be lost.",
+      "Why 5 (root cause): dock crew equipment-condition concerns are communicated informally with no formal reporting channel, so a known padding-wear issue was never converted into a tracked maintenance action."
+    ],
+    "root_cause": "There is no formal reporting channel for loading-dock crew to flag equipment condition concerns to maintenance, so informally-raised issues (like sling padding wear) are not tracked or actioned.",
+    "corrective_action": "Replace the sling padding immediately; process the customer complaint per procedure (credit/replacement); inspect other slings plant-wide.",
+    "preventive_action": "Create a simple formal reporting channel (e.g., a logged tag-out or digital form) for floor/dock staff to flag equipment condition concerns, feeding directly into the maintenance work-order queue.",
+    "effectiveness_verification": "Zero loading-related scratch complaints over next quarter; reporting channel shows active use with tracked resolution times."
+  },
+  {
+    "id": "SC-028",
+    "defect_type": "Scratches",
+    "process_stage": "finishing",
+    "non_conformance_description": "Recurring fine scratches noted by quality on Line 4 across a shift, all short and randomly oriented, not matching any single equipment contact point.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.3",
+    "five_why": [
+      "Why 1: Random short scratches with no single contact point -> loose metallic debris is present on a contact surface, causing intermittent scoring.",
+      "Why 2: Debris present -> housekeeping/cleaning of the finishing line contact surfaces is done at end-of-shift only, not during the shift.",
+      "Why 3: Cleaning only at end-of-shift -> the cleaning SOP was designed around the original single-shift operation and never updated for the plant's current 3-shift continuous operation.",
+      "Why 4: Never updated for 3-shift operation -> SOP revision typically happens reactively when a specific incident triggers review, and no incident had previously been traced to this cause.",
+      "Why 5 (root cause): the finishing line cleaning SOP still reflects single-shift-era assumptions and was never revisited when the plant moved to continuous 3-shift operation, since SOP updates are triggered reactively rather than by operational-change review."
+    ],
+    "root_cause": "The finishing line cleaning SOP was written for single-shift operation and was never revisited when the plant moved to continuous 3-shift operation, since SOPs are only updated reactively after an incident, not proactively when operations change.",
+    "corrective_action": "Perform an immediate mid-shift cleaning of contact surfaces on Line 4; inspect coils processed since the last cleaning.",
+    "preventive_action": "Revise the cleaning SOP to include mid-shift cleaning cycles matched to the current 3-shift operating pattern, and add a trigger requiring SOP review whenever operating patterns (shift structure, line speed, etc.) change.",
+    "effectiveness_verification": "Debris-related scratch defect rate drops to near zero over next 30 days; SOP revision log shows the new operational-change review trigger documented."
+  },
+  {
+    "id": "SC-029",
+    "defect_type": "Scratches",
+    "process_stage": "finishing",
+    "non_conformance_description": "Scratches found concentrated on the underside of coils only, Line 3, coinciding with the introduction of a new coil-turning device two weeks prior.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Scratches only on underside -> the new coil-turning device contacts the underside surface during rotation.",
+      "Why 2: Device contacts surface -> the turning device's contact pads were specified for a different (thicker gauge) product than currently running.",
+      "Why 3: Pads specified for wrong gauge -> the equipment procurement spec referenced the plant's most common historical product mix, not the current mix which has shifted toward thinner gauges.",
+      "Why 4: Spec based on historical mix -> there was no product-mix review step in the equipment procurement process to check against current/forecasted production.",
+      "Why 5 (root cause): the equipment procurement process specifies contact components based on historical product mix without a required check against current or forecasted product mix at time of purchase."
+    ],
+    "root_cause": "Equipment procurement specifications were based on historical product mix without a required check against the current/forecasted product mix, so contact pads suited to thicker gauge were installed for a plant now running thinner gauges more often.",
+    "corrective_action": "Replace the turning device contact pads with a gauge-appropriate variant; inspect coils processed since installation.",
+    "preventive_action": "Add a mandatory current/forecasted product-mix review step to the equipment procurement checklist for any component specified against product dimensions.",
+    "effectiveness_verification": "Zero turning-device-related scratches over next 30 days with new pads installed; procurement checklist audit confirms product-mix review documented for next equipment purchase."
+  },
+  {
+    "id": "SC-030",
+    "defect_type": "Scratches",
+    "process_stage": "finishing",
+    "non_conformance_description": "Isolated scratch complaint from a single customer order, traced to in-transit handling rather than plant-internal cause, following root-cause review with the logistics partner.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2 (customer complaint, external cause)",
+    "five_why": [
+      "Why 1: Scratch present at customer receiving -> damage occurred during third-party transport, not at the plant.",
+      "Why 2: Damage occurred in transport -> the coil was loaded without the agreed protective wrap specified in the shipping instruction.",
+      "Why 3: Protective wrap omitted -> the shipping instruction was attached to the order documentation but not physically present at the loading bay for the third-party carrier's crew.",
+      "Why 4: Not present at loading bay -> shipping instructions are emailed to the logistics coordinator but not printed/posted at the physical loading point for carrier crews who may not have email access.",
+      "Why 5 (root cause): shipping/packaging instructions are distributed digitally to the logistics coordinator only, with no requirement that they be physically present at the loading bay for third-party carrier crews to reference."
+    ],
+    "root_cause": "Shipping and packaging instructions are distributed only via email to the internal logistics coordinator, with no requirement that they be physically posted at the loading bay where third-party carrier crews, who may lack email access, actually load the product.",
+    "corrective_action": "Process the customer complaint per procedure; notify the logistics partner of the gap for this shipment and confirm corrective packaging on any remaining order quantity.",
+    "preventive_action": "Require a printed/posted copy of shipping and packaging instructions at the physical loading bay for every order, verified by the logistics coordinator before loading begins, independent of the digital record.",
+    "effectiveness_verification": "Zero transport-related scratch complaints traced to missing wrap over the next quarter; loading bay audit confirms physical instructions present for a sample of outbound orders."
+  },
+  {
+    "id": "SC-031",
+    "defect_type": "Crescent Gap",
+    "process_stage": "cold_rolling",
+    "non_conformance_description": "Half-circle-shaped material loss defect found at the trailing edge of sheared sheets from Line 4 shear station, roughly 1 in 30 sheets affected over the shift.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Crescent-shaped gap at trailing edge -> the shear blade made an incomplete, curved cut rather than a clean straight cut.",
+      "Why 2: Incomplete curved cut -> the shear blade has localized wear at the specific contact point corresponding to this sheet length.",
+      "Why 3: Localized wear at that point -> the shear has been running the same sheet length repeatedly for an extended run without lateral blade-position rotation.",
+      "Why 4: No lateral rotation performed -> the shear maintenance SOP does not include a periodic blade-position rotation step to distribute wear.",
+      "Why 5 (root cause): the shear maintenance SOP has no periodic blade-position rotation requirement, so extended runs at a fixed cut length concentrate wear at a single contact point instead of distributing it."
+    ],
+    "root_cause": "The shear maintenance SOP has no periodic blade-position rotation step, so long runs at a single cut length concentrate blade wear at one contact point rather than distributing it across the blade.",
+    "corrective_action": "Rotate or replace the shear blade at the worn position immediately; inspect and disposition affected sheets from the current run.",
+    "preventive_action": "Add a periodic blade-position rotation step to the shear maintenance SOP, triggered by cumulative cut count at a fixed length rather than calendar time alone.",
+    "effectiveness_verification": "Zero crescent gap defects over next 5,000 cuts at the same length; blade wear measurement confirms more even wear distribution at next scheduled inspection."
+  },
+  {
+    "id": "SC-032",
+    "defect_type": "Crescent Gap",
+    "process_stage": "cold_rolling",
+    "non_conformance_description": "Crescent gap defects appeared suddenly on Line 4 shear after a blade replacement earlier in the shift, affecting the first several sheets post-replacement.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.3",
+    "five_why": [
+      "Why 1: Defects appeared right after blade replacement -> the new blade was not aligned to the correct gap tolerance during installation.",
+      "Why 2: Alignment was incorrect -> the alignment gauge used was not the current calibrated version.",
+      "Why 3: Wrong gauge used -> a superseded gauge from a prior tooling generation was still present in the toolbox alongside the current one.",
+      "Why 4: Superseded gauge still present -> there is no formal process for removing/red-tagging obsolete tooling when a replacement gauge is introduced.",
+      "Why 5 (root cause): obsolete alignment gauges are not formally removed or red-tagged when replacement tooling is introduced, leaving superseded tools available for accidental use."
+    ],
+    "root_cause": "There is no formal process for removing or red-tagging obsolete alignment gauges when replacement tooling is introduced, so a superseded gauge remained available in the toolbox and was used by mistake.",
+    "corrective_action": "Re-align the blade using the correct current gauge; inspect and disposition the affected first-run sheets.",
+    "preventive_action": "Implement a formal red-tag/removal process for obsolete tooling whenever a replacement is introduced, with toolbox audits to confirm only current-generation tools remain accessible.",
+    "effectiveness_verification": "Zero misalignment incidents traced to obsolete tooling over next 90 days; toolbox audit confirms no superseded gauges present."
+  },
+  {
+    "id": "SC-033",
+    "defect_type": "Crescent Gap",
+    "process_stage": "cold_rolling",
+    "non_conformance_description": "Gradually worsening crescent gap severity noted across a full week on Line 4, not tied to any single maintenance event.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Gradually worsening defect -> shear blade clearance is slowly increasing over time.",
+      "Why 2: Clearance increasing -> the blade mounting bolts are gradually loosening under repeated shear-impact vibration.",
+      "Why 3: Bolts loosening -> standard (non-locking) fasteners are used at the blade mount, with no vibration-resistant hardware.",
+      "Why 4: Non-locking fasteners used -> the original equipment specification predates the plant's current higher shear cycle rate, which increased vibration loading beyond original design assumptions.",
+      "Why 5 (root cause): the shear blade mount uses standard non-locking fasteners specified under an older, lower cycle-rate assumption, and the hardware was never upgraded when the plant's cycle rate increased."
+    ],
+    "root_cause": "Standard non-locking fasteners at the shear blade mount were specified under an older, lower cycle-rate assumption and were never upgraded to vibration-resistant hardware when the plant's shear cycle rate increased.",
+    "corrective_action": "Re-torque blade mounting bolts to spec immediately; inspect and disposition affected sheets from the degrading-severity window.",
+    "preventive_action": "Upgrade shear blade mount fasteners to vibration-resistant (e.g., nylon-insert or spring-lock) hardware rated for the current cycle rate, and add bolt-torque verification to the PM schedule.",
+    "effectiveness_verification": "Torque-check logs show mounting bolts holding spec over next 60 days; zero progressive crescent-gap-severity trends observed."
+  },
+  {
+    "id": "SC-034",
+    "defect_type": "Crescent Gap",
+    "process_stage": "cold_rolling",
+    "non_conformance_description": "New operator on Line 4 produced a batch of sheets with crescent gap defects during their first solo shift on the shear station.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.3 (training-related)",
+    "five_why": [
+      "Why 1: New operator's batch shows defects -> the operator set an incorrect blade gap for the material thickness being run.",
+      "Why 2: Incorrect gap set -> the operator was not aware the gap setting must change per material thickness, not just per product length.",
+      "Why 3: Not aware of thickness dependency -> the training program covers length-setting procedure in detail but only briefly mentions thickness-dependent gap adjustment.",
+      "Why 4: Training under-covers this -> the training curriculum was developed primarily around the most common product thickness run at the time, and was not revised as thickness variety increased.",
+      "Why 5 (root cause): the shear operator training curriculum under-emphasizes thickness-dependent gap adjustment because it was developed when thickness variety was lower and was never revised as the product mix diversified."
+    ],
+    "root_cause": "The shear operator training curriculum was developed when the plant ran a narrower range of material thicknesses and under-emphasizes thickness-dependent blade gap adjustment; it was never revised as thickness variety in the product mix increased.",
+    "corrective_action": "Correct the blade gap setting for the current material; inspect and disposition the affected batch; have a qualified operator review the remainder of the shift's output.",
+    "preventive_action": "Revise the shear operator training curriculum to give thickness-dependent gap adjustment equal emphasis to length setting, including a hands-on competency check across at least 3 representative thicknesses before solo certification.",
+    "effectiveness_verification": "Zero thickness-related crescent gap defects from newly certified operators over next 6 months; training records show updated curriculum delivered and competency-checked."
+  },
+  {
+    "id": "SC-035",
+    "defect_type": "Crescent Gap",
+    "process_stage": "cold_rolling",
+    "non_conformance_description": "Crescent gap defects found only on sheets from a specific coil (source coil CR-0620), not on adjacent coils processed on the same shear the same day.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Defects isolated to one source coil -> that coil's material hardness was outside the shear's validated range.",
+      "Why 2: Hardness outside range -> the coil came from a heat that had a documented hardness deviation, flagged at an earlier stage but not carried forward.",
+      "Why 3: Deviation not carried forward -> the hardness flag from the casting/rolling stage is recorded in the metallurgical system but not linked to the coil ID used on the shear floor.",
+      "Why 4: Systems not linked -> the metallurgical tracking system and the shop-floor coil tracking system were implemented separately and were never integrated to pass forward quality flags.",
+      "Why 5 (root cause): the metallurgical quality tracking system and the shop-floor coil tracking system are not integrated, so upstream quality flags (like a hardness deviation) do not automatically follow the coil ID to downstream operations like shearing."
+    ],
+    "root_cause": "The metallurgical quality tracking system and the shop-floor coil tracking system are not integrated, so an upstream hardness deviation flag did not automatically follow the coil ID forward to the shear station, where it would have prompted a gap-setting adjustment.",
+    "corrective_action": "Isolate and disposition remaining material from the flagged coil; adjust shear gap setting appropriately if the coil is still to be processed.",
+    "preventive_action": "Integrate the metallurgical quality tracking system with the shop-floor coil tracking system (or implement an interim manual flag-transfer step) so upstream quality deviations are visible at every downstream operation referencing that coil ID.",
+    "effectiveness_verification": "Zero downstream defects traced to un-forwarded upstream quality flags over the next 90 days; system integration (or interim process) verified functional via test case."
+  },
+  {
+    "id": "SC-036",
+    "defect_type": "Waist Folding",
+    "process_stage": "forging",
+    "non_conformance_description": "Visible folds/wrinkles found at the waist section of forged components from Press 2, affecting roughly 5% of the day's output, associated with a recent die change.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Folds appear at waist section -> excessive local material deformation occurred during die fill.",
+      "Why 2: Excessive deformation -> the newly installed die had a slightly different fillet radius than the previous validated die.",
+      "Why 3: Different fillet radius -> the replacement die was machined from an updated drawing revision that was not cross-checked against the validated forging parameters.",
+      "Why 4: Not cross-checked -> die drawing revisions and forging parameter validation are managed as separate approval workflows with no linkage requirement.",
+      "Why 5 (root cause): die drawing revision approval and forging process parameter validation are handled as separate, unlinked workflows, so a geometry change (fillet radius) was not automatically flagged for re-validation against existing forging parameters."
+    ],
+    "root_cause": "Die drawing revisions and forging process parameter validation are approved through separate, unlinked workflows, so a geometry change like fillet radius does not automatically trigger re-validation of the forging parameters that depend on it.",
+    "corrective_action": "Revert to the previous validated die or adjust forging parameters for the new fillet radius; disposition affected components.",
+    "preventive_action": "Link the die drawing revision approval workflow to a mandatory forging-parameter re-validation step whenever die geometry changes, before the new die is released to production.",
+    "effectiveness_verification": "Zero waist folding defects over next 500 forged components with the new die; process audit confirms re-validation step completed and documented for the die."
+  },
+  {
+    "id": "SC-037",
+    "defect_type": "Waist Folding",
+    "process_stage": "forging",
+    "non_conformance_description": "Waist folding defects appeared intermittently on Press 3 across a shift, with severity varying part to part rather than being consistent.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.3",
+    "five_why": [
+      "Why 1: Severity varies part to part -> billet preheat temperature is inconsistent between parts.",
+      "Why 2: Preheat inconsistent -> the induction heater's temperature uniformity has degraded.",
+      "Why 3: Uniformity degraded -> one of the induction coil sections has partial insulation breakdown, reducing localized heating efficiency.",
+      "Why 4: Insulation breakdown undetected -> the induction heater's condition monitoring only checks overall output power, not zone-by-zone temperature uniformity.",
+      "Why 5 (root cause): induction heater condition monitoring tracks only total output power, not zone-by-zone temperature uniformity, so a localized insulation breakdown affecting one coil section goes undetected while overall power reads normal."
+    ],
+    "root_cause": "The induction heater's condition monitoring only tracks total output power, not zone-by-zone temperature uniformity, so a localized insulation breakdown in one coil section goes undetected as long as overall power output appears normal.",
+    "corrective_action": "Repair or replace the affected induction coil section; inspect and disposition parts forged during the degraded-uniformity period.",
+    "preventive_action": "Upgrade induction heater condition monitoring to include zone-by-zone temperature measurement (e.g., multi-point pyrometry) rather than relying on total output power alone.",
+    "effectiveness_verification": "Zone temperature logs show uniform heating within tolerance across all zones over next 30 days; zero preheat-related waist folding defects in that window."
+  },
+  {
+    "id": "SC-038",
+    "defect_type": "Waist Folding",
+    "process_stage": "forging",
+    "non_conformance_description": "A batch of components from Press 2 showed waist folding traced to an incorrect billet size being fed into the press.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Incorrect billet size fed -> a billet from a different product's cut schedule was mixed into the current run's staging area.",
+      "Why 2: Mixed into staging -> billets for multiple upcoming product runs are staged in a shared area without size-specific segregation.",
+      "Why 3: No segregation -> the staging area layout was designed when the plant ran fewer concurrent product variants.",
+      "Why 4: Layout not updated -> facility layout changes require a capital-request process that has a long lead time, so informal workarounds (shared staging) developed instead.",
+      "Why 5 (root cause): the billet staging area layout, designed for fewer concurrent product variants, was never updated to add size-specific segregation because facility layout changes go through a slow capital-request process, leaving shared, unsegregated staging as the ongoing informal workaround."
+    ],
+    "root_cause": "The billet staging area lacks size-specific segregation because updating the physical layout requires a slow capital-request process, so mixed staging has persisted as an informal workaround even as the plant's product variant count grew.",
+    "corrective_action": "Sort and segregate the current staging area by billet size immediately; inspect and disposition the affected batch.",
+    "preventive_action": "Implement a low-cost interim segregation measure (labeled bins/floor markings) for billet staging pending the longer-term capital-approved layout change, with a written procedure requiring segregated staging regardless of layout constraints.",
+    "effectiveness_verification": "Zero billet-mix-related defects over next 90 days; staging area audit confirms segregation markings and procedure compliance."
+  },
+  {
+    "id": "SC-039",
+    "defect_type": "Waist Folding",
+    "process_stage": "forging",
+    "non_conformance_description": "Waist folding severity increased noticeably after a recent press-speed increase intended to improve throughput on Press 1.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.3",
+    "five_why": [
+      "Why 1: Severity increased after speed change -> higher press speed reduced the time available for material flow into the die cavity before deformation.",
+      "Why 2: Reduced flow time caused folding -> the speed increase was approved based on throughput targets without a die-fill simulation check at the new speed.",
+      "Why 3: No die-fill check performed -> the throughput improvement project's approval criteria focused on cycle time and equipment capability, not on forming-quality risk.",
+      "Why 4: Quality risk not in approval criteria -> the throughput-improvement project template does not include a required forming-quality impact assessment step.",
+      "Why 5 (root cause): the throughput-improvement project approval template has no required forming-quality impact assessment step, so a speed change can be approved based solely on cycle-time and equipment-capability criteria."
+    ],
+    "root_cause": "The throughput-improvement project approval template does not require a forming-quality impact assessment, so process speed changes can be approved based only on cycle-time and equipment-capability criteria, without checking their effect on material flow and defect risk.",
+    "corrective_action": "Reduce press speed back toward the previous validated rate; disposition affected components produced at the higher speed.",
+    "preventive_action": "Add a mandatory forming-quality impact assessment (including die-fill simulation or trial-run defect-rate check) to the throughput-improvement project approval template for any process speed change.",
+    "effectiveness_verification": "Any future speed change shows documented quality impact assessment before approval; zero waist folding defects at the re-validated speed over next 500 parts."
+  },
+  {
+    "id": "SC-040",
+    "defect_type": "Waist Folding",
+    "process_stage": "forging",
+    "non_conformance_description": "Waist folding found on parts forged using a lubricant lot that was recently changed due to a supplier shortage, Press 3.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Folding appeared with new lubricant lot -> the substitute lubricant has different flow/friction characteristics, affecting material movement in the die.",
+      "Why 2: Different characteristics -> the substitute lubricant was sourced as an emergency measure during a supplier shortage without a formal equivalence trial.",
+      "Why 3: No equivalence trial performed -> emergency substitutions are handled outside the normal supplier/material change process, which is designed for planned changes with lead time.",
+      "Why 4: No emergency-substitution process exists -> the material change approval process assumes advance notice and does not define an expedited-but-still-controlled path for shortage situations.",
+      "Why 5 (root cause): the material/supplier change approval process only defines a path for planned changes with advance notice, with no expedited-but-controlled equivalence check defined for emergency shortage substitutions."
+    ],
+    "root_cause": "The material change approval process only accounts for planned substitutions with advance lead time; it has no defined expedited-but-controlled equivalence check for emergency shortage situations, so the substitute lubricant went into production without a formal check.",
+    "corrective_action": "Revert to the original lubricant if available, or perform an expedited friction/flow check on the substitute before continued use; disposition affected components.",
+    "preventive_action": "Define an expedited (e.g., 24-48 hour) equivalence-check path within the material change approval process specifically for emergency shortage substitutions, covering the minimum critical properties (friction/flow for lubricants) rather than skipping evaluation entirely.",
+    "effectiveness_verification": "Next emergency substitution event shows documented expedited equivalence check completed before use; zero lubricant-substitution-related folding defects going forward."
+  },
+  {
+    "id": "SC-041",
+    "defect_type": "Weld Line Defect",
+    "process_stage": "casting",
+    "non_conformance_description": "Incomplete fusion detected at a coil-to-coil weld joint during continuous line processing, causing an unplanned line stop when the joint failed under tension, Line 1.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.3",
+    "five_why": [
+      "Why 1: Weld joint failed under tension -> the weld had incomplete fusion across part of the joint width.",
+      "Why 2: Incomplete fusion occurred -> welding current was below the setpoint required for the current strip thickness.",
+      "Why 3: Current below setpoint -> the welder's parameter recipe had not been updated when the line began processing a new, thinner gauge range.",
+      "Why 4: Recipe not updated -> gauge-range changes are communicated to rolling/finishing teams but the welding station is not on the standard gauge-change notification list.",
+      "Why 5 (root cause): the welding station is not included on the standard notification list for gauge-range changes, so its parameter recipe was not updated when the plant began processing a new thinner gauge range."
+    ],
+    "root_cause": "The coil-welding station is not included on the standard gauge-range-change notification list used to update process parameters elsewhere in the plant, so its weld recipe was not updated for the new thinner gauge range.",
+    "corrective_action": "Update the welder parameter recipe for the current gauge range immediately; inspect welds made since the gauge range change for fusion quality.",
+    "preventive_action": "Add the coil-welding station to the standard gauge-range-change notification list, with a required parameter recipe update and verification weld test before resuming production after any gauge-range change.",
+    "effectiveness_verification": "Zero weld-related line stops over next 60 days; verification weld test on file for every subsequent gauge-range change."
+  },
+  {
+    "id": "SC-042",
+    "defect_type": "Weld Line Defect",
+    "process_stage": "casting",
+    "non_conformance_description": "Weld joint offset (misalignment) detected downstream during rolling, causing localized thickness variation and downgrade of the affected section, Line 2.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Downstream thickness variation -> the weld joint was misaligned laterally when the two coil ends were joined.",
+      "Why 2: Lateral misalignment -> the automatic edge-alignment guide at the welder was not engaged for this joint.",
+      "Why 3: Guide not engaged -> the operator manually aligned by eye because the automatic guide had a known intermittent fault reported the previous week.",
+      "Why 4: Known fault not yet fixed -> the reported fault was logged as low-priority since manual alignment was seen as an acceptable interim workaround.",
+      "Why 5 (root cause): the known intermittent fault on the automatic edge-alignment guide was classified as low-priority because manual alignment was treated as an acceptable interim workaround, without a documented tolerance comparison showing manual alignment could not reliably meet the same precision."
+    ],
+    "root_cause": "The automatic edge-alignment guide fault was classified as low-priority based on an assumption that manual alignment was an acceptable interim workaround, without verifying that manual alignment could actually meet the same tolerance as the automatic guide.",
+    "corrective_action": "Repair the automatic edge-alignment guide; downgrade the affected section per thickness-variation spec; re-verify alignment on subsequent welds until repair is complete.",
+    "preventive_action": "Require fault-priority classification for alignment-critical equipment to include a documented tolerance comparison against the proposed manual workaround before being downgraded to low-priority.",
+    "effectiveness_verification": "Zero weld-alignment-related thickness downgrades over next 60 days; fault-priority audit confirms tolerance comparison documented for the next similar fault classification."
+  },
+  {
+    "id": "SC-043",
+    "defect_type": "Weld Line Defect",
+    "process_stage": "casting",
+    "non_conformance_description": "Weld joint thickness variation exceeded spec on a joint made during a shift-change handover, Line 1.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.3",
+    "five_why": [
+      "Why 1: Thickness variation exceeded spec -> weld pressure setting was inconsistent with the intended recipe.",
+      "Why 2: Pressure inconsistent -> the incoming shift operator did not confirm the outgoing operator's in-progress weld parameters before taking over.",
+      "Why 3: No confirmation performed -> the shift handover checklist for the welding station does not include a parameter-confirmation step, only equipment-status items.",
+      "Why 4: Parameter confirmation missing from checklist -> the handover checklist was adapted from a general equipment-status template not specific to welding-parameter-sensitive stations.",
+      "Why 5 (root cause): the welding station shift-handover checklist was adapted from a generic equipment-status template and was never customized to include weld-parameter confirmation, a step specific to the sensitivity of this station."
+    ],
+    "root_cause": "The welding station's shift-handover checklist is a generic equipment-status template that was never customized to include weld-parameter confirmation, a step specifically needed for this parameter-sensitive station.",
+    "corrective_action": "Re-set weld pressure to the correct recipe value; disposition the affected joint's downstream material.",
+    "preventive_action": "Customize the welding station's shift-handover checklist to include explicit weld-parameter confirmation (pressure, current, timing) in addition to general equipment status.",
+    "effectiveness_verification": "Zero handover-related weld parameter deviations over next 30 shift changes; handover checklist audit confirms parameter confirmation step completed each time."
+  },
+  {
+    "id": "SC-044",
+    "defect_type": "Weld Line Defect",
+    "process_stage": "casting",
+    "non_conformance_description": "Weld defect found during scheduled destructive testing of a sample joint, not causing a line stop but indicating a systemic quality drift over the past month's welds.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Systemic drift found in sampled joints -> weld electrode condition has gradually degraded across the sampling period.",
+      "Why 2: Electrode condition degraded -> electrode replacement is based on a fixed cycle count that assumes uniform wear, but actual wear varies with the gauge range being welded.",
+      "Why 3: Fixed cycle count assumption -> the replacement schedule was set using wear data from a single reference gauge, not validated across the plant's full gauge range.",
+      "Why 4: Not validated across full range -> the original electrode life study only tested the most common gauge at the time and was not repeated as gauge variety expanded.",
+      "Why 5 (root cause): the electrode replacement schedule is based on a wear-life study conducted on a single reference gauge and was never re-validated as the plant's gauge-range variety expanded, so actual wear now varies from the assumption across different gauges."
+    ],
+    "root_cause": "The weld electrode replacement schedule is based on a wear-life study conducted on a single reference gauge that was never re-validated as the plant's product gauge-range variety expanded, so the fixed cycle-count assumption no longer matches actual wear across the current gauge range.",
+    "corrective_action": "Inspect and replace electrodes showing wear beyond tolerance immediately; expand destructive-test sampling temporarily to characterize the current drift extent.",
+    "preventive_action": "Re-validate the electrode wear-life study across the plant's current full gauge range and set a gauge-range-adjusted replacement schedule rather than a single fixed cycle count.",
+    "effectiveness_verification": "Destructive-test sampling over next quarter shows weld quality within spec across all gauge ranges; revised replacement schedule documented and in use."
+  },
+  {
+    "id": "SC-045",
+    "defect_type": "Weld Line Defect",
+    "process_stage": "casting",
+    "non_conformance_description": "Weld joint failure occurred shortly after a planned welder maintenance event, Line 2, first joint of the shift after restart.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.3",
+    "five_why": [
+      "Why 1: First post-maintenance joint failed -> weld parameters had reverted to factory default settings after the maintenance reset.",
+      "Why 2: Reverted to default -> the maintenance procedure required a controller reset that clears custom parameter recipes unless manually backed up first.",
+      "Why 3: Not backed up -> the maintenance work instruction does not include a parameter-backup step before performing a controller reset.",
+      "Why 4: Backup step missing -> the work instruction was written by the equipment vendor for generic maintenance and was adopted without adding plant-specific pre-work steps.",
+      "Why 5 (root cause): the welder maintenance work instruction, adopted directly from the equipment vendor's generic version, was never supplemented with a plant-specific parameter-backup step before controller resets."
+    ],
+    "root_cause": "The welder maintenance work instruction was adopted directly from the equipment vendor's generic version without adding a plant-specific step to back up custom weld parameters before performing a controller reset, so resets silently revert to factory defaults.",
+    "corrective_action": "Restore the correct weld parameter recipe immediately; inspect and disposition the failed joint and downstream material.",
+    "preventive_action": "Add a mandatory parameter-backup step to the welder maintenance work instruction before any controller reset, plus a post-maintenance parameter-verification check before resuming production.",
+    "effectiveness_verification": "Zero post-maintenance parameter-reversion incidents over next 10 maintenance events; verification check documented as completed each time."
+  },
+  {
+    "id": "SC-046",
+    "defect_type": "Water Spot",
+    "process_stage": "finishing",
+    "non_conformance_description": "Low-contrast staining found on finished coil FN-0601 surface, initially misidentified as oil spot during inspection before being confirmed as water spot via lab analysis.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Staining present -> residual moisture was not fully removed during the drying step.",
+      "Why 2: Moisture not removed -> drying air temperature was below the validated setpoint for the current line speed.",
+      "Why 3: Temperature below setpoint -> the drying unit's heater bank had one element offline, reducing total heat output.",
+      "Why 4: Element offline undetected -> the drying unit's control system reports average temperature across all elements, masking a single-element failure as a small overall deviation.",
+      "Why 5 (root cause): the drying unit's control system reports an averaged temperature across all heating elements rather than per-element status, so a single failed element is masked as a minor overall deviation instead of being flagged as a fault."
+    ],
+    "root_cause": "The drying unit's control system reports only an averaged temperature across all heater elements, masking a single failed element as a small overall deviation rather than surfacing it as a distinct fault.",
+    "corrective_action": "Replace the failed heater element immediately; re-dry or disposition affected coils.",
+    "preventive_action": "Upgrade the drying unit's control system to monitor and report per-element status, with an alarm for any individual element reading outside expected range regardless of the averaged total.",
+    "effectiveness_verification": "Per-element temperature logs show all elements within range over next 30 days; zero water-spot defects traced to drying insufficiency in that window."
+  },
+  {
+    "id": "SC-047",
+    "defect_type": "Oil Spot",
+    "process_stage": "finishing",
+    "non_conformance_description": "Oil spot staining found on coil FN-0615, traced to residual rolling lubricant not fully removed during the cleaning stage prior to finishing.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Residual lubricant present -> cleaning stage effectiveness was reduced for this coil.",
+      "Why 2: Reduced effectiveness -> cleaning solution concentration had dropped below the validated range.",
+      "Why 3: Concentration dropped -> the automatic concentration-replenishment system had not been recalibrated after a recent solution reformulation by the chemical supplier.",
+      "Why 4: Not recalibrated -> supplier reformulation notices are received by procurement but are not routinely forwarded to the process engineering team responsible for replenishment system calibration.",
+      "Why 5 (root cause): supplier reformulation notices are received by procurement but there is no defined process for forwarding them to process engineering, so replenishment system calibration was not updated for the new solution concentration profile."
+    ],
+    "root_cause": "There is no defined process for forwarding chemical supplier reformulation notices from procurement to process engineering, so the cleaning solution replenishment system's calibration was not updated after a supplier reformulation changed the concentration profile.",
+    "corrective_action": "Recalibrate the concentration-replenishment system to the new solution profile immediately; re-clean or disposition affected coils.",
+    "preventive_action": "Establish a defined process requiring procurement to forward all supplier reformulation notices for process chemicals to process engineering, with a required calibration review within a set timeframe of receipt.",
+    "effectiveness_verification": "Zero oil-spot defects traced to concentration drift over next 60 days; documented calibration review on file for the next supplier reformulation notice received."
+  },
+  {
+    "id": "SC-048",
+    "defect_type": "Water Spot",
+    "process_stage": "finishing",
+    "non_conformance_description": "Intermittent water spot staining on Line 2 finishing, correlating loosely with humid ambient conditions on certain days.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.3",
+    "five_why": [
+      "Why 1: Correlates with humid days -> the drying step's fixed-duration setting does not compensate for ambient humidity variation.",
+      "Why 2: Fixed duration regardless of humidity -> the drying process was originally validated and set under a single reference humidity condition.",
+      "Why 3: Single reference condition -> the plant does not have humidity-adaptive drying control, only a fixed time/temperature recipe.",
+      "Why 4: No humidity-adaptive control -> humidity-adaptive drying was not included in the original equipment specification because ambient humidity variation was not identified as a risk factor during design.",
+      "Why 5 (root cause): the original drying equipment specification did not identify ambient humidity variation as a risk factor, so the system was designed with a fixed time/temperature recipe rather than humidity-adaptive control."
+    ],
+    "root_cause": "The drying equipment was specified with a fixed time/temperature recipe because ambient humidity variation was not identified as a risk factor during the original equipment design, so the system has no way to compensate on high-humidity days.",
+    "corrective_action": "Manually extend drying duration on days with elevated ambient humidity per a temporary supervisor-directed adjustment; inspect coils processed on recent humid days.",
+    "preventive_action": "Evaluate and, if justified, retrofit humidity-adaptive drying control (e.g., a humidity sensor feeding an adjustable duration/temperature setpoint); in the interim, formalize the humidity-based manual adjustment as a documented procedure rather than an ad hoc supervisor call.",
+    "effectiveness_verification": "Zero humidity-correlated water spot defects over the next full season of varying ambient conditions once interim procedure or retrofit is in place."
+  },
+  {
+    "id": "SC-049",
+    "defect_type": "Oil Spot",
+    "process_stage": "finishing",
+    "non_conformance_description": "Oil spot found concentrated near the coil core (innermost wraps) rather than distributed across the coil, Line 3.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Concentrated near core -> lubricant pooled in the innermost wraps during coiling before it could be wiped/cleaned.",
+      "Why 2: Lubricant pooled -> the wiper roll pressure was insufficient to fully remove lubricant at the point the innermost wraps pass through.",
+      "Why 3: Insufficient pressure -> the wiper roll's pneumatic pressure cylinder has a slow leak, gradually losing pressure through a run.",
+      "Why 4: Slow leak present -> the pneumatic cylinder was last serviced beyond its recommended seal-replacement interval.",
+      "Why 5 (root cause): the wiper roll pneumatic cylinder's seal-replacement interval was exceeded because seal condition is only checked reactively when a leak becomes obviously noticeable, not on a scheduled preventive basis."
+    ],
+    "root_cause": "The wiper roll pneumatic cylinder's seals are only inspected reactively once a leak becomes obviously noticeable, rather than on a scheduled preventive interval, allowing a slow leak to develop and gradually reduce wiping pressure undetected.",
+    "corrective_action": "Replace the pneumatic cylinder seals immediately; re-clean or disposition affected coil core sections.",
+    "preventive_action": "Add wiper roll pneumatic cylinder seal replacement to the scheduled preventive maintenance plan at the manufacturer-recommended interval, rather than relying on reactive leak detection.",
+    "effectiveness_verification": "Cylinder pressure logs remain stable across full production runs over next 60 days; zero core-concentrated oil spot defects in that window."
+  },
+  {
+    "id": "SC-050",
+    "defect_type": "Water Spot",
+    "process_stage": "finishing",
+    "non_conformance_description": "Customer complaint received citing water spot staining discovered after the customer's own storage period; internal shipment inspection had passed the coil.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2 (customer complaint, latent defect)",
+    "five_why": [
+      "Why 1: Staining appeared after storage, not at shipment -> moisture was present at a level below visible detection at shipment but sufficient to cause staining over time.",
+      "Why 2: Below-visible-detection moisture present -> the plant's drying validation targets visible dryness at inspection, not a moisture-content threshold tied to extended storage staining risk.",
+      "Why 3: Validation targets visible dryness only -> the drying process specification was written before extended customer storage periods became common in the sales agreements offered.",
+      "Why 4: Spec not updated for storage terms -> there is no linkage between changes in customer-facing storage/warranty terms and a review of the underlying process specifications that must support those terms.",
+      "Why 5 (root cause): there is no process linking changes in customer-facing storage or warranty terms to a review of the underlying manufacturing process specifications (like drying moisture thresholds) that need to support those extended terms."
+    ],
+    "root_cause": "There is no process linking changes in customer-facing storage/warranty terms to a required review of underlying manufacturing process specifications, so the drying process's visible-dryness-only target was never updated to a stricter moisture-content threshold when extended storage terms began being offered to customers.",
+    "corrective_action": "Process the customer complaint per procedure; test recent shipments' moisture content against a newly-established threshold and disposition as needed.",
+    "preventive_action": "Establish a defined moisture-content threshold for drying validation (not just visible dryness) calibrated to the longest storage period offered in current sales terms, and add a review trigger requiring process specification review whenever customer-facing storage/warranty terms change.",
+    "effectiveness_verification": "Moisture-content testing shows compliance with the new threshold across a sample of shipments over next quarter; zero storage-related water spot complaints in that period."
+  },
+  {
+    "id": "SC-051",
+    "defect_type": "Crazing",
+    "process_stage": "hot_rolling",
+    "non_conformance_description": "Line 2 afternoon shift: fine surface cracking found on coil HR-2530, coinciding with the first coil run after a planned furnace refractory repair.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Cracking on first post-repair coil -> furnace zone-1 ran hotter than setpoint during initial post-repair operation.",
+      "Why 2: Zone-1 ran hot -> new refractory patch had different thermal conductivity than the surrounding original lining, causing a local hot spot.",
+      "Why 3: Different conductivity not accounted for -> the repair used a general-purpose refractory patch material rather than one matched to the original lining's thermal properties.",
+      "Why 4: Wrong material used -> the refractory repair procedure does not specify a required thermal-conductivity match for patch material.",
+      "Why 5 (root cause): the furnace refractory repair procedure specifies patch application method but not a thermal-conductivity matching requirement for the patch material relative to the original lining."
+    ],
+    "root_cause": "The furnace refractory repair procedure does not require the patch material's thermal conductivity to match the original lining, allowing a mismatched patch to create an undetected local hot spot after repair.",
+    "corrective_action": "Identify and correct the hot-spot zone temperature; downgrade the affected coil.",
+    "preventive_action": "Add a thermal-conductivity matching requirement to the refractory repair procedure, with a post-repair thermal scan before the furnace is released to production.",
+    "effectiveness_verification": "Post-repair thermal scans show no hot spots over next 5 refractory repairs; zero post-repair crazing defects in that window."
+  },
+  {
+    "id": "SC-052",
+    "defect_type": "Crazing",
+    "process_stage": "hot_rolling",
+    "non_conformance_description": "Line 1 night shift: crazing found on coil HR-2545, correlating with a recent change in incoming slab supplier for this grade.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.3",
+    "five_why": [
+      "Why 1: Crazing correlates with new slab supplier -> the new supplier's slab has a different as-cast grain structure than the previous supplier.",
+      "Why 2: Different grain structure -> the new supplier uses a different continuous casting cooling rate than assumed in the plant's rolling parameters.",
+      "Why 3: Cooling rate difference not known -> the supplier-qualification process for slab did not request or review the supplier's casting process parameters, only final chemistry and dimensions.",
+      "Why 4: Casting process not reviewed -> the incoming material qualification checklist for slab suppliers covers chemistry/dimensional specs only.",
+      "Why 5 (root cause): the slab supplier qualification checklist does not request or review upstream casting process parameters (like cooling rate) that affect downstream grain structure and thermal cracking susceptibility."
+    ],
+    "root_cause": "The slab supplier qualification process only reviews final chemistry and dimensions, not upstream casting process parameters like cooling rate, so a grain-structure difference relevant to thermal cracking susceptibility went unnoticed at qualification.",
+    "corrective_action": "Adjust rolling temperature profile for the new supplier's slab characteristics; disposition affected coils.",
+    "preventive_action": "Expand the slab supplier qualification checklist to request and review casting cooling-rate data, with a trial-run crazing-susceptibility check for any new supplier before full qualification.",
+    "effectiveness_verification": "Zero supplier-related crazing defects over next 30 days with adjusted rolling profile; qualification records show casting parameters reviewed for the next new supplier."
+  },
+  {
+    "id": "SC-053",
+    "defect_type": "Inclusion",
+    "process_stage": "casting",
+    "non_conformance_description": "Caster 2: inclusion found in billet from heat H-3480, coinciding with an unusually long pour time due to a partial nozzle clog that was cleared mid-pour rather than stopping the heat.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Inclusion present -> extended exposure time in the tundish allowed additional oxide pickup.",
+      "Why 2: Extended exposure -> pour was continued through a partial nozzle clog rather than stopped and cleared before continuing.",
+      "Why 3: Pour continued -> there is no defined maximum allowable pour-time extension before a heat must be stopped for clog clearing.",
+      "Why 4: No defined limit -> the pour-continuation decision is left to operator judgment without a documented threshold.",
+      "Why 5 (root cause): there is no documented maximum pour-time-extension threshold for partial nozzle clogs, leaving the stop-vs-continue decision to operator judgment without a quality-risk-based guideline."
+    ],
+    "root_cause": "There is no documented threshold defining how long a partial nozzle clog can be tolerated before a pour must be stopped, leaving continuation decisions to operator judgment without a quality-risk basis.",
+    "corrective_action": "Section-test the affected billets; disposition per inclusion findings.",
+    "preventive_action": "Establish a documented maximum pour-time-extension threshold for partial nozzle clogs, beyond which the heat must be stopped and the nozzle cleared before continuing.",
+    "effectiveness_verification": "Zero extended-pour-related inclusion events over next 30 heats; pour-time logs show compliance with the new threshold."
+  },
+  {
+    "id": "SC-054",
+    "defect_type": "Inclusion",
+    "process_stage": "casting",
+    "non_conformance_description": "Caster 1: inclusion cluster found in a billet from heat H-3495, traced to a batch of alloying wire with an unusually high moisture content from prolonged outdoor storage before use.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.3",
+    "five_why": [
+      "Why 1: Inclusion cluster present -> moisture in the alloying wire caused gas-related reaction products in the melt.",
+      "Why 2: Wire had high moisture -> the wire was stored outdoors under a tarp for several weeks before use rather than in the climate-controlled material store.",
+      "Why 3: Stored outdoors -> the material store was at capacity when the wire shipment arrived, and there was no overflow protocol for moisture-sensitive consumables.",
+      "Why 4: No overflow protocol -> the material storage plan was designed for typical inventory levels and did not anticipate a capacity-exceeding delivery of a moisture-sensitive item.",
+      "Why 5 (root cause): the material storage plan has no defined overflow protocol for moisture-sensitive consumables when the climate-controlled store is at capacity, allowing such material to default to unprotected outdoor storage."
+    ],
+    "root_cause": "The material storage plan lacks an overflow protocol for moisture-sensitive consumables when the climate-controlled store is full, so an over-capacity delivery of alloying wire defaulted to unprotected outdoor storage.",
+    "corrective_action": "Discard or dry-recondition the affected wire batch per supplier guidance; disposition the affected billet.",
+    "preventive_action": "Define a moisture-sensitive-consumable overflow protocol (e.g., temporary sealed containers, priority reordering to avoid overflow) for use whenever the primary climate-controlled store reaches capacity.",
+    "effectiveness_verification": "Zero moisture-related inclusion events over next 90 days; storage audit confirms no moisture-sensitive consumables held outside climate-controlled storage."
+  },
+  {
+    "id": "SC-055",
+    "defect_type": "Patches",
+    "process_stage": "hot_rolling",
+    "non_conformance_description": "Line 3: patches found on coil HR-2620, coinciding with a first-time production run using a newly commissioned furnace burner control algorithm update.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Patches appeared with new algorithm -> the updated burner control algorithm produced a different zone-to-zone temperature balance than the previous version.",
+      "Why 2: Different balance -> the algorithm update was validated in simulation but not trialed on a live production run before full deployment.",
+      "Why 3: No live trial -> the software deployment process for furnace control algorithms does not require a limited-scope live trial before full rollout.",
+      "Why 4: No trial requirement -> the deployment process was adapted from general IT software change management, which does not address process-control-specific validation needs.",
+      "Why 5 (root cause): the furnace control algorithm deployment process was adapted from general IT change management and does not require a limited-scope live production trial before full rollout, unlike process-control-specific change practices."
+    ],
+    "root_cause": "The furnace control algorithm deployment process follows general IT software change management, which does not require a limited-scope live production trial before full rollout \u2014 a validation step process-control changes specifically need.",
+    "corrective_action": "Revert to the previous algorithm version pending further validation; disposition affected coils.",
+    "preventive_action": "Add a mandatory limited-scope live trial (e.g., single shift, single line) requirement to the furnace control algorithm deployment process before full rollout.",
+    "effectiveness_verification": "Next algorithm update shows documented live trial results before full deployment; zero algorithm-update-related patch defects going forward."
+  },
+  {
+    "id": "SC-056",
+    "defect_type": "Patches",
+    "process_stage": "hot_rolling",
+    "non_conformance_description": "Line 1: patches found on coil HR-2650, traced to uneven cooling from a partially blocked run-out table cooling header.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.3",
+    "five_why": [
+      "Why 1: Patches from uneven cooling -> a run-out table cooling header had partial mineral scale buildup restricting flow.",
+      "Why 2: Scale buildup -> the plant's process water has higher mineral content than the header design assumed.",
+      "Why 3: Design assumption mismatch -> the cooling header was specified using generic water-quality assumptions rather than the plant's actual measured water hardness.",
+      "Why 4: Actual water quality not used in spec -> equipment specification for new installations references generic industry defaults rather than a required site-specific water quality data input.",
+      "Why 5 (root cause): equipment specifications for new water-contact components use generic industry-default water-quality assumptions rather than a required site-specific water hardness input, leading to under-designed scale resistance for this plant's actual water."
+    ],
+    "root_cause": "Equipment specifications for water-contact components (like cooling headers) use generic industry-default water-quality assumptions instead of requiring the plant's actual measured water hardness as an input, resulting in under-designed scale resistance.",
+    "corrective_action": "Clean the affected cooling header immediately; inspect and disposition affected coils.",
+    "preventive_action": "Require site-specific water quality data (not generic defaults) as a mandatory input to the specification process for any new water-contact equipment.",
+    "effectiveness_verification": "Zero scale-buildup-related patch defects over next 90 days on the cleaned header; next equipment specification documents site water quality data used."
+  },
+  {
+    "id": "SC-057",
+    "defect_type": "Pitted Surface",
+    "process_stage": "cold_rolling",
+    "non_conformance_description": "Line 4: pitting found on coil CR-0810, traced to a coolant tank that had not been fully drained and cleaned during a scheduled changeover to a new coolant chemistry.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Pitting present -> residual old coolant reacted with the new coolant chemistry, reducing corrosion protection.",
+      "Why 2: Residual old coolant present -> the tank changeover procedure specifies draining but not a minimum residual-volume verification step.",
+      "Why 3: No residual verification -> the changeover procedure was written assuming gravity draining fully empties the tank, without accounting for low points where residual fluid can pool.",
+      "Why 4: Low points not accounted for -> the tank's physical design (identified after installation) has drainage low points not covered by the standard drain valve location.",
+      "Why 5 (root cause): the coolant tank's physical design has drainage low points not reached by the standard drain valve, and the changeover procedure was never updated to include a supplementary manual removal step for that residual fluid."
+    ],
+    "root_cause": "The coolant tank has physical drainage low points that the standard drain valve doesn't reach, and the changeover procedure was never updated to include a supplementary manual removal step for the resulting residual fluid.",
+    "corrective_action": "Fully drain, manually clean, and refill the tank with correct-chemistry coolant; disposition affected coils.",
+    "preventive_action": "Add a supplementary manual residual-fluid removal step to the coolant changeover procedure, specifically addressing the tank's known drainage low points.",
+    "effectiveness_verification": "Zero coolant-chemistry-mixing-related pitting defects over next 60 days; changeover procedure audit confirms manual removal step performed."
+  },
+  {
+    "id": "SC-058",
+    "defect_type": "Pitted Surface",
+    "process_stage": "cold_rolling",
+    "non_conformance_description": "Line 3: pitting found on coil CR-0845, coinciding with an extended weekend idle period during which the line was not run.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.3",
+    "five_why": [
+      "Why 1: Pitting after idle period -> residual coolant film on idle work rolls oxidized during the extended stoppage.",
+      "Why 2: Oxidation occurred -> rolls were left in place without an anti-corrosion coating applied for stoppages longer than a standard overnight idle.",
+      "Why 3: No coating applied -> the idle-equipment protection procedure only specifies action for idle periods over 7 days, not weekend-length stoppages of 2-3 days.",
+      "Why 4: Weekend stoppages not covered -> the procedure's idle-duration thresholds were set based on typical daily/overnight patterns and never revisited for extended weekend or holiday stoppage scenarios.",
+      "Why 5 (root cause): the idle-equipment protection procedure's duration thresholds were set for typical daily idle patterns and were never revisited to cover weekend-length (2-3 day) stoppages, leaving a gap between 'overnight' and '7+ day' protection triggers."
+    ],
+    "root_cause": "The idle-equipment protection procedure has thresholds for overnight and 7+ day stoppages but no coverage for the 2-3 day weekend-length gap in between, so rolls sitting idle over a weekend receive no anti-corrosion protection.",
+    "corrective_action": "Clean and inspect the affected work rolls; disposition affected coils.",
+    "preventive_action": "Add a weekend/2-3-day idle threshold to the idle-equipment protection procedure, requiring anti-corrosion coating application for any stoppage beyond the standard overnight duration.",
+    "effectiveness_verification": "Zero weekend-idle-related pitting defects over next 8 weekends; protection procedure compliance confirmed via maintenance log."
+  },
+  {
+    "id": "SC-059",
+    "defect_type": "Rolled-in Scale",
+    "process_stage": "hot_rolling",
+    "non_conformance_description": "Line 2: rolled-in scale found on coil HR-2710, coinciding with a temporary reduction in furnace excess-air ratio made to reduce fuel consumption.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Scale defect present -> the lower excess-air ratio changed the furnace atmosphere, producing a more tenacious oxide scale than usual.",
+      "Why 2: Atmosphere changed -> the fuel-efficiency adjustment was approved based on fuel-consumption targets only.",
+      "Why 3: No scale-impact check -> the energy-efficiency improvement approval process does not include a check against downstream scale/descaling impact.",
+      "Why 4: No such check exists -> energy-efficiency projects and quality/process engineering are managed by separate teams without a required cross-review step.",
+      "Why 5 (root cause): energy-efficiency projects (like furnace excess-air adjustments) are approved by a separate team from quality/process engineering, with no required cross-review step checking downstream scale-formation or descaling impact."
+    ],
+    "root_cause": "Energy-efficiency projects, including furnace atmosphere adjustments, are approved without a required cross-review from quality/process engineering, so downstream effects like more tenacious oxide scale formation are not checked before implementation.",
+    "corrective_action": "Revert the excess-air ratio to the previous validated setting; inspect coils processed under the adjusted setting.",
+    "preventive_action": "Require a quality/process engineering cross-review, specifically checking scale-formation and descaling impact, as part of the approval process for any furnace atmosphere or energy-efficiency change.",
+    "effectiveness_verification": "Zero atmosphere-adjustment-related scale defects over next 30 days at reverted setting; next efficiency project shows documented cross-review sign-off."
+  },
+  {
+    "id": "SC-060",
+    "defect_type": "Rolled-in Scale",
+    "process_stage": "hot_rolling",
+    "non_conformance_description": "Line 1: scale defect found on coil HR-2740, traced to a descaler water temperature that was colder than usual due to a seasonal ambient temperature drop.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.3",
+    "five_why": [
+      "Why 1: Scale defect present -> colder descaler water reduced the thermal shock effect needed to fracture oxide scale efficiently.",
+      "Why 2: Water was colder -> the descaler water supply is not temperature-conditioned and simply follows ambient/seasonal source temperature.",
+      "Why 3: Not temperature-conditioned -> the descaler system was designed and validated using water temperature data from a single season only.",
+      "Why 4: Single-season validation -> the original commissioning validation was performed during summer months and was never repeated to check winter performance.",
+      "Why 5 (root cause): the descaler system's original commissioning validation was performed only during summer months and was never repeated across a full seasonal cycle, so its winter-temperature performance was never actually verified."
+    ],
+    "root_cause": "The descaler system was validated during commissioning using only summer-season water temperature data, and this validation was never repeated across a full seasonal cycle, so its performance at winter water temperatures was never actually verified until this defect occurred.",
+    "corrective_action": "Increase descaler pressure/pass count temporarily to compensate for colder water; inspect affected coils.",
+    "preventive_action": "Perform a full seasonal-cycle validation of descaler performance, and if winter performance is confirmed inadequate, add a water pre-heating step or a seasonally-adjusted pressure recipe.",
+    "effectiveness_verification": "Seasonal validation data confirms descaler performance meets spec across all seasons within next 12 months; zero temperature-related scale defects in the interim with any interim compensation in place."
+  },
+  {
+    "id": "SC-061",
+    "defect_type": "Scratches",
+    "process_stage": "finishing",
+    "non_conformance_description": "Line 2: scratches found on coil FN-0720, traced to a recently installed automated coil-wrapping machine's guide arm making unintended contact.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Guide arm made contact -> the arm's motion path was not fully validated for the full range of coil diameters the plant produces.",
+      "Why 2: Not fully validated -> the machine's commissioning test used only a mid-range sample of coil diameters, not the full production range.",
+      "Why 3: Limited sample used -> the commissioning acceptance criteria specified a minimum number of test runs but not a requirement to span the full diameter range.",
+      "Why 4: Criteria gap -> the equipment commissioning checklist template used for this installation was generic and not tailored to diameter-sensitive equipment.",
+      "Why 5 (root cause): the equipment commissioning checklist template used for this installation was a generic template not tailored to diameter-sensitive equipment, so it did not require testing across the full production diameter range before acceptance."
+    ],
+    "root_cause": "The equipment commissioning checklist used for this installation was a generic template not tailored to diameter-sensitive equipment, so testing across the full production coil-diameter range was never required before the machine was accepted into production.",
+    "corrective_action": "Adjust or restrict the guide arm's motion path pending full validation; inspect coils processed since installation.",
+    "preventive_action": "Create a diameter-range validation requirement in the commissioning checklist for any future diameter-sensitive equipment installation, testing across the plant's full production range before acceptance.",
+    "effectiveness_verification": "Full diameter-range validation completed and documented for the wrapping machine; zero guide-arm-related scratch defects over next 30 days across all diameters."
+  },
+  {
+    "id": "SC-062",
+    "defect_type": "Scratches",
+    "process_stage": "finishing",
+    "non_conformance_description": "Line 3: scratches found on coil FN-0755, traced to grit contamination on a conveyor belt from a nearby floor-grinding maintenance activity performed without adequate containment.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.4 (error-proofing)",
+    "five_why": [
+      "Why 1: Grit contamination present -> floor-grinding dust settled on the conveyor belt near the maintenance activity.",
+      "Why 2: Dust settled on belt -> the maintenance work was performed without a containment barrier or belt covering, despite occurring near an active production line.",
+      "Why 3: No containment used -> the maintenance work permit process does not require a proximity check to active production equipment before approving dust-generating work.",
+      "Why 4: No proximity check -> the work permit template addresses safety hazards (e.g., hot work, confined space) but not product-contamination risk from nearby maintenance activities.",
+      "Why 5 (root cause): the maintenance work permit template addresses safety hazards but has no product-contamination risk category, so dust-generating work near active production equipment is not flagged for containment requirements."
+    ],
+    "root_cause": "The maintenance work permit template covers safety hazards but has no product-contamination risk category, so dust-generating maintenance work near active production lines is not automatically flagged for containment requirements.",
+    "corrective_action": "Clean the affected conveyor and inspect/disposition the affected coil; halt the grinding work until containment is in place.",
+    "preventive_action": "Add a product-contamination risk category to the maintenance work permit template, requiring containment measures for any dust/particulate-generating work within a defined proximity to active production equipment.",
+    "effectiveness_verification": "Zero contamination-related scratch defects from nearby maintenance work over next 90 days; work permit audit confirms contamination risk category in use."
+  },
+  {
+    "id": "SC-063",
+    "defect_type": "Crescent Gap",
+    "process_stage": "cold_rolling",
+    "non_conformance_description": "Line 4 shear station: crescent gap defect found on sheets following a die-set change to a different shear blade set for a specialty order.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Defect after die-set change -> the specialty blade set was not from the same calibrated matched-pair as the standard set.",
+      "Why 2: Not matched-pair -> the specialty blade set is used infrequently and is stored/tracked separately from the standard set's calibration records.",
+      "Why 3: Separate tracking -> the tooling management system was set up around the standard, frequently-used blade sets and specialty/infrequent tooling was added later without full integration.",
+      "Why 4: Not fully integrated -> when specialty tooling was introduced, it was treated as a one-off addition rather than being brought into the standard tooling calibration tracking process.",
+      "Why 5 (root cause): specialty/infrequently-used tooling was added to the shop outside the standard tooling calibration tracking process, so its calibration status is not visible or enforced the same way as regularly-used tooling."
+    ],
+    "root_cause": "Specialty tooling used infrequently for special orders was introduced outside the standard tooling calibration tracking process, so its calibration status is not visible or enforced the same way as regularly-used blade sets.",
+    "corrective_action": "Calibrate the specialty blade set to the correct matched-pair spec immediately; inspect and disposition the affected sheets.",
+    "preventive_action": "Integrate all specialty and infrequently-used tooling into the standard tooling calibration tracking system, regardless of usage frequency.",
+    "effectiveness_verification": "Zero specialty-tooling-related crescent gap defects over next 10 specialty orders; tooling tracking audit confirms specialty tooling now included."
+  },
+  {
+    "id": "SC-064",
+    "defect_type": "Crescent Gap",
+    "process_stage": "cold_rolling",
+    "non_conformance_description": "Line 4 shear station: crescent gap defects found intermittently, correlating loosely with ambient temperature swings between day and night shift in a non-climate-controlled area of the plant.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.3",
+    "five_why": [
+      "Why 1: Defects correlate with temperature swings -> thermal expansion/contraction of the shear frame changes blade clearance slightly between day and night conditions.",
+      "Why 2: Frame affected by ambient temperature -> the shear station is in a non-climate-controlled area with significant day/night temperature variation.",
+      "Why 3: No compensation for this -> the blade clearance setting is fixed once per setup and not re-verified across a shift for ambient-driven drift.",
+      "Why 4: No re-verification -> the setup procedure treats blade clearance as a one-time setting rather than a parameter that could drift with ambient conditions in this specific location.",
+      "Why 5 (root cause): the shear blade clearance setup procedure treats clearance as a one-time setting without accounting for ambient-temperature-driven frame expansion in this specific non-climate-controlled location, so no re-verification occurs across a shift."
+    ],
+    "root_cause": "The blade clearance setup procedure treats clearance as fixed after initial setup, without accounting for ambient-temperature-driven frame expansion specific to this non-climate-controlled shear station location, so no mid-shift re-verification occurs.",
+    "corrective_action": "Re-verify and adjust blade clearance now; inspect and disposition affected sheets from the temperature-swing period.",
+    "preventive_action": "Add a mid-shift blade clearance re-verification step specifically for this shear station, or install a climate-controlled enclosure if a permanent fix is preferred.",
+    "effectiveness_verification": "Zero temperature-correlated crescent gap defects over next full day/night cycle with re-verification in place."
+  },
+  {
+    "id": "SC-065",
+    "defect_type": "Waist Folding",
+    "process_stage": "forging",
+    "non_conformance_description": "Press 1: waist folding found on components forged using a billet lot that had been in inventory significantly longer than typical before use.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Folding on aged billet lot -> the billet surface had developed a thicker oxide layer than fresh billets due to extended storage.",
+      "Why 2: Thicker oxide layer -> the extended storage time exceeded the assumption built into the standard preheat/descaling parameters for forging.",
+      "Why 3: Assumption exceeded -> the inventory management system does not flag billets exceeding a recommended maximum storage duration before use.",
+      "Why 4: No flagging system -> billet inventory is managed by weight/grade tracking only, without a storage-duration aging flag.",
+      "Why 5 (root cause): the billet inventory management system tracks weight and grade but does not flag storage duration, so billets exceeding the recommended maximum age before use are not identified before being pulled for forging."
+    ],
+    "root_cause": "The billet inventory management system tracks weight and grade but not storage duration, so aged billets exceeding the recommended maximum storage time before use are not flagged and can be pulled for forging without extra oxide-removal preparation.",
+    "corrective_action": "Apply additional surface preparation (extended descaling/preheat) to remaining aged billets in the lot before forging; disposition affected components.",
+    "preventive_action": "Add a storage-duration aging flag to the billet inventory management system, triggering additional surface preparation steps for any billet exceeding the recommended maximum storage time.",
+    "effectiveness_verification": "Zero aged-billet-related folding defects over next 90 days; inventory system shows aging flags active and preparation steps applied when triggered."
+  },
+  {
+    "id": "SC-066",
+    "defect_type": "Waist Folding",
+    "process_stage": "forging",
+    "non_conformance_description": "Press 2: waist folding found after switching to a new forging lubricant intended to reduce environmental impact, first batch using the new product.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.3",
+    "five_why": [
+      "Why 1: Folding with new lubricant -> the eco-friendly lubricant has a lower friction-reduction performance at the die-material interface than the previous product.",
+      "Why 2: Lower performance not caught earlier -> the lubricant switch was approved primarily based on environmental/regulatory criteria.",
+      "Why 3: No forming-quality check -> the sustainability-driven material substitution approval process does not include a required forming-quality equivalence test.",
+      "Why 4: No such requirement -> sustainability initiatives are evaluated by an environmental/compliance team with separate approval authority from process/quality engineering.",
+      "Why 5 (root cause): sustainability-driven material substitutions (like this lubricant switch) are approved by an environmental/compliance team without a required forming-quality equivalence test from process/quality engineering."
+    ],
+    "root_cause": "Sustainability-driven material substitutions are approved through an environmental/compliance pathway that does not require a forming-quality equivalence test from process/quality engineering, so a friction-performance gap in the new lubricant went unchecked before production use.",
+    "corrective_action": "Revert to the previous lubricant or increase die lubrication frequency as an interim measure; disposition affected components.",
+    "preventive_action": "Require a forming-quality equivalence test (friction/flow performance) from process/quality engineering as part of any sustainability-driven material substitution approval, in addition to environmental/compliance criteria.",
+    "effectiveness_verification": "Next sustainability-driven material substitution shows documented forming-quality equivalence test results; zero lubricant-substitution-related folding defects going forward."
+  },
+  {
+    "id": "SC-067",
+    "defect_type": "Weld Line Defect",
+    "process_stage": "casting",
+    "non_conformance_description": "Line 2 coil welder: weld defect found coinciding with a recent replacement of the welder's electrode material with a different manufacturer's equivalent-spec electrode.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Weld defect with new electrode -> the new electrode's actual resistivity differs slightly from the previous manufacturer's, despite matching the nominal spec.",
+      "Why 2: Resistivity difference not caught -> the electrode supplier-change approval verified nominal specification match only, not an in-process performance trial.",
+      "Why 3: No performance trial required -> the consumable substitution approval process treats 'equivalent spec' as sufficient without requiring an in-process verification weld test.",
+      "Why 4: Spec-match treated as sufficient -> the approval process assumes nominal specification match guarantees equivalent in-use performance for welding consumables.",
+      "Why 5 (root cause): the consumable substitution approval process assumes nominal specification match guarantees equivalent in-use performance, without requiring an in-process verification weld test before substituting welding electrodes."
+    ],
+    "root_cause": "The consumable substitution approval process assumes that a nominal specification match between electrode suppliers guarantees equivalent real-world performance, without requiring an in-process verification weld test before the substitution goes into production use.",
+    "corrective_action": "Adjust weld parameters to compensate for the new electrode's actual resistivity, or revert to the previous supplier; disposition affected joints.",
+    "preventive_action": "Require an in-process verification weld test (not just spec-sheet comparison) before approving any welding consumable substitution, regardless of nominal specification match.",
+    "effectiveness_verification": "Verification weld test results on file for the current electrode before continued use; zero electrode-substitution-related weld defects over next 60 days."
+  },
+  {
+    "id": "SC-068",
+    "defect_type": "Weld Line Defect",
+    "process_stage": "casting",
+    "non_conformance_description": "Line 1 coil welder: weld joint thickness variation found, traced to a slight but persistent voltage fluctuation in the plant's electrical supply during a specific time window each day.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.3",
+    "five_why": [
+      "Why 1: Thickness variation from voltage fluctuation -> the welder draws power from a shared electrical circuit affected by another high-draw piece of equipment starting up at a consistent time.",
+      "Why 2: Shared circuit affected -> the welder was not specified with its own dedicated, conditioned power circuit during installation.",
+      "Why 3: No dedicated circuit -> the original electrical installation plan grouped the welder with other equipment based on physical proximity rather than power-quality sensitivity.",
+      "Why 4: Grouped by proximity -> the electrical installation planning process for new equipment does not include a power-quality-sensitivity assessment for parameter-sensitive equipment like welders.",
+      "Why 5 (root cause): the electrical installation planning process groups equipment onto circuits based on physical proximity rather than power-quality sensitivity, so parameter-sensitive equipment like the coil welder was not given a dedicated, conditioned circuit."
+    ],
+    "root_cause": "Electrical installation planning for new equipment groups circuits by physical proximity rather than power-quality sensitivity, so the coil welder \u2014 which is sensitive to voltage fluctuation \u2014 was never given a dedicated, conditioned power circuit.",
+    "corrective_action": "Adjust weld schedule to avoid the known voltage-fluctuation window as an interim measure; disposition affected joints from the recurring window.",
+    "preventive_action": "Install a dedicated, conditioned power circuit for the coil welder, and add power-quality sensitivity as a required consideration in future electrical installation planning for parameter-sensitive equipment.",
+    "effectiveness_verification": "Zero voltage-fluctuation-related weld defects over next 30 days once dedicated circuit is installed; voltage logs confirm stability during the previously-affected window."
+  },
+  {
+    "id": "SC-069",
+    "defect_type": "Water Spot",
+    "process_stage": "finishing",
+    "non_conformance_description": "Line 3 finishing: water spot staining found on coils processed during a period when the plant's compressed air supply (used for final surface blow-off before drying) had noticeably higher moisture content.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Staining from blow-off air -> the compressed air used for blow-off carried excess moisture rather than being dry.",
+      "Why 2: Excess moisture in air -> the compressed air dryer unit's desiccant was saturated and overdue for regeneration/replacement.",
+      "Why 3: Desiccant overdue -> the compressed air dryer maintenance is scheduled on a calendar basis without a moisture-level indicator check.",
+      "Why 4: No moisture-level check -> the dryer maintenance procedure was written assuming calendar-based regeneration is sufficient without accounting for variable air demand across the plant.",
+      "Why 5 (root cause): the compressed air dryer maintenance procedure relies on calendar-based regeneration without a moisture-level indicator check, so desiccant saturation driven by variable plant-wide air demand is not caught before it affects moisture-sensitive downstream uses like finishing blow-off."
+    ],
+    "root_cause": "Compressed air dryer maintenance is scheduled purely on a calendar basis without a moisture-level indicator check, so desiccant saturation driven by variable plant-wide air demand goes undetected until it affects moisture-sensitive downstream processes like finishing blow-off.",
+    "corrective_action": "Regenerate/replace the dryer desiccant immediately; re-dry or disposition affected coils.",
+    "preventive_action": "Add a moisture-level indicator (e.g., dew-point sensor) to the compressed air dryer with an alert threshold, supplementing the calendar-based maintenance schedule rather than replacing it.",
+    "effectiveness_verification": "Dew-point readings remain within spec over next 60 days; zero blow-off-air-related water spot defects in that window."
+  },
+  {
+    "id": "SC-070",
+    "defect_type": "Oil Spot",
+    "process_stage": "finishing",
+    "non_conformance_description": "Line 2 finishing: oil spot found on a coil, traced to a hydraulic fluid micro-leak on an overhead crane used in the finishing area, dripping onto coils during transit below.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.4 (error-proofing)",
+    "five_why": [
+      "Why 1: Oil spot from crane leak -> a hydraulic hose fitting on the overhead crane had a slow drip.",
+      "Why 2: Drip not caught earlier -> overhead crane hydraulic inspection is visual-only and performed at ground level, making a slow drip on an elevated fitting hard to spot during routine checks.",
+      "Why 3: Hard to spot from ground -> the crane inspection procedure does not require an elevated/close-up inspection of hydraulic fittings at the scheduled interval.",
+      "Why 4: No elevated inspection required -> the inspection procedure was adapted from a general crane-safety checklist focused on structural/mechanical safety, not product-contamination risk from hydraulic leaks.",
+      "Why 5 (root cause): the overhead crane inspection procedure, adapted from a general crane-safety checklist, focuses on structural/mechanical safety and does not require elevated close-up inspection specifically for hydraulic leaks that could drip onto product below."
+    ],
+    "root_cause": "The overhead crane inspection procedure, adapted from a general safety-focused checklist, does not require elevated close-up inspection of hydraulic fittings specifically to catch leaks that could drip contamination onto product moving below.",
+    "corrective_action": "Repair the leaking fitting immediately; inspect and disposition coils that may have been under the crane's travel path during the leak period.",
+    "preventive_action": "Add a scheduled elevated close-up hydraulic fitting inspection (not just ground-level visual) to the overhead crane maintenance procedure, specifically for cranes operating above product-handling areas.",
+    "effectiveness_verification": "Zero crane-hydraulic-related oil spot defects over next 90 days; elevated inspection records show hydraulic fittings checked on schedule."
+  },
+  {
+    "id": "SC-071",
+    "defect_type": "Water Spot",
+    "process_stage": "finishing",
+    "non_conformance_description": "Line 4 finishing: water spot staining found only on coils processed directly after the drying unit's exhaust fan was temporarily run at reduced speed to address a noise complaint.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Staining after reduced exhaust speed -> reduced exhaust airflow slowed moisture removal from the drying chamber, leaving humid air in contact with the strip longer.",
+      "Why 2: Reduced speed implemented -> the fan speed was lowered in response to a noise complaint without evaluating the impact on drying performance.",
+      "Why 3: No impact evaluation -> the noise-complaint response procedure directs facilities staff to adjust equipment for noise reduction without a required process-impact sign-off from production/quality.",
+      "Why 4: No sign-off required -> the noise-complaint procedure was designed for general facility equipment, not process-critical equipment whose performance directly affects product quality.",
+      "Why 5 (root cause): the noise-complaint response procedure does not distinguish between general facility equipment and process-critical equipment, so a drying-unit exhaust fan was adjusted for noise without any required production/quality impact sign-off."
+    ],
+    "root_cause": "The noise-complaint response procedure treats all equipment the same regardless of process criticality, so a drying-unit exhaust fan (whose speed directly affects product moisture removal) was adjusted for noise reduction without any required production/quality sign-off on the process impact.",
+    "corrective_action": "Restore the exhaust fan to its validated operating speed; identify an alternative noise-mitigation approach; re-dry or disposition affected coils.",
+    "preventive_action": "Add a process-criticality flag to equipment records, requiring production/quality sign-off before any noise- or comfort-driven adjustment to process-critical equipment like drying unit exhaust fans.",
+    "effectiveness_verification": "Zero exhaust-speed-related water spot defects over next 30 days at restored speed; sign-off process documented for the next noise-related equipment adjustment request."
+  },
+  {
+    "id": "SC-072",
+    "defect_type": "Oil Spot",
+    "process_stage": "finishing",
+    "non_conformance_description": "Line 3 finishing: oil spot found concentrated at coil wrap transitions, traced to a slight over-application of anti-corrosion oil by an automated oiling system following a nozzle recalibration.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Over-application at wrap transitions -> the oiling nozzle's flow rate was set slightly high after a recent recalibration.",
+      "Why 2: Flow rate set high -> the recalibration was performed using a reference target for a different product width than currently running.",
+      "Why 3: Wrong reference width used -> the recalibration procedure does not require confirming current production width before recalibrating flow rate.",
+      "Why 4: No width confirmation step -> the recalibration checklist assumes the technician will use current production parameters without an explicit prompt to verify them.",
+      "Why 5 (root cause): the oiling system recalibration checklist assumes the technician will reference current production width without an explicit verification prompt, allowing a mismatched reference width to be used unnoticed."
+    ],
+    "root_cause": "The oiling system recalibration checklist assumes the technician will use the current production width as the reference target without an explicit prompt to confirm it, allowing recalibration against a mismatched width and resulting in incorrect flow rate.",
+    "corrective_action": "Recalibrate the nozzle flow rate for the current production width; re-clean or disposition affected coils.",
+    "preventive_action": "Add an explicit current-production-width confirmation step to the oiling system recalibration checklist before flow rate adjustment.",
+    "effectiveness_verification": "Zero over-application-related oil spot defects over next 30 days; recalibration records show width confirmation step completed each time."
+  },
+  {
+    "id": "SC-073",
+    "defect_type": "Crazing",
+    "process_stage": "hot_rolling",
+    "non_conformance_description": "Line 3: crazing found on coil HR-2810, coinciding with a period when the plant's compressed nitrogen supply (used for furnace atmosphere control on this grade) was running at reduced purity due to a supplier quality issue.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Crazing present -> furnace atmosphere oxygen content was higher than intended for this grade.",
+      "Why 2: Oxygen content high -> the nitrogen purge gas had lower purity than specified, allowing more oxygen infiltration.",
+      "Why 3: Lower purity gas used -> the nitrogen supplier's certificate of analysis was not checked against the plant's minimum purity requirement before the delivery was accepted into use.",
+      "Why 4: Certificate not checked -> incoming inspection for gas deliveries is limited to quantity/pressure verification, not a purity certificate review.",
+      "Why 5 (root cause): incoming inspection for bulk gas deliveries (like nitrogen) checks quantity and pressure only, with no step requiring review of the supplier's purity certificate against the plant's minimum specification before the gas is released to production use."
+    ],
+    "root_cause": "Incoming inspection for bulk gas deliveries checks only quantity and pressure, with no required review of the supplier's purity certificate against the plant's minimum specification before the gas is used in production.",
+    "corrective_action": "Quarantine the current nitrogen supply pending purity verification; disposition affected coils.",
+    "preventive_action": "Add a mandatory purity-certificate review step to incoming inspection for all bulk gas deliveries used in atmosphere-controlled processes.",
+    "effectiveness_verification": "Zero purity-related atmosphere deviations over next 90 days; incoming inspection records show certificate review performed for every gas delivery."
+  },
+  {
+    "id": "SC-074",
+    "defect_type": "Crazing",
+    "process_stage": "hot_rolling",
+    "non_conformance_description": "Line 2: crazing found on coil HR-2835, traced to a furnace zone thermocouple that had drifted out of calibration, reading lower than actual temperature.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.3",
+    "five_why": [
+      "Why 1: Crazing from actual overheating -> the furnace ran hotter than the control system displayed.",
+      "Why 2: Displayed temperature was wrong -> the zone thermocouple had drifted low, so the control system compensated by running the zone hotter to reach the (incorrectly low) displayed setpoint.",
+      "Why 3: Thermocouple drifted undetected -> the calibration interval for furnace thermocouples is annual, and this drift developed roughly 8 months into the cycle.",
+      "Why 4: Annual interval insufficient -> the calibration interval was set based on manufacturer general guidance, not validated against this furnace's actual observed drift rate in this specific service environment.",
+      "Why 5 (root cause): the furnace thermocouple calibration interval follows generic manufacturer guidance rather than being validated against this specific furnace's actual drift rate in its service environment, allowing drift to develop well before the next scheduled calibration."
+    ],
+    "root_cause": "The thermocouple calibration interval is based on generic manufacturer guidance rather than validated against this furnace's actual observed drift rate, allowing significant drift to develop mid-cycle before the next scheduled calibration catches it.",
+    "corrective_action": "Recalibrate the affected thermocouple immediately; verify and correct actual furnace temperature; disposition affected coils.",
+    "preventive_action": "Perform a drift-rate study for this furnace's thermocouples and set a calibration interval based on the actual observed drift rate rather than generic guidance, shortening the interval if warranted.",
+    "effectiveness_verification": "Drift-rate study completed and new interval implemented; zero thermocouple-drift-related crazing defects over next 6 months."
+  },
+  {
+    "id": "SC-075",
+    "defect_type": "Inclusion",
+    "process_stage": "casting",
+    "non_conformance_description": "Caster 2: inclusion found in billet from heat H-3520, coinciding with a first-time use of a new tundish design intended to improve throughput.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Inclusion present -> the new tundish design has a shorter melt residence time than the previous design.",
+      "Why 2: Shorter residence time -> less time was available for inclusions to float out of the melt before casting, a function the previous tundish's longer flow path provided.",
+      "Why 3: Flow path change not evaluated for this -> the new tundish was validated for throughput and temperature-loss criteria, not for inclusion float-out time.",
+      "Why 4: No float-out evaluation -> the tundish design approval process for throughput-improvement projects does not include an inclusion-cleanliness impact assessment.",
+      "Why 5 (root cause): the tundish design approval process for throughput-improvement projects evaluates throughput and temperature criteria but has no required inclusion-cleanliness (float-out time) impact assessment before a new design is put into production use."
+    ],
+    "root_cause": "The tundish design approval process for throughput-improvement projects does not include a required inclusion-cleanliness (float-out time) impact assessment, so a shorter melt residence time's effect on inclusion removal was not evaluated before deployment.",
+    "corrective_action": "Revert to the previous tundish design pending further evaluation; section-test billets cast with the new design.",
+    "preventive_action": "Add a required inclusion-cleanliness impact assessment (e.g., a trial-heat inclusion count comparison) to the tundish design approval process for any future throughput-improvement changes.",
+    "effectiveness_verification": "Trial-heat inclusion counts for any redesigned tundish match or improve on baseline before full deployment; zero inclusion events traced to tundish design changes going forward."
+  },
+  {
+    "id": "SC-076",
+    "defect_type": "Inclusion",
+    "process_stage": "casting",
+    "non_conformance_description": "Caster 1: inclusion found in billet from heat H-3535, traced to a ladle slide-gate mechanism that was sticking intermittently, causing uneven flow control during pouring.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.3",
+    "five_why": [
+      "Why 1: Inclusion from uneven flow -> intermittent sticking of the slide-gate caused flow surges that increased turbulence and oxide entrainment.",
+      "Why 2: Gate sticking -> accumulated deposit buildup on the gate mechanism's sliding surface increased friction.",
+      "Why 3: Deposit buildup -> the gate mechanism's cleaning frequency is based on a fixed heat count, not on observed friction/sticking symptoms.",
+      "Why 4: Fixed heat count basis -> the maintenance schedule for slide-gate mechanisms was set once at commissioning and never adjusted based on actual in-service deposit accumulation patterns.",
+      "Why 5 (root cause): the slide-gate mechanism cleaning schedule was fixed at commissioning based on assumed deposit accumulation and was never revisited or adjusted based on actual observed in-service friction/sticking patterns."
+    ],
+    "root_cause": "The slide-gate mechanism's cleaning schedule was set once at commissioning based on assumed deposit accumulation and has never been revisited against actual observed in-service sticking patterns, allowing real-world deposit buildup to outpace the fixed schedule.",
+    "corrective_action": "Clean and service the slide-gate mechanism immediately; section-test the affected billets.",
+    "preventive_action": "Revise the slide-gate cleaning schedule based on actual observed friction/sticking data rather than the original commissioning-time assumption, with periodic re-validation.",
+    "effectiveness_verification": "Gate mechanism operates without sticking symptoms over next 30 heats at the revised schedule; zero flow-surge-related inclusion events in that window."
+  },
+  {
+    "id": "SC-077",
+    "defect_type": "Patches",
+    "process_stage": "hot_rolling",
+    "non_conformance_description": "Line 3: patches found on coil HR-2910, traced to a recently repaired furnace door seal that was not restoring full seal pressure, allowing localized cold air infiltration.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Patches from cold air infiltration -> the furnace door seal was not making full contact after a recent repair.",
+      "Why 2: Seal not making full contact -> the repair replaced the seal gasket but did not re-shim the door alignment, which had shifted slightly over time.",
+      "Why 3: Alignment not re-checked -> the door seal repair procedure addresses gasket replacement only, not a door alignment verification step.",
+      "Why 4: No alignment check in procedure -> the repair procedure was written assuming gasket wear is the only failure mode, not door alignment drift.",
+      "Why 5 (root cause): the furnace door seal repair procedure assumes gasket wear is the only failure mode and does not include a door alignment verification step, so alignment drift accumulated over time is not caught during gasket-only repairs."
+    ],
+    "root_cause": "The furnace door seal repair procedure only addresses gasket replacement and assumes that's the sole failure mode, so it has no step to verify door alignment \u2014 meaning gradual alignment drift goes uncorrected even when the gasket itself is repaired.",
+    "corrective_action": "Re-align the furnace door and re-verify seal contact; disposition affected coils.",
+    "preventive_action": "Add a door alignment verification step to the seal repair procedure, performed alongside every gasket replacement.",
+    "effectiveness_verification": "Seal contact verified uniform around the full door perimeter after repair; zero cold-air-infiltration-related patch defects over next 30 days."
+  },
+  {
+    "id": "SC-078",
+    "defect_type": "Patches",
+    "process_stage": "hot_rolling",
+    "non_conformance_description": "Line 1: patches found on coil HR-2945, coinciding with a first production run after annual furnace refractory relining.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.3",
+    "five_why": [
+      "Why 1: Patches on first post-reline run -> new refractory lining had not been fully cured before production resumed.",
+      "Why 2: Not fully cured -> the reline procedure's cure time is specified in hours, but the actual furnace only reached the required cure temperature partway through that window due to a slow ramp-up.",
+      "Why 3: Slow ramp-up not accounted for -> the cure time specification assumes a standard ramp-up rate that was not actually verified for this specific furnace's heating capacity.",
+      "Why 4: Ramp-up rate not verified -> the reline procedure was adopted from the refractory manufacturer's generic guidance without site-specific validation of this furnace's actual heat-up characteristics.",
+      "Why 5 (root cause): the refractory reline cure-time procedure follows the manufacturer's generic guidance, which assumes a standard ramp-up rate, without site-specific validation of this furnace's actual heat-up characteristics."
+    ],
+    "root_cause": "The refractory cure-time procedure is based on the manufacturer's generic guidance assuming a standard heat-up ramp rate, without site-specific validation of this furnace's actual (slower) ramp-up characteristics, so the cure window ends before the lining is actually fully cured.",
+    "corrective_action": "Hold production and complete the full cure cycle based on actual measured temperature, not elapsed time alone; disposition affected coils.",
+    "preventive_action": "Validate this furnace's actual ramp-up rate and set cure completion criteria based on measured temperature achievement, not generic elapsed time, for all future relines.",
+    "effectiveness_verification": "Next reline's cure completion is verified by temperature measurement before production resumes; zero cure-related patch defects going forward."
+  },
+  {
+    "id": "SC-079",
+    "defect_type": "Pitted Surface",
+    "process_stage": "cold_rolling",
+    "non_conformance_description": "Line 4: pitting found on coil CR-0910, traced to a coolant pH drift caused by a delayed response to a routine pH test result showing early signs of drift.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Pitting from pH drift -> coolant pH had drifted below the corrosion-protective range.",
+      "Why 2: Drift not corrected in time -> the routine pH test result showing early drift was logged but not acted on for two days.",
+      "Why 3: Delayed action -> pH test results are recorded on a log sheet reviewed only during a weekly quality meeting, not flagged for immediate action when out of trend.",
+      "Why 4: No immediate flagging -> the pH testing procedure specifies a target range but no defined escalation trigger for a result trending toward (but not yet outside) that range.",
+      "Why 5 (root cause): the coolant pH testing procedure defines a target range but has no escalation trigger for results trending toward the edge of that range, so early drift is recorded but not acted on until a weekly review, by which time the range may already be exceeded."
+    ],
+    "root_cause": "The coolant pH testing procedure has a target range but no escalation trigger for results trending toward the edge of it, so early drift warnings sit unaddressed until the next scheduled weekly review rather than prompting immediate action.",
+    "corrective_action": "Correct coolant pH to target range immediately; disposition affected coils from the drift period.",
+    "preventive_action": "Add a trend-based escalation trigger to the pH testing procedure (e.g., two consecutive readings moving toward the range edge trigger immediate corrective dosing), rather than waiting for the weekly review.",
+    "effectiveness_verification": "Zero pH-drift-related pitting defects over next 60 days; pH log shows trend-triggered corrections occurring before range is exceeded."
+  },
+  {
+    "id": "SC-080",
+    "defect_type": "Pitted Surface",
+    "process_stage": "cold_rolling",
+    "non_conformance_description": "Line 3: pitting found on coil CR-0945, traced to a batch of work rolls that had been reground by an external contractor using a different roughness specification than the plant's standard.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.3",
+    "five_why": [
+      "Why 1: Pitting from roll surface issue -> the reground roll's surface roughness was outside the plant's standard tolerance.",
+      "Why 2: Roughness outside tolerance -> the external regrinding contractor used their own default roughness specification rather than the plant's.",
+      "Why 3: Contractor used own default -> the regrinding work order did not explicitly specify the plant's required roughness tolerance, only 'regrind to standard.'",
+      "Why 4: Work order lacked explicit spec -> the work order template for external roll regrinding references an internal document number for the roughness spec, which the contractor does not have access to.",
+      "Why 5 (root cause): the external roll regrinding work order references the roughness specification by internal document number rather than including the actual values, and the external contractor does not have access to that internal document."
+    ],
+    "root_cause": "The work order for external roll regrinding references the roughness specification by an internal document number rather than including the actual numeric values, and the external contractor has no access to that internal document, so they defaulted to their own standard.",
+    "corrective_action": "Re-grind or replace the affected rolls to correct specification; disposition affected coils.",
+    "preventive_action": "Update the external regrinding work order template to include the actual roughness specification values directly, rather than referencing an internal document number the contractor cannot access.",
+    "effectiveness_verification": "Zero contractor-regrinding-related pitting defects over next 5 external regrind cycles; work orders confirmed to include explicit spec values."
+  },
+  {
+    "id": "SC-081",
+    "defect_type": "Rolled-in Scale",
+    "process_stage": "hot_rolling",
+    "non_conformance_description": "Line 2: scale defect found on coil HR-3010, traced to a descaler pump motor running at slightly reduced speed due to an aging variable-frequency drive (VFD).",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Scale from reduced pump output -> the descaler pump motor ran below its rated speed.",
+      "Why 2: Motor ran below rated speed -> the VFD controlling the motor has degraded output capacitors, reducing its maximum deliverable frequency.",
+      "Why 3: Degraded capacitors undetected -> VFD condition monitoring checks fault codes only, not gradual output capability degradation short of an outright fault.",
+      "Why 4: No gradual-degradation monitoring -> the VFD maintenance approach is reactive (respond to fault codes) rather than including periodic performance-capability testing.",
+      "Why 5 (root cause): VFD maintenance is purely reactive (responds to fault codes) with no periodic performance-capability test, so gradual capacitor degradation that reduces maximum output \u2014 without yet triggering a fault code \u2014 goes undetected."
+    ],
+    "root_cause": "VFD maintenance only reacts to fault codes and includes no periodic performance-capability test, so gradual component degradation that reduces maximum motor output \u2014 without yet triggering an outright fault \u2014 goes undetected until it causes a downstream quality issue.",
+    "corrective_action": "Replace or repair the degraded VFD; verify descaler pump reaches full rated speed; disposition affected coils.",
+    "preventive_action": "Add a periodic performance-capability test (verifying actual maximum output against rated spec) to VFD preventive maintenance for all quality-critical drives, not just fault-code monitoring.",
+    "effectiveness_verification": "Performance test confirms full rated output on all quality-critical VFDs over next quarterly check; zero VFD-degradation-related scale defects going forward."
+  },
+  {
+    "id": "SC-082",
+    "defect_type": "Rolled-in Scale",
+    "process_stage": "hot_rolling",
+    "non_conformance_description": "Line 1: scale defect found on coil HR-3045, traced to a batch of slabs with unusually adherent scale characteristics linked to a specific chemistry variation within the approved grade tolerance.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.3",
+    "five_why": [
+      "Why 1: Scale unusually adherent -> the slab's silicon content was at the high end of the approved grade tolerance, which is known in principle to promote more adherent scale.",
+      "Why 2: High-silicon material processed with standard descaler settings -> the descaler recipe is a single standard setting for the whole grade, not adjusted for chemistry sub-variation within tolerance.",
+      "Why 3: No sub-variation adjustment -> the relationship between silicon content and scale adherence within this grade's tolerance band was not incorporated into descaler recipe design.",
+      "Why 4: Not incorporated -> the descaler recipe was originally developed using mid-tolerance reference material only, not tested across the full chemistry tolerance band.",
+      "Why 5 (root cause): the descaler recipe was validated using only mid-tolerance reference chemistry, not tested across the full approved chemistry tolerance band, so higher-silicon material within tolerance was never confirmed to descale adequately at the standard setting."
+    ],
+    "root_cause": "The descaler recipe was validated using only mid-tolerance reference chemistry rather than being tested across the full approved chemistry tolerance band, so material at the high-silicon end of tolerance \u2014 known to produce more adherent scale \u2014 was never confirmed to descale adequately at the standard setting.",
+    "corrective_action": "Increase descaler pressure/pass count for the current high-silicon slab batch; disposition affected coils.",
+    "preventive_action": "Re-validate the descaler recipe across the full chemistry tolerance band for this grade, establishing a chemistry-adjusted recipe if high-silicon material is confirmed to need different settings.",
+    "effectiveness_verification": "Full tolerance-band validation completed; zero chemistry-variation-related scale defects over next 30 days of production spanning the tolerance range."
+  },
+  {
+    "id": "SC-083",
+    "defect_type": "Scratches",
+    "process_stage": "finishing",
+    "non_conformance_description": "Line 2: scratches found on coil FN-0820, traced to a temporary steel plate placed over a floor gap near the finishing line during an unrelated facilities repair, creating a sharp transition edge in the coil transport path.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Scratches from sharp transition -> a temporary floor plate's edge was not flush with the surrounding floor.",
+      "Why 2: Plate not flush -> the facilities team installed it as a quick temporary fix without consulting production about the transport path running over that location.",
+      "Why 3: No consultation -> the facilities work request process does not require checking against active product-transport paths before installing temporary floor modifications.",
+      "Why 4: No such check exists -> facilities repair requests are evaluated for safety and structural criteria, not product-contamination or transport-path interference.",
+      "Why 5 (root cause): the facilities work request process evaluates repairs for safety and structural criteria only, with no required check against active product-transport paths before installing temporary floor modifications near production areas."
+    ],
+    "root_cause": "The facilities work request process checks safety and structural criteria but has no step requiring a check against active product-transport paths before installing temporary floor modifications near production lines.",
+    "corrective_action": "Correct or remove the floor plate to restore a flush transition; inspect and disposition affected coils.",
+    "preventive_action": "Add a product-transport-path check to the facilities work request process for any temporary or permanent floor modification near active production areas.",
+    "effectiveness_verification": "Zero facilities-modification-related scratch defects over next 90 days; work request audit confirms transport-path check performed for subsequent floor work."
+  },
+  {
+    "id": "SC-084",
+    "defect_type": "Scratches",
+    "process_stage": "finishing",
+    "non_conformance_description": "Line 4: scratches found on coil FN-0855, traced to a slitting operation upstream of finishing where a slitter knife had a small chip, leaving a burr that scored subsequent wraps during coiling.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.3",
+    "five_why": [
+      "Why 1: Scratches from burr -> a chipped slitter knife left a small burr on the cut edge.",
+      "Why 2: Knife chipped -> the knife had processed material harder than its rated tolerance during a grade changeover.",
+      "Why 3: Harder material processed -> the slitting line's knife selection guide does not account for a hardness range within the grade specification, only nominal grade.",
+      "Why 4: Guide doesn't account for hardness range -> the knife selection guide was developed using typical/average material hardness for each grade, not the full tolerance range.",
+      "Why 5 (root cause): the slitter knife selection guide is based on typical/average material hardness per grade rather than the full hardness tolerance range within that grade, so material at the harder end of tolerance can exceed the selected knife's rated capability."
+    ],
+    "root_cause": "The slitter knife selection guide is based on typical/average hardness for each grade rather than the full hardness tolerance range, so material at the harder end of the grade's tolerance can exceed the selected knife's capability and cause chipping.",
+    "corrective_action": "Replace the chipped knife; inspect and disposition coils processed since the chip developed.",
+    "preventive_action": "Revise the knife selection guide to account for the full hardness tolerance range within each grade, selecting knife hardness/type based on the upper tolerance bound rather than the typical value.",
+    "effectiveness_verification": "Zero hardness-related knife chipping incidents over next 90 days; knife selection guide revision documented and in use."
+  },
+  {
+    "id": "SC-085",
+    "defect_type": "Crescent Gap",
+    "process_stage": "cold_rolling",
+    "non_conformance_description": "Line 4 shear station: crescent gap found on sheets, traced to a shear hydraulic system pressure drop caused by a slow internal seal leak in the hydraulic cylinder.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Gap from reduced cutting force -> hydraulic system pressure was below the level needed for a clean full-depth cut.",
+      "Why 2: Pressure reduced -> an internal seal leak in the cylinder allowed gradual pressure loss during operation.",
+      "Why 3: Leak undetected -> hydraulic system pressure is monitored at the pump output, not at the point of use (the cylinder itself), so internal leakage downstream of the pump isn't reflected in the monitored reading.",
+      "Why 4: Monitoring point insufficient -> the pressure monitoring point was selected during original installation based on ease of sensor access, not diagnostic completeness.",
+      "Why 5 (root cause): the hydraulic system's pressure monitoring point was selected at installation for ease of sensor access rather than diagnostic completeness, so it reads pump output pressure but cannot detect downstream internal leakage at the cylinder itself."
+    ],
+    "root_cause": "The hydraulic pressure monitoring point was chosen for ease of installation access rather than diagnostic completeness, so it reflects pump output pressure but cannot detect an internal seal leak occurring downstream at the cylinder.",
+    "corrective_action": "Repair the cylinder seal; restore full system pressure; inspect and disposition affected sheets.",
+    "preventive_action": "Add a second pressure monitoring point at or near the cylinder (point of use) to enable detection of downstream pressure loss that the pump-output sensor alone cannot catch.",
+    "effectiveness_verification": "Point-of-use pressure readings remain stable and consistent with pump output over next 60 days; zero hydraulic-leak-related crescent gap defects in that window."
+  },
+  {
+    "id": "SC-086",
+    "defect_type": "Crescent Gap",
+    "process_stage": "cold_rolling",
+    "non_conformance_description": "Line 4 shear station: crescent gap found on the first sheet of each run for several consecutive runs, but not on subsequent sheets within the same run.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.3",
+    "five_why": [
+      "Why 1: Defect on first sheet only -> the shear's hydraulic system has not reached stable operating pressure at the very start of each run.",
+      "Why 2: Not stable at start -> there is no hydraulic pressure stabilization hold built into the run-start sequence.",
+      "Why 3: No stabilization hold -> the run-start sequence was designed around minimizing cycle time between runs, prioritizing speed over a pressure-stabilization pause.",
+      "Why 4: Speed prioritized -> the run-start sequence design did not include a documented trade-off evaluation between cycle-time savings and first-sheet defect risk.",
+      "Why 5 (root cause): the shear run-start sequence was designed to minimize cycle time between runs without a documented evaluation of the trade-off against first-sheet defect risk from inadequate hydraulic pressure stabilization time."
+    ],
+    "root_cause": "The run-start sequence was optimized purely for minimizing cycle time between runs, without a documented trade-off evaluation against the first-sheet defect risk created by not allowing hydraulic pressure to stabilize before the first cut.",
+    "corrective_action": "Add a brief pressure-stabilization pause to the current run-start sequence; disposition affected first-sheets from recent runs.",
+    "preventive_action": "Formally evaluate and document the cycle-time vs. defect-risk trade-off, setting a run-start hydraulic stabilization hold based on measured pressure ramp-up time.",
+    "effectiveness_verification": "Zero first-sheet crescent gap defects over next 20 runs with the stabilization hold in place; documented trade-off evaluation on file."
+  },
+  {
+    "id": "SC-087",
+    "defect_type": "Waist Folding",
+    "process_stage": "forging",
+    "non_conformance_description": "Press 1: waist folding found on components, traced to a die-cooling channel partially blocked by scale buildup, causing localized die surface temperature to run higher than intended.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Folding from die temperature -> a blocked cooling channel caused localized die overheating, altering material flow behavior at that point.",
+      "Why 2: Channel blocked -> descaling debris from the forging process gradually accumulated in the cooling channel over many cycles.",
+      "Why 3: Debris accumulated -> die cooling channels are not included in the routine descaling/cleaning preventive maintenance scope, only external die surfaces.",
+      "Why 4: Not included in scope -> the die maintenance procedure was written focused on visible wear surfaces, not internal cooling passages.",
+      "Why 5 (root cause): the die maintenance procedure focuses on visible external wear surfaces and does not include internal cooling channel cleaning in its scope, so debris accumulation inside cooling passages goes unaddressed over many production cycles."
+    ],
+    "root_cause": "The die maintenance procedure's scope covers visible external wear surfaces but not internal cooling channels, so gradual debris accumulation inside the cooling passages \u2014 which affects die temperature control \u2014 is never addressed by routine maintenance.",
+    "corrective_action": "Clear the blocked cooling channel; verify die surface temperature returns to spec; disposition affected components.",
+    "preventive_action": "Expand the die maintenance procedure's scope to include periodic internal cooling channel inspection and cleaning, not just external wear surfaces.",
+    "effectiveness_verification": "Cooling channel flow verified clear at next 3 scheduled maintenance checks; zero die-temperature-related folding defects over next 90 days."
+  },
+  {
+    "id": "SC-088",
+    "defect_type": "Waist Folding",
+    "process_stage": "forging",
+    "non_conformance_description": "Press 2: waist folding found on components forged immediately following an operator shift change, first few parts of the new shift only.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.3",
+    "five_why": [
+      "Why 1: Folding on shift-change parts -> the incoming operator used a slightly different manual billet-centering technique than the outgoing operator.",
+      "Why 2: Different technique -> billet centering in the die is partially manual and depends on individual operator technique rather than a fixed jig or guide.",
+      "Why 3: No fixed guide -> the press was not originally equipped with a centering guide, relying on operator training and experience instead.",
+      "Why 4: Relies on training -> a centering guide/jig was considered at initial press setup but not implemented, as manual technique was deemed sufficient at the time.",
+      "Why 5 (root cause): the press relies on manual operator billet-centering technique rather than a fixed centering guide/jig, so consistency depends on individual operator technique and varies at shift changes between operators with different habits."
+    ],
+    "root_cause": "Billet centering on this press depends on manual operator technique rather than a fixed centering guide or jig, so consistency varies between individual operators \u2014 most visibly right at shift changes when technique differences are freshest.",
+    "corrective_action": "Brief the incoming operator on standard centering technique for the remainder of the shift; disposition affected components.",
+    "preventive_action": "Design and install a physical billet-centering guide/jig for the press to remove dependence on individual operator technique.",
+    "effectiveness_verification": "Zero shift-change-correlated folding defects over next 20 shift changes once the centering guide is installed."
+  },
+  {
+    "id": "SC-089",
+    "defect_type": "Weld Line Defect",
+    "process_stage": "casting",
+    "non_conformance_description": "Line 2 coil welder: weld defect found, traced to strip surface contamination (residual rolling oil) at the joint location that was not fully cleaned before welding.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Weld defect from contamination -> residual rolling oil at the joint interfered with proper fusion.",
+      "Why 2: Oil not cleaned -> the pre-weld cleaning station's cleaning solution concentration had drifted low, reducing its degreasing effectiveness.",
+      "Why 3: Concentration drifted -> the cleaning solution's concentration is topped up on a fixed schedule rather than monitored continuously or triggered by usage.",
+      "Why 4: Fixed schedule insufficient -> the topping-up schedule was set based on typical usage assumptions that don't account for variable production volume between top-ups.",
+      "Why 5 (root cause): the pre-weld cleaning solution concentration is maintained on a fixed top-up schedule based on typical usage assumptions, without accounting for variable actual production volume, so high-volume periods can deplete concentration faster than the schedule assumes."
+    ],
+    "root_cause": "The pre-weld cleaning solution's concentration is maintained on a fixed top-up schedule based on assumed typical usage, without accounting for actual variable production volume, so periods of higher-than-typical volume can deplete concentration faster than scheduled top-ups replenish it.",
+    "corrective_action": "Top up cleaning solution concentration immediately; re-clean and re-weld or disposition the affected joint.",
+    "preventive_action": "Switch from fixed-schedule top-up to usage-triggered or continuously-monitored concentration maintenance for the pre-weld cleaning solution.",
+    "effectiveness_verification": "Cleaning solution concentration remains within spec over next 60 days regardless of production volume swings; zero contamination-related weld defects in that window."
+  },
+  {
+    "id": "SC-090",
+    "defect_type": "Weld Line Defect",
+    "process_stage": "casting",
+    "non_conformance_description": "Line 1 coil welder: weld defect found, traced to a strip thickness measurement error causing the welder to apply parameters for the wrong effective thickness.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.3",
+    "five_why": [
+      "Why 1: Wrong parameters applied -> the automatic thickness gauge feeding the welder's parameter selection gave an incorrect reading.",
+      "Why 2: Incorrect reading -> the thickness gauge had accumulated a buildup of fine debris on its sensing surface, skewing the measurement.",
+      "Why 3: Debris buildup -> the gauge's sensing surface cleaning is not included in any scheduled maintenance task.",
+      "Why 4: Not in any maintenance task -> the gauge was installed as an add-on automation upgrade after the original maintenance schedule was established, and the schedule was never updated to include it.",
+      "Why 5 (root cause): the automatic thickness gauge was added as a later automation upgrade, and the plant's maintenance schedule was never updated to include its sensing-surface cleaning, so it received no scheduled maintenance at all."
+    ],
+    "root_cause": "The automatic thickness gauge was installed as a later automation add-on, and the maintenance schedule \u2014 established before the gauge existed \u2014 was never updated to include it, so its sensing surface has received no scheduled cleaning since installation.",
+    "corrective_action": "Clean the gauge sensing surface and verify accurate reading; re-verify and correct weld parameters; disposition the affected joint.",
+    "preventive_action": "Add the thickness gauge to the formal maintenance schedule with a defined cleaning interval, and establish a review step for any future automation additions to ensure they're added to maintenance scope at installation time.",
+    "effectiveness_verification": "Gauge reading accuracy verified against manual measurement over next 10 checks; zero thickness-measurement-related weld defects going forward."
+  },
+  {
+    "id": "SC-091",
+    "defect_type": "Water Spot",
+    "process_stage": "finishing",
+    "non_conformance_description": "Line 2 finishing: water spot staining found, traced to a drying unit temperature sensor reading correctly but positioned in a location not representative of actual strip surface temperature.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Staining despite 'correct' sensor reading -> the sensor's location reads chamber air temperature, not actual strip surface temperature, and the two diverged under current conditions.",
+      "Why 2: Divergence occurred -> at the current (increased) line speed, the strip does not fully equilibrate to chamber air temperature within the drying chamber dwell time.",
+      "Why 3: Not accounted for -> the drying validation was performed at a lower line speed where strip and chamber air temperature were closely matched, and was never re-validated after line speed was later increased for throughput.",
+      "Why 4: Not re-validated after speed increase -> line speed changes for throughput purposes are approved based on mechanical/equipment capability, not re-validation of temperature-sensitive process steps like drying.",
+      "Why 5 (root cause): line speed increases approved for throughput purposes are evaluated against mechanical/equipment capability only, without a required re-validation of temperature-sensitive downstream process steps like drying that were originally validated at the previous, slower speed."
+    ],
+    "root_cause": "Line speed increases are approved based on mechanical/equipment capability alone, without a required re-validation of temperature-sensitive process steps like drying \u2014 so the drying process remained validated only for the previous, slower speed at which strip and chamber air temperature closely matched.",
+    "corrective_action": "Manually extend drying time or increase temperature to compensate at current speed; re-dry or disposition affected coils.",
+    "preventive_action": "Require re-validation of temperature-sensitive process steps (like drying) whenever line speed changes are approved, not just a mechanical/equipment capability check.",
+    "effectiveness_verification": "Drying process re-validated at current line speed with strip-surface (not just chamber-air) temperature confirmed adequate; zero speed-related water spot defects going forward."
+  },
+  {
+    "id": "SC-092",
+    "defect_type": "Oil Spot",
+    "process_stage": "finishing",
+    "non_conformance_description": "Line 3 finishing: oil spot found, traced to a changeover between two different anti-corrosion oil products for different customer specifications, with residual old oil mixing with the new oil in a shared applicator system.",
+    "applicable_standard": "IATF 16949:2016 clause 10.2.3",
+    "five_why": [
+      "Why 1: Oil spot from mixed oils -> residual old oil in the shared applicator system mixed with newly loaded oil, creating an inconsistent film.",
+      "Why 2: Residual oil present -> the applicator changeover procedure specifies refilling with new oil but not a flush/purge step to clear residual old oil first.",
+      "Why 3: No flush step -> the changeover procedure was written assuming the applicator system fully empties before refill, without verifying this is actually true for the system's design.",
+      "Why 4: Assumption not verified -> the applicator's internal reservoir and line design were never assessed for residual-volume characteristics when the changeover procedure was created.",
+      "Why 5 (root cause): the oil applicator changeover procedure assumes the system fully empties before refill without ever having assessed the actual internal reservoir/line design for residual-volume characteristics, so a flush/purge step was never included even though residual old oil can remain in the system."
+    ],
+    "root_cause": "The oil applicator changeover procedure assumes the system empties fully before refill, but this was never actually verified against the applicator's internal reservoir and line design, so no flush/purge step was included despite residual old oil being able to remain and mix with newly loaded oil.",
+    "corrective_action": "Flush the applicator system and reload with correct oil; re-clean or disposition affected coils.",
+    "preventive_action": "Assess the applicator's actual residual-volume characteristics and add a required flush/purge step to the changeover procedure between different oil products.",
+    "effectiveness_verification": "Zero oil-mixing-related spot defects over next 10 product changeovers with the flush step in place."
+  },
+  {
+    "id": "SC-093",
+    "defect_type": "Water Spot",
+    "process_stage": "finishing",
+    "non_conformance_description": "Line 4 finishing: water spot staining found intermittently, traced to condensation dripping from an overhead HVAC duct located directly above a section of the finishing line.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Staining from condensation drip -> an overhead HVAC duct sweats under certain humidity/temperature combinations and drips onto product below.",
+      "Why 2: Duct sweats -> the duct lacks insulation at the specific section routed above the finishing line.",
+      "Why 3: Missing insulation -> that duct section was added during a later facility expansion and was not insulated to the same standard as the original duct run.",
+      "Why 4: Inconsistent insulation standard -> the facility expansion's HVAC installation was contracted separately from the original system and followed the contractor's default practice rather than the plant's original specification.",
+      "Why 5 (root cause): the HVAC ductwork added during a later facility expansion was installed by a separate contractor following their own default practice rather than being required to match the plant's original insulation specification, resulting in an uninsulated section positioned above product-sensitive areas."
+    ],
+    "root_cause": "Ductwork added during a facility expansion was installed by a different contractor using their own default practice rather than being required to match the plant's original HVAC insulation specification, leaving an uninsulated section positioned directly above a product-sensitive area.",
+    "corrective_action": "Insulate the affected duct section immediately; inspect and disposition coils affected by condensation drip.",
+    "preventive_action": "Require any future facility expansion HVAC work to explicitly match the plant's original insulation specification, verified before acceptance, especially for ductwork routed above production areas.",
+    "effectiveness_verification": "Zero condensation-related water spot defects over next full season of humidity variation once insulation is corrected."
+  },
+  {
+    "id": "SC-094",
+    "defect_type": "Oil Spot",
+    "process_stage": "finishing",
+    "non_conformance_description": "Line 2 finishing: oil spot found, traced to an over-lubricated bearing on a nearby conveyor idler roller that was recently serviced with a manual grease gun.",
+    "applicable_standard": "ISO 9001:2015 clause 10.2",
+    "five_why": [
+      "Why 1: Oil spot from over-lubrication -> excess grease was purged from the bearing and contacted passing product.",
+      "Why 2: Excess grease applied -> the manual greasing procedure specifies 'apply until slight purge visible' without a maximum pump-count or quantity limit.",
+      "Why 3: No quantity limit -> the procedure relies on visual judgment of 'slight purge,' which is subjective and varies between technicians.",
+      "Why 4: Subjective criterion used -> the greasing procedure was written based on general best-practice guidance without adapting it to a quantified, technician-independent standard for this specific plant's bearings.",
+      "Why 5 (root cause): the manual greasing procedure relies on a subjective visual judgment ('slight purge visible') rather than a quantified pump-count or grease-quantity limit specific to this bearing type, so the amount applied varies by technician interpretation."
+    ],
+    "root_cause": "The manual greasing procedure uses a subjective visual criterion ('slight purge visible') instead of a quantified pump-count or grease-quantity limit specific to the bearing type, so actual grease applied varies significantly by individual technician interpretation.",
+    "corrective_action": "Clean up excess grease and affected product contact area; re-clean or disposition affected coils.",
+    "preventive_action": "Replace the subjective greasing criterion with a quantified pump-count or grease-quantity specification per bearing type, removing reliance on individual technician judgment.",
+    "effectiveness_verification": "Zero over-lubrication-related oil spot defects over next 90 days; greasing records show quantified pump-counts documented per service."
+  }
+]

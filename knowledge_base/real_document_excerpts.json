@@ -1,0 +1,22 @@
+{
+  "_source_note": "These are NOT verbatim reproductions of the source documents (that would raise both copyright and academic-integrity concerns). They are paraphrased structural/style summaries of real, publicly available documents, useful for grounding your retrieval index in genuine regulatory and engineering RCA writing conventions rather than invented style. For your actual knowledge base, you should download and chunk real FDA 483 PDFs and NASA NTRS reports yourself (links below) — this file gives you the pattern to look for and a couple of real, citable case anchors.",
+  "fda_483_pattern": {
+    "source": "FDA Form 483, 'Inspectional Observations' — https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/inspection-references/inspection-observations",
+    "structural_pattern": "Each observation opens with a general statement of the regulatory requirement that was not met, followed by a 'Specifically, on [date]...' clause that grounds the finding in a concrete, dated, observed fact (who, what, where, under what conditions). Observations are ranked in descending order of risk significance, not chronological order.",
+    "example_case_paraphrased": {
+      "context": "A 2013 inspection of a compounding pharmacy's sterile-drug processing area (FDA Form 483, publicly posted at fda.gov/media/85788/download).",
+      "paraphrased_finding": "Inspectors documented that personnel gowning was inconsistent with aseptic requirements — exposed skin and hair were noted on a technician working inside an ISO 5 hood — and that the cleanroom's exhaust vent placement had never been verified by smoke studies to confirm non-turbulent airflow, both cited as conditions that could compromise sterility assurance.",
+      "why_this_is_useful": "Notice the pattern: general requirement -> specific dated observation -> named risk mechanism. This is exactly the register a CAPA 'Problem Description' section should use."
+    }
+  },
+  "nasa_ntrs_pattern": {
+    "source": "NASA Technical Reports Server (NTRS) — https://ntrs.nasa.gov",
+    "structural_pattern": "NASA failure/mishap reports separate 'proximate cause' (the immediate mechanical trigger) from 'root cause' (the underlying process or system gap that allowed the proximate cause to occur) — directly analogous to a CAPA's corrective action (fixes the proximate cause) vs. preventive action (fixes the root cause).",
+    "example_case_paraphrased": {
+      "context": "NASA's 2013 investigation into water intrusion in an astronaut's helmet during a spacewalk (EMU 3011 'Water in the Helmet' mishap, NTRS record 20140016950 / 20150003027).",
+      "paraphrased_finding": "Testing traced the immediate trigger to blockage of the suit's water-separator drum holes by a mixture of silica and silicate particles, which caused cooling water to spill into the ventilation loop and migrate toward the helmet. Investigators then traced that contamination further back to ground-processing shortcomings in the filter-bed servicing procedure, which had allowed contaminants into the filters before the hardware was ever installed on the suit.",
+      "why_this_is_useful": "This is a real-world illustration of the '5-Why' idea done properly: the proximate cause (blocked drum holes) is not where the investigation stopped — it kept going until it reached a correctable process gap (filter-bed servicing procedure), which is what the preventive action actually needs to target."
+    }
+  },
+  "recommended_next_step": "Download 30-50 real FDA 483 PDFs (fda.gov Electronic Reading Room / datadashboard.fda.gov) and 20-30 real NASA NTRS failure-analysis reports (ntrs.nasa.gov, search 'failure analysis' or 'root cause'), then run them through the Phase 3 chunking code in the dossier. This file is a starting reference, not a replacement for that step."
+}
